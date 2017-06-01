@@ -1,0 +1,8 @@
+lang: ja
+
+themes:
+  - miyadaiku.themes.pygments
+  - miyadaiku.themes.base
+  - miyadaiku.themes.jquery
+
+article_template: common.html
