@@ -2,7 +2,8 @@ lang: ja
 
 themes:
   - miyadaiku.themes.pygments
-  - miyadaiku.themes.base
-  - miyadaiku.themes.jquery
+  - miyadaiku.themes.bootstrap4
+  - miyadaiku.themes.fontawesome
+  
 
-article_template: common.html
+

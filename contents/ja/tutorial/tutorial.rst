@@ -1,5 +1,9 @@
 
-チュートリアル
+.. article::
+  :order: 1
+  
+
+サイトの作成
 ======================
 
 はじめに、次のコマンドで ``first_doc`` ディレクトリに ``miyadaiku`` のプロジェクトを作成します
@@ -28,7 +32,7 @@
 -------------------------
 
 
-では、最初のアーティクルとして、``first_doc/contents/hello.rst`` ファイルを作成しましょう。
+では、最初のアーティクルとして、reStructuredText形式のファイルを作成しましょう。
 
 
 .. code-block:: rst
@@ -39,7 +43,7 @@
    This is my first miyadaiku article.
 
 
-上記の内容のテキストファイルを作成し、 ``first_doc/contents/`` ディレクトリに ``hello.rst`` という名前で保存してください。
+上記の内容のテキストファイルを作成し、 ``first_doc/contents/hello.rst`` という名前で保存してください。
 
 
 テキストファイルを保存したら、次のコマンドでサイトを構築します。
@@ -77,7 +81,7 @@
 
 でサイトを構築すると、あらたに ``first_doc/output/link.html`` が作成されます。
 
-``:jinja:`` ロールで記述した内容は、そのまま ``jinja2`` のテンプレートとして処理され、HTMLに変換されます。
+``:jinja:`` ロールで記述した内容は、そのまま ``Jinja2`` のテンプレートとして処理され、HTMLに変換されます。
 
 ``first_doc/contents/index.rst`` では、``:jinja:`` ロールを利用して、``./hello.rst`` ページへのリンクを作成しています。``page.link_to(ページ名)`` メソッドは、指定したページのタイトルをテキストとして、リンクを作成します。
 
@@ -85,9 +89,9 @@
 テンプレートのカスタマイズ
 -------------------------------
 
-アーティクルは、``page_article.html`` という名前のjinja2 テンプレートで、HTMLに変換されます。デフォルトでは、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルがテンプレートとなります。
+MiyadaikuがアーティクルからHTMLページを生成する時、``page_article.html`` という名前の Jinja2 テンプレートを使用します。デフォルトでは、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルがテンプレートとなります。
 
-jinja2の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成できます。例として、テンプレートディレクトリ ``first_doc/templates`` に、 テンプレートとなる ``page_article.html`` ファイルを作成しましょう。
+Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成できます。例として、テンプレートディレクトリ ``first_doc/templates`` に、 テンプレートとなる ``page_article.html`` ファイルを作成しましょう。
 
 
 .. code-block:: jinja
@@ -108,7 +112,7 @@ jinja2の継承機能を利用してこのテンプレートをカスタマイ�
 
 ``page_article.html`` テンプレートには ``head`` ブロックと ``body`` ブロックがあり、それぞれ ``<head>`` 要素と ``<body>`` 要素を出力します。ここでは ``body`` ブロックをオーバライドして、``body`` 要素にコピーライト表記を追加します。
 
-miyadaikuでは、Pythonパッケージに含まれるテンプレートを、``パッケージ名!テンプレートファイル名`` のように、パッケージ名とファイル名を ``!`` 記号で区切って指定します。この例では、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルを拡張しています。
+Miyadaikuでは、Pythonパッケージに含まれるテンプレートを、``パッケージ名!テンプレートファイル名`` のように、パッケージ名とファイル名を ``!`` 記号で区切って指定します。この例では、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルを拡張しています。
 
 
 CSSファイルを追加

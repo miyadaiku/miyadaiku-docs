@@ -1,4 +1,8 @@
 
+.. article::
+  :order: 2
+
+
 Blogサイトの作成
 ======================
 
@@ -33,7 +37,7 @@ Blogサイトの作成
    themes:
      - miyadaiku.themes.base
 
-``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ ``miyadaiku.themes.blog`` を使用するように設定します。
+``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ ``miyadaiku.themes.sample.blog`` を使用するように設定します。
 
 .. code-block:: yaml
 
