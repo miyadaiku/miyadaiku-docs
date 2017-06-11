@@ -10,4 +10,4 @@ build
 .cache
 .venv
 
-output
+outputs

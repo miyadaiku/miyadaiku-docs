@@ -1,13 +1,12 @@
 
 .. article::
-  :order: 2
-  :tags: タグ1, タグ2
+  :order: 3
   
 
 アーティクル
 ======================
 
-``contents`` ディレクトリの ``reStructuredText`` ファイルや ``Markdown`` ファイルは、**アーティクル** として読み込まれ、Jinja2テンプレートを適用してHTMLファイルに変換します。
+``contents`` ディレクトリの reStructuredTextファイルや Markdownファイルは、**アーティクルオブジェクト** として読み込まれます。アーティクルオブジェクトはJinja2テンプレートを適用し、``outputs`` ディレクトリにHTMLファイルを出力します。
 
 reStructuredText
 ----------------------------
@@ -25,6 +24,7 @@ articleディレクティブ
 articleディレクティブで、アーティクルのプロパティを指定します。
 
 .. code-block:: rst
+   :caption: Sample of article in reStructuredText:
 
    .. article::
       :date: 2017-01-01
@@ -42,6 +42,7 @@ articleディレクティブで、アーティクルのプロパティを指定�
 
 
 .. code-block:: rst
+   :caption: Sample of Jinja role in reST:
 
    Properties of this document
    -----------------------------------
@@ -53,8 +54,45 @@ articleディレクティブで、アーティクルのプロパティを指定�
    Tags are :jinja:`{{ ', '.join(content.tags) }}`
 
 
-プロパティとして、任意の項目を指定できます。標準のプロパティ設定については、`プロパティ設定` を参照してください。
+プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
 
+
+
+jinjaディレクティブ
+++++++++++++++++++++++++++++++++
+
+``jinja`` ディレクティブで指定した文字列は、Jinja2テンプレートとして評価され、結果はHTMLとして埋め込まれます。
+
+.. code-block:: rst
+   :caption: Sample of Jinja role in reST:
+
+   Link test
+   -------------
+
+   .. jinja::
+
+      Another way to link to {{ page.link_to("./hello.rst") }}.
+
+
+
+.. jinja::
+
+   <a id='jinja_vars' class='header_anchor'></a>
+
+
+テンプレート変数
+################################
+
+Jinjaテンプレート内では、次の変数を使用できます。
+
+content
+  Jinjaテンプレートを含む :jinja:`{{ page.link_to('./template.rst', text='コンテントオブジェクト', fragment='content_vars') }}`。
+
+page
+  HTMLページの元となる :jinja:`{{ page.link_to('./template.rst', text='コンテントオブジェクト', fragment='content_vars') }}`。
+
+
+アーティクルからHTMLファイルを生成する際は、``page``  も ``content`` もおなじアーティクルオブジェクトとなります。ブログのインデックスページなら ``page`` はインデックスオブジェクトで、``content`` はアーティクルオブジェクトです。
 
 
 jinjaロール
@@ -63,6 +101,7 @@ jinjaロール
 ``:jinja:`` ロールで指定した文字列は、Jinja2テンプレートとして評価され、結果はHTMLとして埋め込まれます。
 
 .. code-block:: rst
+   :caption: Sample of Jinja role in reST:
 
    Link test
    -------------
@@ -70,7 +109,31 @@ jinjaロール
    Link to :jinja:`{{ page.link_to("./hello.rst") }}`.
 
 
-``page`` などの、Jinja2テンプレートで参照できる変数については、`実行時変数` を参照してください。
+   <a id='jinja_vars' class='header_anchor'></a>
+
+
+
+   Link to.
+
+
+Jinja2テンプレートでは、 :jinja:`{{ page.link_to(content, text='テンプレート変数', fragment='jinja_vars') }}` を参照できます。
+
+
+
+code-blockディレクティブ
++++++++++++++++++++++++++++++
+
+
+プログラムのソースコードなどは、``code-block`` ディレクティブで記述します。``.. code-block:: lang`` のように言語を指定すると、`Pygments <http://pygments.org/>`_ による構文ハイライトが行われます。
+
+.. code-block:: rst
+   :caption: Sample of code-block directive:
+
+   .. code-block:: python
+      :caption: sample python code
+      
+      def test():
+         pass
 
 
 
@@ -86,35 +149,41 @@ Markdown
 
 
 
-文書プロパティ
+プロパティ
 +++++++++++++++++++++++
 
 文書ファイルの先頭に、プロパティ名とプロパティ値を指定できます。
 
 
 .. code-block:: md
+   :caption: Sample of document properties in Markdown:
 
    date: 2017-01-01
    title: 文書タイトル
    category: カテゴリ1
    tags: タグ1, タグ2
 
-   # Title of Markdown article
+   # Miyadaiku article
+
+   This is a Miyadaiku article in Markdown.
+  
 
 
 
 プロパティ値は各行に一つづつ、プロパティ名と値を ``:`` で区切って指定します。
 
-プロパティとして、任意の項目を指定できます。標準のプロパティ設定については、`プロパティ設定` を参照してください。
+プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
+
 
 
 
 Jinja2テンプレート
 ++++++++++++++++++++++++++
 
-Markdownでも、reStructuredTextと同様、``:jinja:` Jinja2タグ ``` の形式で、Jinja2テンプレートを指定できます。
+Markdownでも、reStructuredTextと同様、*\:jinja:` Jinja2タグ `* の形式で、Jinja2テンプレートを指定できます。
 
 .. code-block:: md
+   :caption: Sample of Jinja role in Markdown:
 
    # Link test
 
@@ -122,8 +191,7 @@ Markdownでも、reStructuredTextと同様、``:jinja:` Jinja2タグ ``` の形�
 
 
 
-
-``page`` などの、Jinja2テンプレートで参照できる変数については、`実行時変数` を参照してください。
+Jinja2テンプレートでは、 :jinja:`{{ page.link_to(content, text='テンプレート変数', fragment='jinja_vars') }}` を参照できます。
 
 
 
@@ -134,13 +202,14 @@ HTML
 拡張子が ``.html`` のファイルは、文書の先頭に文書プロパティを指定したHTMLファイルとして読み込み、Jinja2テンプレートエンジンでHTMLとして出力します。
 
 
-文書プロパティ
+プロパティ
 +++++++++++++++++++++++
 
 文書ファイルの先頭に、プロパティ名とプロパティ値を指定できます。
 
 
 .. code-block:: html
+   :caption: Sample of document properties in HTML:
 
    date: 2017-01-01
    title: 文書タイトル
@@ -153,7 +222,7 @@ HTML
 
 プロパティ値は各行に一つづつ、プロパティ名と値を ``:`` で区切って指定します。
 
-プロパティとして、任意の項目を指定できます。標準のプロパティ設定については、`プロパティ設定` を参照してください。
+プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
 
 
 
@@ -163,10 +232,49 @@ Jinja2テンプレート
 HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換されます。特別な記法なしで、Jinja2タグを使用できます。
 
 .. code-block:: html
+   :caption: Sample of Jinja template in HTML:
 
-   <p>Link to <a href='{{ page.link_to("./hello.rst") }}`'>hello</a></p>
+   <p>Link to <a href='{{ page.link_to("./hello.rst") }}'>hello</a></p>
 
 
 
-``page`` などの、Jinja2テンプレートで参照できる変数については、`実行時変数` を参照してください。
+Jinja2テンプレートでは、 :jinja:`{{ page.link_to(content, text='テンプレート変数', fragment='jinja_vars') }}` を参照できます。
+
+
+
+:jinja:`<a class="header_anchor" id="propsofarticle"></a>`
+
+
+
+アーティクルのプロパティ
+-----------------------------------
+
+アーティクルオブジェクトは、:jinja:`{{ page.link_to('./config.rst', text='標準プロパティ', fragment='standardprofs') }}` に加え、以下のプロパティを指定できます。
+
+
+article_template
+  アーティクルのHTMLページを生成するJinja2テンプレートの名前を指定します。未指定の場合は、``page_article.html`` となります。
+
+draft
+  未公開状態のアーティクルは ``true``、公開中のアーティクルは ``false`` を指定します。未指定の場合は ``false`` となります。
+
+ext
+  アーティクルの出力ファイル名の拡張子。未指定の場合は、``'.html'`` となります。
+
+filename
+  出力ファイル名を指定します。未指定の場合は、アーティクルのファイル名の拡張子を ``.html`` としたファイルを作成します。
+
+  ``filename`` には、相対ディレクトリ名も指定できます。ex) ``subdir/article1.html``,  ``../subdir/article1.html``
+
+filename_templ
+  出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、``'{{ page.stem }}.{{ page.ext }}'`` となります。
+
+  テンプレートでは、 :jinja:`{{ page.link_to(content, text='テンプレート変数', fragment='jinja_vars') }}` を参照できます。
+
+
+order
+  アーティクルの順序を数値で指定します。
+
+stem
+  アーティクルの出力ファイル名(拡張子以外)。未指定の場合は、アーティクルソースファイルのファイル名(拡張子以外)となります。
 

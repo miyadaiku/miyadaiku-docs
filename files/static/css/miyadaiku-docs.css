@@ -15,13 +15,43 @@ li p {
   margin-bottom: 0.5rem;
 }
 
-.highlight pre {
-  background: #202020;
-  color: #d0d0d0;
+dt {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.1rem;
+}
+
+dt:before {
+    content: "\025B8";
+    margin-right: 0.5rem;
+}
+
+dd {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.code-block {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.code-block pre {
   padding: 0.7em;
-  font-size: .9rem;
+  background: #202020;
+  color: #d0d0d0;
+  margin-bottom: 0rem;
+}
+
+.code-block-caption {
+  margin-left: 0.0rem;
+  padding: 0.2rem 0.5rem;
+  background-color: lightgray;
+  font-size: 0.9rem;
 }
 
 .article-body {
@@ -29,8 +59,8 @@ li p {
 }
 
 .article-content h1 {
-  font-size: 1.5rem;
-  padding: .3em;
+  font-size: 1.8rem;
+  padding: .3rem 0rem;
   margin-top: 1.5em;
   margin-bottom: .5em;
   border-bottom: solid #366D9C;
@@ -42,11 +72,23 @@ li p {
   margin-bottom: .5em;
 }
 
+.article-content h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+  font-size: 1.1rem;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
 
 .toc {
-  padding: 10px;
+  padding: 0;
   z-index: 999;
-  overflow: auto;
+  color: gray;
 }
 
 .toc .article-block {
@@ -58,12 +100,14 @@ li p {
 }
 
 .toc ul {
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   margin: 0rem 0 0.2rem 0;
+  font-size:1rem;
 } 
 
 .toc li {
   list-style-type: none;
+  margin-bottom:0.2rem;
 }
 
 
@@ -75,19 +119,37 @@ li p {
   color: gray;
 }
 
-.header_h1 {
+.toc a {
+  color: #292B2C;
 }
 
-.header_h2 {
+.header_h1 {
+  font-weight: normal;
   margin-left:0.5rem;
 }
 
+.header_h1 a {
+  color: #292B2C;
+  font-size: 0.9rem;
+}
+
+.header_h2 {
+  margin-left: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.header_h2 a, .header_h3 a, .header_h4 a, .header_h5 a, .header_h6 a {
+  color: #a5a5a5;
+}
+
 .header_h3 {
-  margin-left:1rem;
+  margin-left: 2rem;
+  font-size: 0.8rem;
 }
 
 .header_h4,.header_h5, .header_h6 {
-  margin-left:1.5rem;
+  margin-left:2.5rem;
+  font-size: 0.8rem;
 }
 
 .literal {
@@ -111,6 +173,7 @@ li p {
 .header_anchor {
     display: block;
     position: relative;
-    top: -80px;
+    top: -60px;
     visibility: hidden;  
 }
+

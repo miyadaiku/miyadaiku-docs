@@ -20,6 +20,7 @@ Blogサイトの作成
 初期設定では、プロジェクト設定ファイル ``first_blog/config.yml`` ファイルは次のようになっています。
 
 .. code-block:: yaml
+   :caption: first_blog/config.yml:
 
    # Title of the site
    site_title: FIXME - site title
@@ -40,6 +41,7 @@ Blogサイトの作成
 ``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ ``miyadaiku.themes.sample.blog`` を使用するように設定します。
 
 .. code-block:: yaml
+   :caption: first_blog/config.yml:
 
    # Title of the site
    site_title: FIXME - site title
@@ -65,6 +67,7 @@ Blogサイトの作成
 
 
 .. code-block:: rst
+   :caption: first_blog/contents/first_entry.rst:
 
    .. article::
       :date: 2017-01-01
@@ -83,6 +86,7 @@ Blogサイトの作成
 
 
 .. code-block:: rst
+   :caption: first_blog/contents/second_entry.rst:
 
    .. article::
       :date: 2017-01-01
@@ -95,10 +99,17 @@ Blogサイトの作成
    This is my second blog entry.
 
 
-次のコマンドでサイトを構築します。
+
+サイトのビルド
+-------------------------
+
+次のコマンドでサイトをビルドします。
 
 
 .. code-block:: console
 
    $ miyadaiku-build ./first_blog
+
+
+正常に終了すると、``first_blog/outputs/index.html`` にBlogが出力されます。
 

@@ -36,6 +36,7 @@
 
 
 .. code-block:: rst
+   :caption: first_doc/contents/hello.rst:
 
    hello world
    -------------
@@ -46,7 +47,11 @@
 上記の内容のテキストファイルを作成し、 ``first_doc/contents/hello.rst`` という名前で保存してください。
 
 
-テキストファイルを保存したら、次のコマンドでサイトを構築します。
+
+サイトのビルド
+-------------------------
+
+テキストファイルを保存したら、次のコマンドでサイトをビルドします。
 
 .. code-block:: console
 
@@ -63,6 +68,7 @@
 
 
 .. code-block:: rst
+   :caption: first_doc/contents/link.rst:
 
    Link test
    -------------
@@ -95,6 +101,7 @@ Jinja2 の継承機能を利用してこのテンプレートをカスタマイ�
 
 
 .. code-block:: jinja
+   :caption: first_doc/templates/page_article.html:
 
    <!-- miyadaiku.themes.base パッケージの page_article.html を拡張する -->
    {% extends 'miyadaiku.themes.base!page_article.html' %}
@@ -124,6 +131,7 @@ CSSファイルを追加
 
 
 .. code-block:: CSS
+   :caption: first_doc/files/static/css/copyright.css:
 
    .copyright {
      text-align: right;
@@ -133,6 +141,7 @@ CSSファイルを追加
 
 
 .. code-block:: jinja
+   :caption: first_doc/templetes/page_article.html:
 
    <!-- miyadaiku.themes.base パッケージの page_article.html を拡張する -->
    {% extends 'miyadaiku.themes.base!page_article.html' %}
