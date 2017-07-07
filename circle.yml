@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - pip install miyadaiku.themes.pygments miyadaiku.themes.bootstrap4 miyadaiku.themes.fontawesome
+    - pip install miyadaiku.themes.bootstrap4 miyadaiku.themes.fontawesome
 
 deployment:
   github:
