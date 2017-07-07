@@ -5,7 +5,8 @@ machine:
 dependencies:
   pre:
     - pip install wheel
-    - pip install miyadaiku miyadaiku.themes.bootstrap4 miyadaiku.themes.fontawesome
+    - pip install miyadaiku
+    - pip install miyadaiku.themes.bootstrap4 miyadaiku.themes.fontawesome
 
 deployment:
   github:
