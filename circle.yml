@@ -1,0 +1,13 @@
+machine:
+  python:
+    version: 3.6.1
+
+dependencies:
+  pre:
+    - pip install miyadaiku.themes.pygments miyadaiku.themes.bootstrap4 miyadaiku.themes.fontawesome
+
+deployment:
+  github:
+    branch: master
+    commands:
+      - ./deploy_ghp.sh
