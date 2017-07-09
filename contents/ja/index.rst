@@ -33,7 +33,5 @@ Use pip to install miyadaiku.
 
 .. code-block:: console
 
-   $ pip install miyadaiku
-
-
+   $ pip3 install miyadaiku
 

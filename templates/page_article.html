@@ -46,14 +46,14 @@
             {% if c.url == page.url %}
                 <div class="current article-block">
                   <div class="article-title"><i class="fa fa-file-text-o"></i>            
-                  {{ page.link_to(c) }}</div>
+                    {{ page.link_to(c) }}</div>
 
                   <ul>
-                  {% for id, elem, text in page.html.headers %}
-                    <li class="header_{{ elem }}">
-                      <a href="#{{id}}">{{text}}</a>
-                    </li>
-                  {% endfor %}
+                    {% for id, elem, text in page.html.headers %}
+                      <li class="header_{{ elem }}">
+                        <a href="#a_{{id}}">{{text}}</a>
+                      </li>
+                    {% endfor %}
                   </ul>
                 </div>
             {% else %}
@@ -63,7 +63,6 @@
                 </div>
             {% endif %}
           {% endfor %}
-
       {% endif %}
 
 

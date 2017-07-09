@@ -22,6 +22,9 @@ Blogサイトの作成
 .. code-block:: yaml
    :caption: first_blog/config.yml:
 
+   # Base URL of the site
+   site_url: http://localhost:8888/
+
    # Title of the site
    site_title: FIXME - site title
 
