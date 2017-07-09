@@ -1,0 +1,6 @@
+type: article
+article_template: page_redirect.html
+lang_pages: >
+  { ja: './ja/index.html' }
+
+lang_default: ./ja/index.html
