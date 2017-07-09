@@ -1,0 +1,21 @@
+<!-- miyadaiku.themes.base パッケージの page_article.html を拡張する -->
+{% extends 'miyadaiku.themes.base!page_article.html' %}
+
+<!-- headブロックをカスタマイズ -->
+{% block head %}
+  <!-- 元のheadブロックを出力 -->
+  {{ super() }}
+
+  <link rel="stylesheet" href="{{ page.path_to('/static/css/copyright.css')}}">
+{% endblock head %}
+
+<!-- bodyブロックをカスタマイズ -->
+{% block body %}
+
+  <!-- 元のbodyブロックを出力 -->
+  {{ super() }}
+
+  <!-- コピーライト表記を追加 -->
+  <div class="copyright">Copyright(c) 2017 miyadaiku ALL RIGHTS RESERVED.</div>
+{% endblock body %}
+

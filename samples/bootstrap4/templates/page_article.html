@@ -1,0 +1,27 @@
+{% extends 'miyadaiku.themes.base!page_article.html' %}
+
+{% block head %}
+  {{ super() }}
+
+  <!-- include boolstrap4 -->
+  {% include 'bootstrap4_css.html' %}
+
+  <!-- include jquery.js -->
+  {% include 'jquery.html' %}
+
+  <!-- include tether.js -->
+  {% include 'tether.html' %}
+
+  <!-- include boolstrap4 js -->
+  {% include 'bootstrap4_js.html' %}
+
+{% endblock head %}
+
+
+{% block body %}
+
+<div class="container">
+  {{ super() }}
+</div>
+
+{% endblock body %}

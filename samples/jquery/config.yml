@@ -1,0 +1,13 @@
+# Title of the site
+site_title: FIXME - site title
+
+# Default language code
+lang: ja
+
+# Default timezone
+timezone: Asia/Tokyo
+
+# List of site theme
+themes:
+  - miyadaiku.themes.jquery
+

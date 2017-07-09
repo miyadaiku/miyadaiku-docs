@@ -1,0 +1,9 @@
+.. article::
+  :date: 2017-01-10
+  :category: カテゴリ1
+  :tags: タグ2
+
+entry 10
+-------------
+
+body of entry 10

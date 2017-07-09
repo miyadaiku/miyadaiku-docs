@@ -1,0 +1,30 @@
+{% extends 'miyadaiku.themes.base!page_article.html' %}
+
+{% block head %}
+  {{ super() }}
+
+  <!-- include jquery.js -->
+  {% include 'jquery.html' %}
+
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#article").fadeIn("slow");
+      });
+    });
+  </script>
+
+{% endblock head %}
+
+{% block body %}
+
+<h1>jQuery sample</h1>
+
+<button>Click me to show article</button>
+
+<div id="article" style="display:none;">
+  {{ super() }}
+</div>
+
+{% endblock body %}
+

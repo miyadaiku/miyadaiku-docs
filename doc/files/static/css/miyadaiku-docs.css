@@ -177,3 +177,16 @@ dd {
     visibility: hidden;  
 }
 
+.samples {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.samplebox {
+  padding: 10px;
+}
+
+.samplebox img {
+  width: 200px;
+  border: solid 1px;
+}

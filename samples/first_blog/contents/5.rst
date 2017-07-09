@@ -1,0 +1,9 @@
+.. article::
+  :date: 2017-01-05
+  :category: カテゴリ1
+  :tags: タグ3
+
+5.rst
+-------------
+
+body of 5.rst

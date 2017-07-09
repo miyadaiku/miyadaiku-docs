@@ -1,0 +1,13 @@
+# Title of the site
+site_title: Blog sample
+
+# Default language code
+lang: en
+
+# Default timezone
+timezone: Asia/Tokyo
+
+# List of site theme
+themes:
+  - miyadaiku.themes.sample.blog
+

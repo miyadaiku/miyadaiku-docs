@@ -1,0 +1,9 @@
+.. article::
+  :date: 2017-01-08
+  :category: カテゴリ1
+  :tags: タグ3
+
+8.rst
+-------------
+
+body of 8.rst

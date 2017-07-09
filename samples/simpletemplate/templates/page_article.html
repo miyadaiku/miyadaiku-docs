@@ -1,0 +1,15 @@
+{% extends "miyadaiku.themes.base!page_article.html" %}
+
+{% block head %}
+  {{ super() }}
+   <link rel="stylesheet" href="{{ page.path_to('/static/simple.css') }}">
+{% endblock head %}
+
+
+{% block body %}
+
+  {{ super() }}
+
+  <hr>
+  <p>built from {{ page.name }}</p>
+{% endblock body %}
