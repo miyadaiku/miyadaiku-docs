@@ -21,7 +21,7 @@ done
 
 cd miyadaiku.github.io
 git add --all *
-git commit -m "update doc"
-git push ${REPO} master
+git commit -m "update doc" || true
+git push ${REPO} master || true
 cd ..
 rm -rf miyadaiku.github.io
