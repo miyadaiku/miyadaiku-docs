@@ -4,7 +4,7 @@
   {{ super() }}
 
   <!-- include jquery.js -->
-  {% include 'jquery.html' %}
+  {{ jquery.load_js(page) }}
 
   <link rel="stylesheet" type="text/css" href="{{page.path_to('/jquery.fullpage.min.css')}}" />
   <script type="text/javascript" src="{{page.path_to('/jquery.fullpage.min.js')}}"></script>

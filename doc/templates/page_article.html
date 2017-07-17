@@ -4,22 +4,22 @@
   {{ super() }}
 
   <!-- include boolstrap4 -->
-  {% include 'bootstrap4_css.html' %}
+  {{ bootstrap4.load_css(page) }}
 
   <!-- include jquery.js -->
-  {% include 'jquery.html' %}
+  {{ jquery.load_js(page) }}
 
   <!-- include tether.js -->
-  {% include 'tether.html' %}
+  {{ tether.load_js(page) }}
 
   <!-- include boolstrap4 js -->
-  {% include 'bootstrap4_js.html' %}
+  {{ bootstrap4.load_js(page) }}
 
   <!-- include pygments css -->
-  {% include 'pygments_css.html' %}
+  {{ pygments.load_css(page) }}
   
   <!-- include font awesome -->
-  {% include 'fontawesome.html' %}
+  {{ fontawesome.load_css(page) }}
   
   <link rel="stylesheet" href="{{ page.path_to('/static/css/miyadaiku-docs.css')}}">
 
