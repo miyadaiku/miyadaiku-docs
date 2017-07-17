@@ -53,7 +53,7 @@ html
 url
   アーティクルのURL
 
-get_content(target)
+load(target)
   ``target`` で指定したパスのコンテンツオブジェクトを取得します。``target`` には相対パスまたは絶対パスを指定できます。
 
 path_to(target):

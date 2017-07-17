@@ -46,7 +46,7 @@
 スニペットの読み込み
 -----------------------
 
-スニペットの内容は、``html`` プロパティで取得できます。他のアーティクルやJinaテンプレートにスニペットの内容を書き込む場合は、次のように記述します。
+スニペットの内容は、``html`` プロパティで取得できます。
 
 .. code-block:: rst
 
@@ -55,6 +55,6 @@
 
    Emebeded 'snippet.rst' file at same directory.
 
-   :jinja:`{{ page.get_content('./snippet.rst').html }}`
+   :jinja:`{{ page.load('./snippet.rst').html }}`
 
 
