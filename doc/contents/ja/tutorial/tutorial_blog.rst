@@ -6,6 +6,17 @@
 Blogサイトの作成
 ======================
 
+
+このチュートリアルで作成するソースコードは、
+
+    https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog
+
+からダウンロードできます。
+
+
+プロジェクトの作成
+-------------------------
+
 はじめに、次のコマンドで ``first_blog`` ディレクトリに ``miyadaiku`` のプロジェクトを作成します
 
 .. code-block:: console

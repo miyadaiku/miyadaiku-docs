@@ -6,6 +6,17 @@
 サイトの作成
 ======================
 
+このチュートリアルで作成するソースコードは、
+
+   https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_doc
+
+からダウンロードできます。
+
+
+プロジェクトの作成
+-------------------------
+
+
 はじめに、次のコマンドで ``first_doc`` ディレクトリに ``miyadaiku`` のプロジェクトを作成します
 
 .. code-block:: console
@@ -32,7 +43,7 @@
 -------------------------
 
 
-では、最初のアーティクルとして、reStructuredText形式のファイルを作成しましょう。
+最初のアーティクルとして、reStructuredText形式のファイルを作成しましょう。
 
 
 .. code-block:: rst
@@ -97,7 +108,9 @@
 
 MiyadaikuがアーティクルからHTMLページを生成する時、``page_article.html`` という名前の Jinja2 テンプレートを使用します。デフォルトでは、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルがテンプレートとなります。
 
-Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成できます。例として、テンプレートディレクトリ ``first_doc/templates`` に、 テンプレートとなる ``page_article.html`` ファイルを作成しましょう。
+Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成できます。
+
+例として、テンプレートディレクトリ ``first_doc/templates`` に、 テンプレートとなる ``page_article.html`` ファイルを作成しましょう。
 
 
 .. code-block:: jinja

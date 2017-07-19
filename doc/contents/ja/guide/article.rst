@@ -38,7 +38,22 @@ articleディレクティブで、アーティクルのプロパティを指定�
    This is a miyadaiku article in reST.
 
 
-この例では、文書のプロパティとして ``date``、``category``、``tags`` を指定しています。指定した値は、``jinja`` ロールを使って次のように参照できます。
+この例では、文書のプロパティとして ``date``、``category``、``tags`` を指定しています。
+
+プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
+
+
+
+jinjaテンプレート
+++++++++++++++++++++++++++++++++++++++++++++++
+
+``jinja`` ディレクティブと ``jinja`` ロールを使って、Jinja2テンプレートをreSTに記述できます。
+
+
+jinjaディレクティブ
+################################
+
+``jinja`` ディレクティブで指定した文字列は、Jinja2テンプレートとして評価され、結果はHTMLに出力されます。
 
 
 .. code-block:: rst
@@ -47,21 +62,19 @@ articleディレクティブで、アーティクルのプロパティを指定�
    Properties of this document
    -----------------------------------
 
-   Date is :jinja:`{{ content.date}}`
-
    Category is :jinja:`{{ content.category }}`
 
    Tags are :jinja:`{{ ', '.join(content.tags) }}`
 
-
-プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
-
+   Date is :jinja:`{{ content.date.strftime('%Y-%m-%d') }}`
 
 
-jinjaディレクティブ
-++++++++++++++++++++++++++++++++
 
-``jinja`` ディレクティブで指定した文字列は、Jinja2テンプレートとして評価され、結果はHTMLとして埋め込まれます。
+
+jinjaロール
+################################
+
+``:jinja:`` ロールで指定した文字列は、Jinja2テンプレートとして評価され、結果はHTMLとして埋め込まれます。
 
 .. code-block:: rst
    :caption: Sample of Jinja role in reST:
@@ -69,16 +82,13 @@ jinjaディレクティブ
    Link test
    -------------
 
-   .. jinja::
-
-      Another way to link to {{ page.link_to("./hello.rst") }}.
+   Link to :jinja:`{{ page.link_to("./hello.rst") }}`.
 
 
 
 .. jinja::
 
    <a id='jinja_vars' class='header_anchor'></a>
-
 
 テンプレート変数
 ################################
@@ -93,30 +103,6 @@ page
 
 
 アーティクルからHTMLファイルを生成する際は、``page``  も ``content`` もおなじアーティクルオブジェクトとなります。ブログのインデックスページなら ``page`` はインデックスオブジェクトで、``content`` はアーティクルオブジェクトです。
-
-
-jinjaロール
-++++++++++++++
-
-``:jinja:`` ロールで指定した文字列は、Jinja2テンプレートとして評価され、結果はHTMLとして埋め込まれます。
-
-.. code-block:: rst
-   :caption: Sample of Jinja role in reST:
-
-   Link test
-   -------------
-
-   Link to :jinja:`{{ page.link_to("./hello.rst") }}`.
-
-
-   <a id='jinja_vars' class='header_anchor'></a>
-
-
-
-   Link to.
-
-
-Jinja2テンプレートでは、 :jinja:`{{ page.link_to(content, text='テンプレート変数', fragment='jinja_vars') }}` を参照できます。
 
 
 
@@ -144,7 +130,7 @@ Markdown
 
 デフォルトでは、Markdownモジュールの `Extra 拡張 <http://pythonhosted.org/Markdown/extensions/extra.html>`_ が有効になっています。
 
-また、Miyadaikuは、Markdownモジュールを独自に拡張し、文書プロパティの指定・Jinja2テンプレートの埋め込みなどを行えます。
+また、Miyadaikuは、Markdownモジュールを独自に拡張ており、文書プロパティの指定・Jinja2テンプレートの埋め込みなどを行えます。
 
 
 
