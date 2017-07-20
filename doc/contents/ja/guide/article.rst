@@ -62,11 +62,14 @@ jinjaディレクティブ
    Properties of this document
    -----------------------------------
 
-   Category is :jinja:`{{ content.category }}`
 
-   Tags are :jinja:`{{ ', '.join(content.tags) }}`
+   .. jinja::
 
-   Date is :jinja:`{{ content.date.strftime('%Y-%m-%d') }}`
+      <ul>
+        <li> Category is {{ content.category }} </li>
+        <li> Tags are {{ ', '.join(content.tags) }} </li>
+        <li> Date is {{ content.date.strftime('%Y-%m-%d') }} </li>
+      </ul>
 
 
 
