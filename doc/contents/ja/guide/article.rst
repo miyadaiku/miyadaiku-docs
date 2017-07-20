@@ -57,11 +57,11 @@ jinjaディレクティブ
 
 
 .. code-block:: rst
-   :caption: Sample of Jinja role in reST:
+   :caption: Sample of Jinja directive in reST:
 
    Properties of this document
-   -----------------------------------
 
+   -----------------------------------
 
    .. jinja::
 
@@ -111,7 +111,8 @@ page
 
 例えば、次のような2つのアーティクル ``parent.rst`` と ``child.rst`` があった場合
 
-.. code-block:: parent.rst
+.. code-block:: jinja
+   :caption: parent.rst:
 
    This is parent.rst
 
@@ -123,7 +124,8 @@ page
    {{ page.load('./child.rst').html }}
 
 
-.. code-block:: child.rst
+.. code-block:: jinja
+   :caption: child.rst:
 
    This is child.rst
 
@@ -163,7 +165,7 @@ Markdown
 
 デフォルトでは、Markdownモジュールの `Extra 拡張 <http://pythonhosted.org/Markdown/extensions/extra.html>`_ が有効になっています。
 
-また、Miyadaikuは、Markdownモジュールを独自に拡張ており、文書プロパティの指定・Jinja2テンプレートの埋め込みなどを行えます。
+また、Miyadaikuは、Markdownモジュールを独自に拡張しており、文書プロパティの指定・Jinja2テンプレートの埋め込みなどを行えます。
 
 
 
