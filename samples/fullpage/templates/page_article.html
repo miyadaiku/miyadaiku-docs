@@ -6,28 +6,10 @@
   <!-- include jquery.js -->
   {{ jquery.load_js(page) }}
 
-  <link rel="stylesheet" type="text/css" href="{{page.path_to('/jquery.fullpage.min.css')}}" />
-  <script type="text/javascript" src="{{page.path_to('/jquery.fullpage.min.js')}}"></script>
+  <!-- include fullPage.js -->
+  {{ fullpagejs.load(page) }}
 
-  <style>
-  #menu {
-    background-color: black;
-    display: flex;
-  }
-
-  #menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0;
-    padding: 0.2rem 0.5rem;
-  }
-
-  #menu .active {
-    color: black;
-    background-color: white;
-  }
-
-  </style>
+  <link rel="stylesheet" href="{{ page.path_to('/main.css') }}">
 
   <script>
   $(document).ready(function() {
@@ -41,11 +23,12 @@
 
 {% block body %}
   {% set sections = contents.get_contents(filters={'type':['snippet']}) %}
-  <div id='menu' style='position:absolute; right:50px; top:50px; z-index:1000;'>
+  <div id='menu'>
     {% for s in sections|sort(attribute='order') %}
       <a data-menuanchor="{{loop.index}}" href="#{{loop.index}}" data-anchor="{{loop.index}}">{{ s.title }}</a>
     {% endfor %}
   </div>
+
   <div id="fullpage">
     {% for s in sections|sort(attribute='order') %}
       <div class="section" data-anchor="{{loop.index}}" style="background-color:{{ s.background_color }}">{{ s.html }}</div>

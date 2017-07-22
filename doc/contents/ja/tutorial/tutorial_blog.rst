@@ -107,7 +107,7 @@ Blogサイトの作成
       :category: カテゴリ2
       :tags: タグ3
 
-   First entry
+   Second entry
    -------------
 
    This is my second blog entry.
