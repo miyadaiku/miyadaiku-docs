@@ -1,3 +1,5 @@
+.. article::
+   :og_type: website
 
 
 Miyadaiku

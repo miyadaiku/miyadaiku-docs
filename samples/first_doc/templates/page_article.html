@@ -7,6 +7,8 @@
   {{ super() }}
 
   <link rel="stylesheet" href="{{ page.path_to('/static/css/copyright.css')}}">
+
+  {{ macros.opengraph(page) }}
 {% endblock head %}
 
 <!-- bodyブロックをカスタマイズ -->

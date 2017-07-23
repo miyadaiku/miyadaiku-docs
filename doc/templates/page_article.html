@@ -21,6 +21,8 @@
   <!-- include font awesome -->
   {{ fontawesome.load_css(page) }}
   
+  {{ macros.opengraph(page) }}
+
   <link rel="stylesheet" href="{{ page.path_to('/static/css/miyadaiku-docs.css')}}">
 
 {% endblock head %}

@@ -3,6 +3,7 @@
 {% block head %}
   {{ super() }}
    <link rel="stylesheet" href="{{ page.path_to('/static/simple.css') }}">
+  {{ macros.opengraph(page) }}
 {% endblock head %}
 
 
