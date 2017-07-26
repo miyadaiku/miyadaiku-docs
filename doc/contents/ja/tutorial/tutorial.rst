@@ -3,6 +3,7 @@
   :order: 1
   
 
+
 サイトの作成
 ======================
 
@@ -12,6 +13,8 @@
 
 からダウンロードできます。
 
+
+.. target:: create_project
 
 プロジェクトの作成
 -------------------------
@@ -38,6 +41,7 @@
 
 
 
+.. target:: create_article
 
 アーティクルの作成
 -------------------------
@@ -58,6 +62,7 @@
 上記の内容のテキストファイルを作成し、 ``first_doc/contents/hello.rst`` という名前で保存してください。
 
 
+.. target:: build
 
 サイトのビルド
 -------------------------
@@ -71,6 +76,8 @@
 
 正常に終了すれば、``first_doc/output/hello.html`` ファイルが作成されています。
 
+
+.. target:: createlinks
 
 アーティクルのリンク
 -------------------------
@@ -100,13 +107,21 @@
 
 ``:jinja:`` ロールで記述した内容は、そのまま ``Jinja2`` のテンプレートとして処理され、HTMLに変換されます。
 
-``first_doc/contents/index.rst`` では、``:jinja:`` ロールを利用して、``./hello.rst`` ページへのリンクを作成しています。``page.link_to(ページ名)`` メソッドは、指定したページのタイトルをテキストとして、リンクを作成します。
+ここでは、``page.link_to(ページ名)`` メソッドを使用して、他のページへのリンクを作成します。リンクのテキストは、リンク先ページのタイトルを使用します。
 
+変数 ``page`` は、処理中のコンテントオブジェクトを参照します。``link_to()`` メソッドの他にも、
+
+    :jinja:`{{ page.link_to('../guide/template.rst', text='テンプレートのコンテンツ変数', fragment='content_vars') }}`
+
+のメソッドやプロパティを使用できます。
+
+
+.. target:: template
 
 テンプレートのカスタマイズ
 -------------------------------
 
-MiyadaikuがアーティクルからHTMLページを生成する時、``page_article.html`` という名前の Jinja2 テンプレートを使用します。デフォルトでは、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルがテンプレートとなります。
+MiyadaikuがアーティクルからHTMLページを生成する時、``page_article.html`` という名前の Jinja2 テンプレートを検索して使用します。デフォルトでは、`miyadaiku.themes.base パッケージ <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_ の、 `page_article.html <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ ファイルがテンプレートとなります。
 
 Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成できます。
 
@@ -130,19 +145,27 @@ Jinja2 の継承機能を利用してこのテンプレートをカスタマイ�
 
    {% endblock body %}
 
-``page_article.html`` テンプレートには ``head`` ブロックと ``body`` ブロックがあり、それぞれ ``<head>`` 要素と ``<body>`` 要素を出力します。ここでは ``body`` ブロックをオーバライドして、``body`` 要素にコピーライト表記を追加します。
+``page_article.html`` には、``head`` ブロックと ``body`` ブロックがあり、それぞれ ``<head>`` 要素と ``<body>`` 要素を出力します。ここでは ``body`` ブロックをオーバライドして、``body`` 要素にコピーライト表記を追加します。
 
-Pythonパッケージに含まれるテンプレートを使用するときは、パッケージ名とファイル名を ``!`` 記号で区切って指定します。
+Pythonパッケージの ``templates`` ディレクトリにあるテンプレートを使用するときは、パッケージ名とファイル名を ``!`` 記号で区切って指定します。
 
     ``パッケージ名!テンプレートファイル名``
 
-この例では、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルを拡張しています。
+この例で使用している
 
+    ``miyadaiku.themes.base!page_article.html``
+
+
+は、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルを指定しています。
+
+
+
+.. target:: newfile
 
 CSSファイルを追加
 -------------------------
 
-プロジェクトの ``files/`` ディレクトリにあるファイルは、HTMLに変換せずにそのまま ``output`` ディレクトリにコピーされます。
+プロジェクトの ``files/`` ディレクトリにあるファイルは、HTMLに変換せずにそのまま ``outputs`` ディレクトリにコピーされます。
 
 ``first_doc/files/static/css`` ディレクトリに、以下の内容の ``copyright.css`` ファイルを追加します。
 
@@ -154,7 +177,7 @@ CSSファイルを追加
      text-align: right;
    }
 
-前節で作成した ``first_doc/templetes/page_article.html`` を、次のように修正します。
+前節で作成したテンプレート ``first_doc/templetes/page_article.html`` を、次のように修正します。
 
 
 .. code-block:: jinja

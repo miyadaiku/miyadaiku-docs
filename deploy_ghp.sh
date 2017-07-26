@@ -5,10 +5,11 @@ git config --global user.email "autp@example.com"
 git config --global user.name "auto circleci"
   
 rm -rf miyadaiku.github.io || true
+rm -rf doc/outputs/samples || true
 
 miyadaiku-build doc
-mkdir doc/outputs/samples
 
+mkdir doc/outputs/samples
 for d in samples/*/ ; do
   miyadaiku-build "$d"
   mkdir doc/outputs/$d

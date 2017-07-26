@@ -51,9 +51,9 @@
                     {{ page.link_to(c) }}</div>
 
                   <ul>
-                    {% for id, elem, text in page.html.headers %}
+                    {% for id, elem, text in page.headers %}
                       <li class="header_{{ elem }}">
-                        <a href="#a_{{id}}">{{text}}</a>
+                        <a href="#{{id}}">{{text}}</a>
                       </li>
                     {% endfor %}
                   </ul>
@@ -69,7 +69,7 @@
     </div>
 
     <div class='col-md-9 article-body'>
-      <a id='page_title' class='header_anchor'></a>
+      <a id='page_title' class='header_target'></a>
       <h1>
         {{ page.title }}
       </h1>

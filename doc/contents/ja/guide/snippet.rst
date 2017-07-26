@@ -1,6 +1,6 @@
 
 .. article::
-  :order: 4
+  :order: 40
   
 
 スニペット
@@ -20,33 +20,40 @@
 - reStructuredTextのスニペット
 
    .. code-block:: rst
+      :caption: Sample of snippet in reST:
 
       .. article::
          :type: snippet
+         :title: Snippet in reST
 
       This is a snippet in reST.
 
 - Markdownのスニペット
 
    .. code-block:: md
+      :caption: Sample of snippet in Markdown:
 
       type: snippet
+      title: Snippet in Markdown
 
       This is a snippet in Markdown.
 
 - HTMLのスニペット
 
    .. code-block:: html
+      :caption: Sample of snippet in HTML:
 
       type: snippet
+      title: Snippet in HTML
 
-      <p>This is a snippet in Markdown.</p>
+      <p>This is a snippet in HTML.</p>
 
 
 スニペットの読み込み
 -----------------------
 
-スニペットの内容は、``html`` プロパティで取得できます。
+スニペットは、``html`` プロパティを利用して他のアーティクルやテンプレートで表示できます。``title`` などの :jinja:`{{ page.link_to("./article.rst", fragment='propsofarticle') }}` も使用できます。
+
 
 .. code-block:: rst
 

@@ -1,17 +1,28 @@
 
 .. article::
-  :order: 7
+  :order: 90
   
 
 テンプレート
 ======================
 
-``contents`` ディレクトリのアーティクルやインデックスは、Jinja2テンプレートを適用して最終的なHTMLファイルを出力します。テンプレートは、プロジェクトディレクトリの ``templates`` ディレクトリに保存します。
+Miyadaikuは、``contents`` ディレクトリを走査し、アーティクルやインデックスなどのコンテンツをJinja2テンプレートに渡してHTMLを作成します。テンプレートは、プロジェクトディレクトリの ``templates`` ディレクトリに作成します。
 
 アーティクルテンプレート
 ------------------------------
 
 アーティクルに適用するテンプレートは、``article_template`` プロパティで指定します。未指定の場合は、``'page_article.html'`` となります。
+
+テンプレート変数
++++++++++++++++++++++
+
+テンプレート内では、次の変数を参照できます。
+
+page
+   処理対象となるアーティクルの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` を参照します。通常、アーティクルテンプレートでは、``page`` 変数の ``html`` プロパティからHTMLを取得して表示します。
+
+contents
+   プロジェクトの :jinja:`{{ page.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
 
 
 .. code-block:: jinja
@@ -25,51 +36,9 @@
    </head>
 
    <body>
-     {{page.html}}
+     {{ page.html }}
    </body>
    </html>
-
-
-
-.. jinja::
-
-   <a id='content_vars' class='header_anchor'></a>
-
-
-コンテンツ変数
-++++++++++++++++++++++++
-
-テンプレート内では、作成中のHTMLページのアーティクルコンテンツオブジェクトを ``page`` 変数で参照できます。
-
-例えば ``contents`` ディレクトリの ``article1.rst`` からHTMLページを作成する場合、テンプレートファイル ``page_article.html`` では、 ``page`` 変数は ``article1.rst`` オブジェクトとなります。
-
-page オブジェクト
-~~~~~~~~~~~~~~~~~~~~
-
-``page`` オブジェクトは、現在テンプレートでHTMLページを作成しているコンテンツオブジェクトで、アーティクルなどのコンテントに設定された :jinja:`{{ page.link_to('./article.rst', text='プロパティ', fragment='propsofarticle') }}` と、次のプロパティ/メソッドを使用できます。
-
-
-abstruct
-  HTMLに変換したアーティクルを、 ``abstract_length`` プロパティで指定した文字数分取得します。``abstract_length`` が ``0`` の場合、全文を返します。
-
-html
-  HTMLに変換したアーティクル全文を返します
-
-url
-  アーティクルのURL
-
-load(target)
-  ``target`` で指定したパスのコンテンツオブジェクトを取得します。``target`` には相対パスまたは絶対パスを指定できます。
-
-path_to(target):
-  ``target`` で指定したパスのコンテンツオブジェクトへのリンクファイル名を取得します。``target`` には相対パスまたは絶対パスを指定できます。
-
-link_to(target, text=None, fragment=None):
-  ``target`` で指定したパスのコンテンツオブジェクトへのリンクする<a>要素を取得します。``target`` には相対パスまたは絶対パスを指定できます。
-
-  ``text`` は、リンク文字列を指定します。省略時は、``target`` のタイトルとなります。
-
-  ``fragment`` は、リンク先ページ内の要素idを指定します。
 
 
 
@@ -77,7 +46,29 @@ link_to(target, text=None, fragment=None):
 ------------------------------
 
 
-アーティクルの一覧を出力するインデックスの場合、生成されるHTMLファイルは複数ページとなる場合があり、1ページ目と2ページ目以降でそれぞれ別のテンプレートを指定できます。1ページ目のテンプレートは ``indexpage_template`` プロパティで指定します。未指定の場合は、``''page_index.html'`` となります。2ページ目以降は ``indexpage_template2`` プロパティで指定し、未指定の場合は、``''page_index.html'`` となります。
+アーティクルの一覧を出力するインデックスの場合、生成されるHTMLファイルは複数ページとなる場合があり、1ページ目と2ページ目以降でそれぞれ別のテンプレートを指定できます。
+
+1ページ目のテンプレートは ``indexpage_template`` プロパティで指定します。未指定の場合は、``'page_index.html'`` となります。2ページ目以降は ``indexpage_template2`` プロパティで指定し、未指定の場合は、``'page_index.html'`` となります。
+
+テンプレート変数
++++++++++++++++++++++
+
+テンプレート内では、次の変数を参照できます。
+
+page
+   処理対象となるインデックスの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+
+contents
+   プロジェクトの :jinja:`{{ page.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
+
+cur_page
+   ページ番号を指定します。
+
+is_last
+   最後のページなら ``True``、そうでなければ ``False`` となります。
+
+articles
+   インデックスの表示対象となる :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` のリストを参照します。
 
 
 .. code-block:: jinja
@@ -97,7 +88,7 @@ link_to(target, text=None, fragment=None):
    
      <div>
        {% for article in articles %}
-         <h2><a href="{{page.path_to(article)}}">{{ article.title }}</a></h2>
+         <h2><a href="{{article.path(article)}}">{{ article.title }}</a></h2>
          <div>{{ article.abstract }}</div>
        {% endfor %}
      </div>
@@ -105,41 +96,22 @@ link_to(target, text=None, fragment=None):
      <hr>
      <div>
        {% if cur_page != 1 %}
-         <a href="{{page.path_to(page, values=group_names, npage=cur_page-1)}}">Prev page</a>
+         <a href="{{page.path(values=group_names, npage=cur_page-1)}}">Prev page</a>
        {% endif %}
        {% if not is_last %}
-         <a href="{{page.path_to(page, groups=group_names, npage=cur_page+1)}}">Next page</a>
+         <a href="{{page.path(values=group_names, npage=cur_page+1)}}">Next page</a>
        {% endif %}
      </div>
    </body>
    </html>
 
-   
-テンプレート変数
-++++++++++++++++++++++++
 
-テンプレート内では、作成中のHTMLページのアーティクルコンテンツオブジェクトを ``page`` 変数で参照できます。
-
-例えば、``contents`` ディレクトリの ``index.yml`` ファイルから ``index.html`` ファイルを作成する場合、HTMLファイルを作成する作成中の ``page`` 変数は ``index.yml`` のインデックスオブジェクトとなります。
-
-
-インデックステンプレートでは、:jinja:`{{ page.link_to(page, text='アーティクルテンプレートの変数', fragment='content_vars') }}` に加え、以下の変数を使用できます。
-
-
-cur_page
-   ページ番号を指定します。
-
-is_last
-   最後のページなら ``True``、そうでなければ ``False`` となります。
-
-articles
-   表示対象のアーティクルのリストを返します。
-
+.. target:: template_names
 
 テンプレート名の解決
 ---------------------------------------
 
-Jinjaでは、``extends`` 文や ``import`` 文で、テンプレート名を指定して外部のテンプレートを再利用する仕組みがあります。Miyadaikuでは、``extends`` 文などでテンプレート名が指定された時、以下の順にテンプレートを検索します。
+アーティクルに指定されたテンプレート名や、Jinja2の ``extends`` 文や ``import`` 文で、テンプレート名を指定してテンプレートを利用するとき、Miyadaikuでは以下の順にテンプレートを検索します。
 
 1. プロジェクトの ``templates`` ディレクトリ
 
@@ -149,5 +121,9 @@ Jinjaでは、``extends`` 文や ``import`` 文で、テンプレート名を指
 ただし、 テンプレート名に ``!`` が含まれていたら、上記の検索は行わず、``!`` の左側をパッケージ名とし、そのパッケージの ``templates`` ディレクトリを検索します。
 
 e.g. ``miyadaiku.themes.sample.blog!test.html`` というテンプレート名なら、``miyadaiku.themes.sample.blog`` パッケージの、``templates/test.html`` を取得します。
+
+
+
+
 
 

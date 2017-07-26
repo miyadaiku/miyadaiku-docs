@@ -33,6 +33,8 @@ Blogサイトの作成
 .. code-block:: yaml
    :caption: first_blog/config.yml:
 
+   # Miyadaiku config file
+
    # Base URL of the site
    site_url: http://localhost:8888/
 
@@ -40,7 +42,7 @@ Blogサイトの作成
    site_title: FIXME - site title
 
    # Default language code
-   lang: ja
+   lang: ja-JP
 
    # Default charset
    charset: utf-8
@@ -49,8 +51,9 @@ Blogサイトの作成
    timezone: Asia/Tokyo
 
    # List of site theme
-   themes:
-     - miyadaiku.themes.base
+   # themes:
+   #   - miyadaiku.themes.sample.blog
+
 
 ``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ ``miyadaiku.themes.sample.blog`` を使用するように設定します。
 
@@ -70,7 +73,7 @@ Blogサイトの作成
    timezone: Asia/Tokyo
 
    # List of site theme
-   themes:
+   themes:                            # <--- この行を修正
      - miyadaiku.themes.sample.blog   # <--- この行を修正
 
 
@@ -94,7 +97,7 @@ Blogサイトの作成
    This is my first blog entry.
 
 
-ブログの日付、カテゴリなどの記事情報を、``article`` ロールに記述します。ここでは、記事の日付、カテゴリ、タグを指定しています。
+ブログの日付、カテゴリなどのプロパティを、``article`` ロールに記述します。ここでは、記事の日付、カテゴリ、タグを指定しています。
 
 同様に、二つ目の記事 ``first_blog/contents/second_entry.rst`` ファイルを作成します。
 
