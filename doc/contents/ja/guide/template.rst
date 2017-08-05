@@ -19,10 +19,10 @@ Miyadaikuは、``contents`` ディレクトリを走査し、アーティクル�
 テンプレート内では、次の変数を参照できます。
 
 page
-   処理対象となるアーティクルの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` を参照します。通常、アーティクルテンプレートでは、``page`` 変数の ``html`` プロパティからHTMLを取得して表示します。
+   処理対象となるアーティクルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。通常、アーティクルテンプレートでは、``page`` 変数の ``html`` プロパティからHTMLを取得して表示します。
 
 contents
-   プロジェクトの :jinja:`{{ page.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
+   プロジェクトの :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
 
 
 .. code-block:: jinja
@@ -56,10 +56,10 @@ contents
 テンプレート内では、次の変数を参照できます。
 
 page
-   処理対象となるインデックスの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+   処理対象となるインデックスの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
 
 contents
-   プロジェクトの :jinja:`{{ page.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
+   プロジェクトの :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
 
 cur_page
    ページ番号を指定します。
@@ -68,7 +68,7 @@ is_last
    最後のページなら ``True``、そうでなければ ``False`` となります。
 
 articles
-   インデックスの表示対象となる :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` のリストを参照します。
+   インデックスの表示対象となる :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` のリストを参照します。
 
 
 .. code-block:: jinja
@@ -96,10 +96,10 @@ articles
      <hr>
      <div>
        {% if cur_page != 1 %}
-         <a href="{{page.path(values=group_names, npage=cur_page-1)}}">Prev page</a>
+         <a href="{{content.path(values=group_names, npage=cur_page-1)}}">Prev page</a>
        {% endif %}
        {% if not is_last %}
-         <a href="{{page.path(values=group_names, npage=cur_page+1)}}">Next page</a>
+         <a href="{{content.path(values=group_names, npage=cur_page+1)}}">Next page</a>
        {% endif %}
      </div>
    </body>

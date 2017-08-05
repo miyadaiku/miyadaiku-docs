@@ -94,5 +94,5 @@ Miyadaikuのドキュメントプロジェクトは、``miyadaiku-start`` コマ
 
 ``contents`` ディレクトリのコンテンツファイルは、Markdownパーザなどで変換してから、Jinja2テンプレートエンジンによってHTMLに変換されます。生成されたHTMLから、``templates`` ディレクトリの Jinjaテンプレートで最終的なHTMLファイルを作成し、``outputs`` ディレクトリに出力されます。
 
-:jinja:`<img src="{{page.path_to('/img/process.png')}}" width=500px>`
+:jinja:`<img src="{{content.path_to('/img/process.png')}}" width=500px>`
 

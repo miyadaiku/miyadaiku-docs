@@ -46,7 +46,7 @@
 
 アーティクルのテンプレート名や、Jinja2の ``import`` 文などでテンプレート名を指定すると、プロジェクトの ``templates`` ディレクトリに続いて、使用中のテーマからテンプレートディレクトリを検索します。
 
-テンプレート名の検索順序については、:jinja:`{{page.link_to("./template.rst", fragment="template_names")}}` を参照してください。
+テンプレート名の検索順序については、:jinja:`{{ content.link_to("./template.rst", fragment="template_names") }}` を参照してください。
 
 
 

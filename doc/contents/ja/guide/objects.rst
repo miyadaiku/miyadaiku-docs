@@ -12,10 +12,10 @@
 コンテントオブジェクト
 --------------------------
 
-Miyadaikuで、``contents`` ディレクトリや ``files`` ディレクトリのファイルは、:jinja:`{{ page.link(fragment='content_obj') }}` として読み込まれます。アーティクルやインデックスなどのファイルだけでなく、CSSや画像ファイルなどのMiyadaikuで処理されないファイルも、コンテントオブジェクトとして参照できます。
+Miyadaikuで、``contents`` ディレクトリや ``files`` ディレクトリのファイルは、:jinja:`{{ content.link(fragment='content_obj') }}` として読み込まれます。アーティクルやインデックスなどのファイルだけでなく、CSSや画像ファイルなどのMiyadaikuで処理されないファイルも、コンテントオブジェクトとして参照できます。
 
 
-コンテントオブジェクトは、:jinja:`{{ page.link_to('./article.rst', fragment='propsofarticle') }}` や :jinja:`{{ page.link_to('./index.rst', fragment='propertyofindex') }}` に加え、次のメソッドを使用できます。
+コンテントオブジェクトは、:jinja:`{{ content.link_to('./article.rst', fragment='propsofarticle') }}` や :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}` に加え、次のメソッドを使用できます。
 
 
 
@@ -27,7 +27,7 @@ load(target)
 
      <p>/page1.rst の概要を表示します</p>
      
-     {{ page.load('/page1.rst').abstract }}  
+     {{ content.load('/page1.rst').abstract }}  
 
 
 path(fragment=None, abs_path=False, values=None, npage=None):
@@ -108,7 +108,7 @@ link_to(target, text=None, fragment=None, abs_path=False, attrs=None, values=Non
   .. code-block:: jinja
      :caption: Sample of content.link_to() method
 
-     {{ page.link_to("../page1.rst", fragment="id_in_page",
+     {{ content.link_to("../page1.rst", fragment="id_in_page",
                      attrs={"class":"class_a", "style":"border:solid;"}) }}
 
 

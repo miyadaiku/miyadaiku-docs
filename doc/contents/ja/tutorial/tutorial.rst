@@ -93,7 +93,7 @@
 
    This is a link page.
 
-   Link to :jinja:`{{ page.link_to("./hello.rst") }}`.
+   Link to :jinja:`{{ content.link_to("./hello.rst") }}`.
 
 
 再び、
@@ -107,13 +107,9 @@
 
 ``:jinja:`` ロールで記述した内容は、そのまま ``Jinja2`` のテンプレートとして処理され、HTMLに変換されます。
 
-ここでは、``page.link_to(ページ名)`` メソッドを使用して、他のページへのリンクを作成します。リンクのテキストは、リンク先ページのタイトルを使用します。
+ここでは、``content.link_to(ページ名)`` メソッドを使用して、他のページへのリンクを作成します。リンクのテキストは、リンク先ページのタイトルを使用します。
 
-変数 ``page`` は、処理中のコンテントオブジェクトを参照します。``link_to()`` メソッドの他にも、
-
-    :jinja:`{{ page.link_to('../guide/template.rst', text='テンプレートのコンテンツ変数', fragment='content_vars') }}`
-
-のメソッドやプロパティを使用できます。
+変数 ``page`` は、処理中のコンテントオブジェクトを参照します。``link_to()`` メソッドの他にも、:jinja:`{{ content.link_to('../guide/objects.rst', fragment='content_obj') }}` のメソッドやプロパティを使用できます。
 
 
 .. target:: template

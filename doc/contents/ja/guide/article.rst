@@ -14,7 +14,7 @@
 アーティクルのプロパティ
 -----------------------------------
 
-アーティクルオブジェクトは、:jinja:`{{ page.link_to('./property.rst', fragment='standardprofs') }}` に加え、以下のプロパティを指定できます。
+アーティクルオブジェクトは、:jinja:`{{ content.link_to('./property.rst', fragment='standardprofs') }}` に加え、以下のプロパティを指定できます。
 
 
 abstract
@@ -133,7 +133,7 @@ jinjaロール
    Link test
    -------------
 
-   Link to :jinja:`{{ page.link_to("./hello.rst") }}`.
+   Link to :jinja:`{{ content.link_to("./hello.rst") }}`.
 
 
 
@@ -172,7 +172,7 @@ HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして�
    Section II
    ------------------
 
-   Link to :jinja:`page.link_to(content, fragment='id_of_this_section1')`.
+   Link to :jinja:`content.link_to(content, fragment='id_of_this_section1')`.
 
 
 
@@ -226,7 +226,7 @@ Markdownでも、reStructuredTextと同様、*\:jinja:` Jinja2タグ `* の形�
 
    # Link test
 
-   Link to :jinja:`{{ page.link_to("./hello.rst") }}`.
+   Link to :jinja:`{{ content.link_to("./hello.rst") }}`.
 
 
 
@@ -246,7 +246,7 @@ target
 
    # Section II
 
-   Link to :jinja:`page.link_to(content, fragment='id_of_this_section1')`.
+   Link to :jinja:`content.link_to(content, fragment='id_of_this_section1')`.
 
 
 
@@ -289,7 +289,7 @@ HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換され
 .. code-block:: html
    :caption: Sample of Jinja template in HTML:
 
-   <p>Link to <a href='{{ page.link_to("./hello.rst") }}'>hello</a></p>
+   <p>Link to <a href='{{ content.link_to("./hello.rst") }}'>hello</a></p>
 
 
 
@@ -302,20 +302,20 @@ HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換され
 アーティクルのJinjaテンプレートでは、次の変数を使用できます。
 
 content
-  現在のアーティクルの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+  現在のアーティクルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
 
 page
-  アーティクルを呼び出しているコンテンツの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+  アーティクルを呼び出しているコンテンツの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
 
 contents
-   プロジェクトの  :jinja:`{{ page.link_to('./objects.rst', fragment='contents_collection') }}`  を参照します。
+   プロジェクトの  :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}`  を参照します。
 
 
 content と page
 -----------------------------------
 
 
-Miyadaikuは、``contents`` ディレクトリを走査し、見つかったアーティクル中をJinja2テンプレートに渡し、HTMLを作成します。このアーティクル内にあるJinja2テンプレートでは、アーティクル自身は変数 ``content`` と ``page`` で参照できます。
+Miyadaikuは、``contents`` ディレクトリを走査し、見つかったアーティクル中をJinja2テンプレートに渡し、HTMLを作成します。この時、アーティクルにあるJinja2テンプレートでは、変数 ``content`` と ``page`` はどちらもHTMLを作成しているアーティクルオブジェクト自身を参照します。
 
 このアーティクルが、文章中で別のアーティクルを読み込んでいる場合、読み込まれているアーティクル内のJinja2テンプレートでは、読み込み元のアーティクルは変数 ``page``、読み込まれているアーティクル自身は 変数 ``content`` で参照できます。
 
@@ -331,7 +331,7 @@ Miyadaikuは、``contents`` ディレクトリを走査し、見つかったア�
 
    ---
 
-   {{ page.load('./child.rst').html }}
+   {{ content.load('./child.rst').html }}
 
 
 .. code-block:: jinja
@@ -343,7 +343,7 @@ Miyadaikuは、``contents`` ディレクトリを走査し、見つかったア�
    content: {{ content.name }}
 
 
-``parent.rst`` をHTMLに変換する際、 ``{{ page.load('./child.rst').html }}`` で ``child.rst`` が読み込まれます。
+``parent.rst`` をHTMLに変換する際、 ``{{ content.load('./child.rst').html }}`` で ``child.rst`` が読み込まれます。
 
 この時、``parent.rst`` 内では、 
 

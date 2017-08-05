@@ -24,7 +24,7 @@ Blogサイトなどでは、新着記事ページや、記事カテゴリ別の�
 インデックスのプロパティ
 ------------------------------
 
-インデックスオブジェクトには、:jinja:`{{ page.link_to('./property.rst', fragment='standardprofs') }}` に加えて、以下のプロパティを指定できます。
+インデックスオブジェクトには、:jinja:`{{ content.link_to('./property.rst', fragment='standardprofs') }}` に加えて、以下のプロパティを指定できます。
 
 
 filters
@@ -58,7 +58,7 @@ indexpage_filename_templ
     ページ番号を指定します。
 
   page
-    インデックスページの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}`
+    インデックスページの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}`
 
 
 indexpage_filename_templ2
@@ -118,7 +118,7 @@ type
 グループ別インデックスのプロパティ
 ++++++++++++++++++++++++++++++++++++++
 
-グループ別インデックスでは、:jinja:`{{page.link_to(content, fragment='propertyofindex', text='通常のインデックス')}}` に加えて、次のプロパティを指定できます。
+グループ別インデックスでは、:jinja:`{{content.link_to(content, fragment='propertyofindex', text='通常のインデックス')}}` に加えて、次のプロパティを指定できます。
 
 
 groupby
@@ -145,7 +145,7 @@ indexpage_group_filename_templ
     分類するプロパティ名を指定します。
 
   page
-    インデックスページの :jinja:`{{ page.link_to('./objects.rst', fragment='content_obj') }}`
+    インデックスページの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}`
 
   value
     プロパティの値を指定します。

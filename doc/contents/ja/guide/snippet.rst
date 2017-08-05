@@ -52,7 +52,7 @@
 スニペットの読み込み
 -----------------------
 
-スニペットは、``html`` プロパティを利用して他のアーティクルやテンプレートで表示できます。``title`` などの :jinja:`{{ page.link_to("./article.rst", fragment='propsofarticle') }}` も使用できます。
+スニペットは、``html`` プロパティを利用して他のアーティクルやテンプレートで表示できます。``title`` などの :jinja:`{{ content.link_to("./article.rst", fragment='propsofarticle') }}` も使用できます。
 
 
 .. code-block:: rst
@@ -62,6 +62,6 @@
 
    Emebeded 'snippet.rst' file at same directory.
 
-   :jinja:`{{ page.load('./snippet.rst').html }}`
+   :jinja:`{{ content.load('./snippet.rst').html }}`
 
 
