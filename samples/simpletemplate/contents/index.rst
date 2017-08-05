@@ -7,3 +7,5 @@ Link to :jinja:`{{page.link_to("page2.rst")}}`.
 
 This is index.rst
 ++++++++++++++++++++++
+
+    https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/simpletemplate

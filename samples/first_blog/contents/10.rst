@@ -7,3 +7,5 @@ entry 10
 -------------
 
 body of entry 10
+
+    https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog

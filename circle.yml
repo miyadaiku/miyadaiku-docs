@@ -5,7 +5,6 @@ machine:
 dependencies:
   pre:
     - pip install wheel
-    - pip install miyadaiku
     - pip install miyadaiku.themes.bootstrap4 miyadaiku.themes.fontawesome miyadaiku.themes.fullpagejs
 
 test:
