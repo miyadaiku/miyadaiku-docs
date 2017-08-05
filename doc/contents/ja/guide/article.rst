@@ -37,6 +37,9 @@ filename
 filename_templ
   出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、``'{{ content.stem }}.{{ content.ext }}'`` となります。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
 
+header
+  アーティクルのヘッダ要素のリストを取得します。リストの要素は、(ヘッダのid, ヘッダ要素名, ヘッダテキスト) のタプルです。
+
 html
   ページの内容をHTMLで取得します。
 
