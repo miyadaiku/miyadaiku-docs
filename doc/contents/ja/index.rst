@@ -2,7 +2,7 @@
    :og_type: website
 
 
-Miyadaiku
+About Miyadaiku
 =========================================================================
 
 Miyadaiku is a flexible static site generator for Jinja2 artists.
