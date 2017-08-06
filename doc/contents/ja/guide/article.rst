@@ -358,5 +358,23 @@ Miyadaikuは、``contents`` ディレクトリを走査し、見つかったア�
 
 となります。
 
+.. target:: import_templ
+
+
+インポート済みテンプレート
+-----------------------------------
+
+:jinja:`{{ content.link_to('./property.rst', fragment='prop_imports', text='importsプロパティ') }}` に指定したJinja2テンプレートは、自動的に `import <http://jinja.pocoo.org/docs/2.9/templates/#import>`_ されます。モジュール名は、パッケージ名の拡張子を除いたファイル名となります。
+
+.. code-block:: rst
+   :caption: Using Jinja2 macros:
+
+   .. article::
+      :imports: my_template.html
+
+   my_template.html をインポートし、my_macroを呼び出す
+
+   {{ my_template.my_macro() }}
+
 
 

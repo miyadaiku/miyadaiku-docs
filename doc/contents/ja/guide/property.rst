@@ -37,6 +37,15 @@ date
 
   - ``2017/01/01 12:00:00 +0900``
 
+.. target:: prop_imports
+
+imports
+   Jinja2のモジュールとして import するテンプレートを、``,`` 区切りで指定します。指定したモジュールは、:jinja:`{{ content.link_to('./article.rst', fragment='import_templ') }}` として使用できます。
+
+   e.g.
+
+   ``macro1.html, other.package!macro2.html``
+
 lang
   生成されるHTMLの ``lang`` を指定します。未指定の場合は ``'en'``  となります。
 
