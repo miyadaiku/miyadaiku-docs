@@ -96,6 +96,7 @@ articleディレクティブは、アーティクルのプロパティを指定�
 プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
 
 
+.. target:: jinjadirective
 
 jinjaディレクティブ
 ++++++++++++++++++++++++++++++++++++++++++++++
@@ -153,6 +154,7 @@ code-blockディレクティブ
       def test():
          pass
 
+.. target:: targetdirective
 
 targetディレクティブ
 +++++++++++++++++++++++
@@ -283,8 +285,7 @@ HTML
 Jinja2テンプレート
 ++++++++++++++++++++++++++
 
-HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換されます。HTMLファイル内では、Jinja2タグを使って
- :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
+HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換されます。HTMLファイル内では、Jinja2タグを使って :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
 
 .. code-block:: html
    :caption: Sample of Jinja template in HTML:
@@ -299,7 +300,7 @@ HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換され
 -----------------------------------
 
 
-アーティクルのJinjaテンプレートでは、次の変数を使用できます。
+reStructuredText/Markdown/HTMLのいずれのアーティクルでも、内部に記述するJinjaテンプレートでは、次の変数を使用できます。
 
 content
   現在のアーティクルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
@@ -364,7 +365,7 @@ Miyadaikuは、``contents`` ディレクトリを走査し、見つかったア�
 インポート済みテンプレート
 -----------------------------------
 
-:jinja:`{{ content.link_to('./property.rst', fragment='prop_imports', text='importsプロパティ') }}` に指定したJinja2テンプレートは、自動的に `import <http://jinja.pocoo.org/docs/2.9/templates/#import>`_ されます。モジュール名は、パッケージ名の拡張子を除いたファイル名となります。
+アーティクルの :jinja:`{{ content.link_to('./property.rst', fragment='prop_imports', text='importsプロパティ') }}` に指定したJinja2テンプレートは、自動的に `import <http://jinja.pocoo.org/docs/2.9/templates/#import>`_ され、天レートに記述されたマクロなどを使用できます。テンプレートのモジュール名は、テンプレートの名の拡張子を除いたファイル名となります。
 
 .. code-block:: rst
    :caption: Using Jinja2 macros:

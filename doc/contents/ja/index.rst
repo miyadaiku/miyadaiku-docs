@@ -5,21 +5,22 @@
 About Miyadaiku
 =========================================================================
 
-Miyadaiku is a flexible static site generator for Jinja2 artists.
+Miyadaiku は、 Jinja2職人のための静的サイトジェネレータです。
 
-- Contents are written in reStructuredText, Markdown, HTML and YAML. 
 
-- Jinja2 templates to create HTML pages.
+- コンテンツを reStructuredText, Markdown, HTML, YAML で記述できます。
 
-- Jinja2 tags can be used in your contents too. Miyadaiku provides ReST/Markdown extensions to write Jinja2 in content files. 
+- Jinja2 テンプレートでコンテンツからHTMLを作成します。
 
-- Hierarchical contents property. Each directory can have default property values for documents. These property values are also applied to contents of their sub-directories.
+- コンテンツ中にもJinja2タグを記述できます。Miyadaikuは、ReSTとMarkdownにそれぞれ専用の拡張構文を用意しています。
 
-- Theme system to share templates, CSS, Javascript, Image or any other contents files.
+- コンテンツのプロパティを、ディレクトリ階層に沿って指定できます。ディレクトリごとにデフォルトプロパティを指定し、ディレクトリとそのサブディレクトリのデフォルトプロパティを一括して指定できます。
 
-- Themes are managed as Python package. You can install themes from PyPI with pip.
+- テーマを使って、テンプレートやCSS, Javascript, 画像などを共有できます。
 
-- Generate index pages and Atom/RSS feeds for Blog sites.
+- テーマは、Pythonのパッケージとして作成し、pip などを用いて PYPI からインストールできます。
+
+- Blogサイト用の機能として、インデックスページや、Atom/RSSフィードを作成できます。
 
 
 Requirements
