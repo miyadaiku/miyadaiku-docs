@@ -1,0 +1,10 @@
+{% extends 'miyadaiku.themes.base!page_article.html' %}
+
+{% block head %}
+  {{ super() }}
+
+  <!-- set ipynb headers -->
+  {{ ipynb.set_header() }}
+
+{% endblock head %}
+
