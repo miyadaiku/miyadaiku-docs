@@ -1,0 +1,5 @@
+type: config
+messages:
+    tutorial: Tutorial
+    guide: Guide
+    sample: Samples

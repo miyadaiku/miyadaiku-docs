@@ -4,6 +4,7 @@
   var language = (window.navigator.languages 
       || [window.navigator.language || window.navigator.userLanguage])[0].substring(0, 2);
   var pages = {{ page.lang_pages | safe }};
+  console.log(language)
   var page = pages[language];
   if (!page) {
     page = '{{ page.lang_default | safe}}';
