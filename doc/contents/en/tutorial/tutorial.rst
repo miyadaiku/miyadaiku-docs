@@ -99,7 +99,7 @@ Create the another article ``first_doc/contents/link.rst``.
    Link to :jinja:`{{ content.link_to("./hello.rst") }}`.
 
 
-Again,
+Let's build the project again.
 
 .. code-block:: console
 
@@ -112,7 +112,7 @@ This command creates ``first_doc/output/link.html`` file.
 Content written in the ``:jinja:`` role is processed as ``Jinja2`` template and converted to HTML.
 
 
-The variable `` content`` is :jinja:`{{content.link_to('../guide/objects.rst', fragment='content_obj')}}` refers to the article being processed. Here we use the ``link_to(page name)`` method to create a link to another page. The title of the landing page is used as the text of the link.
+The variable ``content`` is :jinja:`{{content.link_to('../guide/objects.rst', fragment='content_obj')}}` refers to the article being processed. Here we use the ``link_to(pagename)`` method to create a link to another page. The title of the landing page is used as the text of the link.
 
 
 
@@ -172,7 +172,7 @@ Add a CSS file
 
 Files in the ``files/`` directory of the project are copied directly to the ``outputs`` directory without converting them to HTML.
 
-Let's add `` copyright.css`` file to the ``first_doc/files/static/css`` directory.
+Let's add ``copyright.css`` file to the ``first_doc/files/static/css`` directory.
 
 .. code-block:: CSS
    :caption: first_doc/files/static/css/copyright.css:
@@ -189,8 +189,8 @@ Modify the template ``first_doc/templetes/page_article.html`` created in the pre
 
    <!-- Extends page_article.html in miyadaiku.themes.base package -->
    {% extends 'miyadaiku.themes.base!page_article.html' %}
-
-   <! - Add template - begin ->
+   
+   <! - Add template - begin ->
 
    <!-- Customize head block -->
    {% block head %}
@@ -202,7 +202,7 @@ Modify the template ``first_doc/templetes/page_article.html`` created in the pre
       <link rel="stylesheet" href="{{ page.path_to('/static/css/copyright.css')}}">
    {% endblock head %}
 
-   <! - Add template - end ->
+   <! - Add template - end ->
 
    <!-- Customize body block -->
    {% block body %}

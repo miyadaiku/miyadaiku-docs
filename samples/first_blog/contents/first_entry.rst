@@ -1,7 +1,7 @@
 .. article::
   :date: 2017-01-01
-  :category: カテゴリ1
-  :tags: タグ2, タグ3
+  :category: Category1
+  :tags: tag2, tag3
 
 First entry
 -------------

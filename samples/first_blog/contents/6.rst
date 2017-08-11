@@ -1,7 +1,7 @@
 .. article::
   :date: 2017-01-06
-  :category: カテゴリ1
-  :tags: タグ1
+  :category: Category1
+  :tags: tag1
 
 6.rst
 -------------

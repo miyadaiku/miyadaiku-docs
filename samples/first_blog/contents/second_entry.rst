@@ -1,7 +1,7 @@
 .. article::
   :date: 2017-01-02
-  :category: カテゴリ2
-  :tags: タグ1
+  :category: Category2
+  :tags: tag1
 
 Second entry
 -------------

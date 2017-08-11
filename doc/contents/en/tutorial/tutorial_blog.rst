@@ -3,21 +3,20 @@
   :order: 2
 
 
-Blogサイトの作成
+Create a blog site
 ======================
 
 
-このチュートリアルで作成するソースコードは、
+You can download source files in this tutorial from:
 
     https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog
 
-からダウンロードできます。
 
 
-プロジェクトの作成
+Create a project
 -------------------------
 
-はじめに、次のコマンドで ``first_blog`` ディレクトリに ``miyadaiku`` のプロジェクトを作成します
+At first, create Miyadaiku project in the ``first_blog`` directory with the following command.
 
 .. code-block:: console
 
@@ -25,10 +24,10 @@ Blogサイトの作成
 
 
 
-プロジェクト設定
+Project setting
 -------------------------
 
-初期設定では、プロジェクト設定ファイル ``first_blog/config.yml`` ファイルは次のようになっています。
+By default, the project configuration file ``first_blog/config.yml`` file looks like this:
 
 .. code-block:: yaml
    :caption: first_blog/config.yml:
@@ -55,7 +54,8 @@ Blogサイトの作成
    #   - miyadaiku.themes.sample.blog
 
 
-``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ ``miyadaiku.themes.sample.blog`` を使用するように設定します。
+Modify ``themes`` in ``first_blog/config.yml`` file to use the built-in theme `` miyadaiku.themes.sample.blog``.
+
 
 .. code-block:: yaml
    :caption: first_blog/config.yml:
@@ -73,14 +73,14 @@ Blogサイトの作成
    timezone: Asia/Tokyo
 
    # List of site theme
-   themes:                            # <--- この行を修正
-     - miyadaiku.themes.sample.blog   # <--- この行を修正
+   themes:                            # <--- FIX HERE
+     - miyadaiku.themes.sample.blog   # <--- FIX HERE
 
 
-記事の作成
+Create an article
 -------------------------
 
-ブログの記事として、``first_blog/contents/first_entry.rst`` ファイルを作成します。
+Create an  article file ``first_blog/contents/first_entry.rst``.
 
 
 .. code-block:: rst
@@ -88,8 +88,8 @@ Blogサイトの作成
 
    .. article::
       :date: 2017-01-01
-      :category: カテゴリ1
-      :tags: タグ1, タグ2
+      :category: Category1
+      :tags: tag1, tag2
 
    First entry
    -------------
@@ -97,9 +97,10 @@ Blogサイトの作成
    This is my first blog entry.
 
 
-ブログの日付、カテゴリなどのプロパティを、``article`` ロールに記述します。ここでは、記事の日付、カテゴリ、タグを指定しています。
+Write properties such as blog date and category in the ``article`` role. Here, we specify the date, category, tag of the article.
 
-同様に、二つ目の記事 ``first_blog/contents/second_entry.rst`` ファイルを作成します。
+Create the second article ``first_blog/contents/second_entry.rst`` file.
+
 
 
 .. code-block:: rst
@@ -107,8 +108,8 @@ Blogサイトの作成
 
    .. article::
       :date: 2017-01-01
-      :category: カテゴリ2
-      :tags: タグ3
+      :category: Category2
+      :tags: tag3
 
    Second entry
    -------------
@@ -117,16 +118,16 @@ Blogサイトの作成
 
 
 
-サイトのビルド
+Building the site
 -------------------------
 
-次のコマンドでサイトをビルドします。
-
+Build the site with the following command.
 
 .. code-block:: console
 
    $ miyadaiku-build ./first_blog
 
 
-正常に終了すると、``first_blog/outputs/index.html`` にBlogが出力されます。
+If the command succeeds, the ``first_blog/outputs/index.html`` file will be created.
+
 
