@@ -1,7 +1,7 @@
 .. article::
   :date: 2017-01-10
-  :category: カテゴリ1
-  :tags: タグ2
+  :category: カテゴリ
+  :tags: タグ2, tag tag
 
 entry 10
 -------------

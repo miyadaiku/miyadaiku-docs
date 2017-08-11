@@ -26,7 +26,7 @@
 
    $ miyadaiku-start ./first_doc
 
-このコマンドで、次のようなディレクトリが作成されます。
+次のようなディレクトリが作成されます。
 
 ::
 
@@ -74,7 +74,7 @@
    $ miyadaiku-build ./first_doc
 
 
-正常に終了すれば、``first_doc/output/hello.html`` ファイルが作成されています。
+正常に終了すれば、``first_doc/output/hello.html`` ファイルが作成されます。
 
 
 .. target:: createlinks
@@ -107,9 +107,7 @@
 
 ``:jinja:`` ロールで記述した内容は、そのまま ``Jinja2`` のテンプレートとして処理され、HTMLに変換されます。
 
-ここでは、``content.link_to(ページ名)`` メソッドを使用して、他のページへのリンクを作成します。リンクのテキストは、リンク先ページのタイトルを使用します。
-
-変数 ``page`` は、処理中のコンテントオブジェクトを参照します。``link_to()`` メソッドの他にも、:jinja:`{{ content.link_to('../guide/objects.rst', fragment='content_obj') }}` のメソッドやプロパティを使用できます。
+変数 ``content`` は、処理中のアーティクルを参照する :jinja:`{{ content.link_to('../guide/objects.rst', fragment='content_obj') }}` です。ここでは、``link_to(ページ名)`` メソッドを使用して、他のページへのリンクを作成します。リンク先ページのタイトルが、リンクのテキストとなります。
 
 
 .. target:: template
@@ -117,9 +115,7 @@
 テンプレートのカスタマイズ
 -------------------------------
 
-MiyadaikuがアーティクルからHTMLページを生成する時、``page_article.html`` という名前の Jinja2 テンプレートを検索して使用します。デフォルトでは、`miyadaiku.themes.base パッケージ <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_ の、 `page_article.html <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ ファイルがテンプレートとなります。
-
-Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成できます。
+アーティクルは、``page_article.html`` という名前の Jinja2 テンプレートでHTMLに変換されます。 
 
 例として、テンプレートディレクトリ ``first_doc/templates`` に、 テンプレートとなる ``page_article.html`` ファイルを作成しましょう。
 
@@ -141,9 +137,9 @@ Jinja2 の継承機能を利用してこのテンプレートをカスタマイ�
 
    {% endblock body %}
 
-``page_article.html`` には、``head`` ブロックと ``body`` ブロックがあり、それぞれ ``<head>`` 要素と ``<body>`` 要素を出力します。ここでは ``body`` ブロックをオーバライドして、``body`` 要素にコピーライト表記を追加します。
+Miyadaikuでは、デフォルトのテンプレートとして、`miyadaiku.themes.base <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_  パッケージに `page_article.html <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ を提供しています。ここでは、Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成します。
 
-Pythonパッケージの ``templates`` ディレクトリにあるテンプレートを使用するときは、パッケージ名とファイル名を ``!`` 記号で区切って指定します。
+Pythonパッケージの ``templates`` ディレクトリにあるテンプレートを使用するときは、次のようにパッケージ名とファイル名を ``!`` 記号で区切って指定します。
 
     ``パッケージ名!テンプレートファイル名``
 
@@ -153,6 +149,10 @@ Pythonパッケージの ``templates`` ディレクトリにあるテンプレ�
 
 
 は、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルを指定しています。
+
+
+``page_article.html`` には、``head`` ブロックと ``body`` ブロックがあり、それぞれ ``<head>`` 要素と ``<body>`` 要素を出力します。この例では、``body`` ブロックをオーバライドして、``body`` 要素にコピーライト表記を追加しています。
+
 
 
 
@@ -208,5 +208,5 @@ CSSファイルを追加
    {% endblock body %}
 
 
-``head`` ブロックのオーバライドを追加し、``<link>`` 要素でCSSの読み込みを指定します。``page.path_to(ページ名)`` メソッドは、指定したページへの相対パスを返します。
+``head`` ブロックのオーバライドを追加し、``<link>`` 要素でCSSの読み込みを指定します。``content.path_to(ページ名)`` メソッドは、指定したページのパスを返します。
 

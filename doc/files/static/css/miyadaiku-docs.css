@@ -31,6 +31,11 @@ dd {
   margin-bottom: 1.5rem;
 }
 
+blockquote {
+  margin-left: 1.5rem;
+}
+
+
 .nav-item {
   cursor: pointer;
 }

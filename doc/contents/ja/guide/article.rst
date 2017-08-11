@@ -6,7 +6,14 @@
 アーティクル
 ======================
 
-``contents`` ディレクトリの reStructuredTextファイル/Markdownファイル/HTMLファイルは、**アーティクルオブジェクト** として読み込まれます。アーティクルオブジェクトはJinja2テンプレートを適用し、``outputs`` ディレクトリにHTMLファイルを出力します。
+``contents`` ディレクトリの
+
+- reStructuredTextファイル
+- Markdownファイル
+- HTMLファイル
+- ipynbファイル
+
+は、**アーティクルオブジェクト** として読み込まれます。アーティクルオブジェクトはHTMLに変換し、``outputs`` ディレクトリに出力されます。
 
 
 .. target:: propsofarticle 
@@ -20,6 +27,10 @@
 abstract
   HTMLに変換したアーティクルを、 ``abstract_length`` プロパティで指定した文字数分取得します。``abstract_length`` が ``0`` の場合、全文を返します。
 
+
+abstract_length
+  インデックスファイルやRSSの摘要として使用するテキストの長さを、文字数で指定します。長さとして ``0`` を指定すると、本文すべてを摘要とします。未指定の場合は、``500`` 文字となります。
+
 article_template
   アーティクルのHTMLページを生成するJinja2テンプレートの名前を指定します。未指定の場合は、``page_article.html`` となります。
 
@@ -27,10 +38,10 @@ draft
   未公開状態のアーティクルは ``true``、公開中のアーティクルは ``false`` を指定します。未指定の場合は ``false`` となります。
 
 ext
-  アーティクルの出力ファイル名の拡張子。未指定の場合は、``'.html'`` となります。
+  アーティクルの出力ファイル名の拡張子を指定します。未指定の場合は、``'.html'`` となります。
 
 filename
-  出力ファイル名を指定します。未指定の場合は、アーティクルのファイル名の拡張子を ``.html`` としたファイルを作成します。
+  出力ファイル名を指定します。未指定の場合は、``filename_templ`` でファイル名を生成します。
 
   ``filename`` には、相対ディレクトリ名も指定できます。ex) ``subdir/article1.html``,  ``../subdir/article1.html``
 
@@ -38,7 +49,7 @@ filename_templ
   出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、``'{{ content.stem }}.{{ content.ext }}'`` となります。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
 
 header
-  アーティクルのヘッダ要素のリストを取得します。リストの要素は、(ヘッダのid, ヘッダ要素名, ヘッダテキスト) のタプルです。
+  アーティクルのヘッダ要素のリストを取得します。リストの要素は、`(ヘッダのid, ヘッダ要素名, ヘッダテキスト)` のタプルとなります。。
 
 html
   ページの内容をHTMLで取得します。
@@ -47,7 +58,7 @@ order
   アーティクルの順序を数値で指定します。
 
 stem
-  アーティクルの出力ファイル名(拡張子以外)。未指定の場合は、アーティクルソースファイルのファイル名(拡張子以外)となります。
+  アーティクルの出力ファイル名(拡張子以外)を指定します。未指定の場合は、アーティクルソースファイルのファイル名(拡張子以外)となります。
 
 
 
@@ -235,7 +246,7 @@ Markdownでも、reStructuredTextと同様、*\:jinja:` Jinja2タグ `* の形�
 target
 +++++++++++++++++++++++
 
-*\:target:`id_of_div`* の形式で記述し、HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして指定できるようにします。``<div>`` 要素の ``id`` として、``id_of_div`` を指定します。
+*\:target:`id_of_div`* の形式で記述し、HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして指定できるようにします。次の例では、``<div>`` 要素の ``id`` として、``id_of_div`` を指定します。
 
 .. code-block:: md
    :caption: Sample of target :
@@ -316,9 +327,9 @@ content と page
 -----------------------------------
 
 
-Miyadaikuは、``contents`` ディレクトリを走査し、見つかったアーティクル中をJinja2テンプレートに渡し、HTMLを作成します。この時、アーティクルにあるJinja2テンプレートでは、変数 ``content`` と ``page`` はどちらもHTMLを作成しているアーティクルオブジェクト自身を参照します。
+Miyadaikuは、``contents`` ディレクトリを走査し、すべてのアーティクルをロードしてHTMLを作成します。この時、*\:jinja:* ロールなどでアーティクル内に記述したJinja2テンプレートでは、変数 ``content`` と ``page`` はどちらもHTMLを作成しているアーティクルオブジェクト自身を参照します。
 
-このアーティクルが、文章中で別のアーティクルを読み込んでいる場合、読み込まれているアーティクル内のJinja2テンプレートでは、読み込み元のアーティクルは変数 ``page``、読み込まれているアーティクル自身は 変数 ``content`` で参照できます。
+アーティクルが、文章中で別のアーティクルを読み込んでいる場合、読み込まれているアーティクル内のJinja2テンプレートでは、読み込み元のアーティクルは変数 ``page``、読み込まれているアーティクル自身は 変数 ``content`` で参照できます。
 
 例えば次のような2つのアーティクル ``parent.rst`` と ``child.rst`` がある場合
 
@@ -346,13 +357,13 @@ Miyadaikuは、``contents`` ディレクトリを走査し、見つかったア�
 
 ``parent.rst`` をHTMLに変換する際、 ``{{ content.load('./child.rst').html }}`` で ``child.rst`` が読み込まれます。
 
-この時、``parent.rst`` 内では、 
+この時、``parent.rst`` 内のテンプレートでは、 
 
 - ``page`` は ``parent.rst`` オブジェクト
 - ``content`` は ``parent.rst`` オブジェクト
 
 
-``child.rst`` 内では、 
+``child.rst`` 内のテンプレートでは、 
 
 - ``page`` は ``parent.rst`` オブジェクト
 - ``content`` は ``child.rst`` オブジェクト
@@ -365,7 +376,9 @@ Miyadaikuは、``contents`` ディレクトリを走査し、見つかったア�
 インポート済みテンプレート
 -----------------------------------
 
-アーティクルの :jinja:`{{ content.link_to('./property.rst', fragment='prop_imports', text='importsプロパティ') }}` に指定したJinja2テンプレートは、自動的に `import <http://jinja.pocoo.org/docs/2.9/templates/#import>`_ され、天レートに記述されたマクロなどを使用できます。テンプレートのモジュール名は、テンプレートの名の拡張子を除いたファイル名となります。
+アーティクルの :jinja:`{{ content.link_to('./property.rst', fragment='prop_imports', text='importsプロパティ') }}` に指定したJinja2テンプレートは、自動的に `import <http://jinja.pocoo.org/docs/2.9/templates/#import>`_ され、内部のマクロなどを使用できます。
+
+テンプレートのモジュール名は、テンプレートの名の拡張子を除いたファイル名となります。
 
 .. code-block:: rst
    :caption: Using Jinja2 macros:

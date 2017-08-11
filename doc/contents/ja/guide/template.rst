@@ -70,6 +70,13 @@ is_last
 articles
    インデックスの表示対象となる :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` のリストを参照します。
 
+group_values
+   ``groupby`` プロパティを指定したグループ別インデックスでは、グループの値のリストを返します。
+
+       e.g. ``['category 1']``
+
+   ``groupby`` プロパティを指定なければ、``[]`` となります。
+
 
 .. code-block:: jinja
    :caption: Sample of index template:
@@ -96,10 +103,10 @@ articles
      <hr>
      <div>
        {% if cur_page != 1 %}
-         <a href="{{content.path(values=group_names, npage=cur_page-1)}}">Prev page</a>
+         <a href="{{content.path(values=group_values, npage=cur_page-1)}}">Prev page</a>
        {% endif %}
        {% if not is_last %}
-         <a href="{{content.path(values=group_names, npage=cur_page+1)}}">Next page</a>
+         <a href="{{content.path(values=group_values, npage=cur_page+1)}}">Next page</a>
        {% endif %}
      </div>
    </body>
@@ -107,6 +114,8 @@ articles
 
 
 .. target:: template_names
+
+
 
 テンプレート名の解決
 ---------------------------------------
