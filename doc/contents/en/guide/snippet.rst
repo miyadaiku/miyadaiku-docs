@@ -3,21 +3,22 @@
   :order: 40
   
 
-スニペット
+Snippet
 ======================
 
-**スニペットオブジェクト** はアーティクルと同様、`*.rst` ファイルや `*.md` ファイルなどから作成されるコンテンツですが、アーティクルとは異なり、スニペットからはHTMLファイルは生成されません。
+As article object, **Snippet objects** are created from source files in the ``contents`` directory. But unlike article, snippet does not output HTML file. 
 
-スニペットは、独立したHTMLページを作成するためではなく、他のアーティクルなどから読み込んで使用します。
+Snippet is not used to create an independent HTML page, but be embedded in the another article objects.
 
 
-スニペットの作成
+
+Create snipprt
 -----------------------
 
-スニペットはアーティクルと同様にreStructuredText/Markdown/HTMLなどで作成し、文書プロパティの ``type`` として ``snippet`` を指定します。
+As with articles, create snippets with reStructuredText / Markdown / HTML etc., with a ``type`` property set to ``snippet``.
 
 
-- reStructuredTextのスニペット
+- Snippet in reStructuredText
 
    .. code-block:: rst
       :caption: Sample of snippet in reST:
@@ -28,7 +29,7 @@
 
       This is a snippet in reST.
 
-- Markdownのスニペット
+- Snippet in Markdown
 
    .. code-block:: md
       :caption: Sample of snippet in Markdown:
@@ -38,7 +39,7 @@
 
       This is a snippet in Markdown.
 
-- HTMLのスニペット
+- Snippet in HTML
 
    .. code-block:: html
       :caption: Sample of snippet in HTML:
@@ -49,10 +50,11 @@
       <p>This is a snippet in HTML.</p>
 
 
-スニペットの読み込み
+
+Loading snippet
 -----------------------
 
-スニペットは、``html`` プロパティを利用して他のアーティクルやテンプレートで表示できます。``title`` などの :jinja:`{{ content.link_to("./article.rst", fragment='propsofarticle') }}` も使用できます。
+Snippets can be displayed with in other articles or templates using the ``html`` property.
 
 
 .. code-block:: rst

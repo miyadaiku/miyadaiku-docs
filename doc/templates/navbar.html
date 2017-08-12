@@ -45,6 +45,18 @@
         <a class="nav-link" href="https://github.com/miyadaiku/miyadaiku"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
       </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ page.lang }}</a>
+        <div class="dropdown-menu">
+          {% for lang, p in page.lang_pages.items() | sort %}
+            {% if lang !=  page.lang %}
+              <a class="dropdown-item" href="{{ page.path_to(p) }}">{{ lang }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+
     </ul>
   </div>
 </nav>

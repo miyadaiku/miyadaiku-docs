@@ -3,26 +3,31 @@
   :order: 90
   
 
-テンプレート
+Template
 ======================
 
-Miyadaikuは、``contents`` ディレクトリを走査し、アーティクルやインデックスなどのコンテンツをJinja2テンプレートに渡してHTMLを作成します。テンプレートは、プロジェクトディレクトリの ``templates`` ディレクトリに作成します。
+Content files in the ``contents`` directory are converted with Jinja2 template file. The template is created in the ``templates`` directory of the project directory.
 
-アーティクルテンプレート
+
+Aritcle template
 ------------------------------
 
-アーティクルに適用するテンプレートは、``article_template`` プロパティで指定します。未指定の場合は、``'page_article.html'`` となります。
+The template applied to the article is specified by the ``article_template`` property. Default template name is ``'page_article.html'``.
 
-テンプレート変数
+
+Template variable
 +++++++++++++++++++++
 
-テンプレート内では、次の変数を参照できます。
+
+Within the template, you can refer to the following variables.
 
 page
-   処理対象となるアーティクルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。通常、アーティクルテンプレートでは、``page`` 変数の ``html`` プロパティからHTMLを取得して表示します。
+
+   Refer to :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the article to be processed. Most article templates get the HTML to render from the ``html`` property of the ``page`` variable.
+
 
 contents
-   プロジェクトの :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
+   Refer to :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` of the project.
 
 
 .. code-block:: jinja
@@ -42,40 +47,40 @@ contents
 
 
 
-インデックステンプレート
+Index template
 ------------------------------
 
 
-アーティクルの一覧を出力するインデックスの場合、生成されるHTMLファイルは複数ページとなる場合があり、1ページ目と2ページ目以降でそれぞれ別のテンプレートを指定できます。
+For an index that outputs a list of articles, the generated HTML file may be multiple pages. You can specify different templates for the first page, and the second and subsequent pages.
 
-1ページ目のテンプレートは ``indexpage_template`` プロパティで指定します。未指定の場合は、``'page_index.html'`` となります。2ページ目以降は ``indexpage_template2`` プロパティで指定し、未指定の場合は、``'page_index.html'`` となります。
+The template of the first page is specified by the ``indexpage_template`` property. Default template name is ``'page_index.html'``.  The template pf the second and subsequent pages are specified with the ``indexpage_template2`` property. Default template name is ``'page_index.html'``.
 
-テンプレート変数
+
+Template variables
 +++++++++++++++++++++
 
-テンプレート内では、次の変数を参照できます。
+Within the template, you can refer to the following variables.
 
 page
-   処理対象となるインデックスの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+   Refer to :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` of the index to be processed.
 
 contents
-   プロジェクトの :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` を参照します。
+   Refer to :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` of the project.
 
 cur_page
-   ページ番号を指定します。
+   Current page number.
 
 is_last
-   最後のページなら ``True``、そうでなければ ``False`` となります。
+   ``True`` if this is last page, ``False`` otherwise.
 
 articles
-   インデックスの表示対象となる :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` のリストを参照します。
+   List of :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` of article to be displayed in the index page.
 
 group_values
-   ``groupby`` プロパティを指定したグループ別インデックスでは、グループの値のリストを返します。
+   List of property values specified in ``groupby`` property of index.
 
-       e.g. ``['category 1']``
+   e.g. ``['category 1']``
 
-   ``groupby`` プロパティを指定なければ、``[]`` となります。
 
 
 .. code-block:: jinja
@@ -117,22 +122,18 @@ group_values
 
 
 
-テンプレート名の解決
+Template name resolution
 ---------------------------------------
 
-アーティクルに指定されたテンプレート名や、Jinja2の ``extends`` 文や ``import`` 文で、テンプレート名を指定してテンプレートを利用するとき、Miyadaikuでは以下の順にテンプレートを検索します。
+Miyadaiku searches Jinja2 template in the following order.
 
-1. プロジェクトの ``templates`` ディレクトリ
+1. The project's ``templates`` directory
 
-2. テーマとして指定されたパッケージの、``templates`` ディレクトリ。複数のテーマが指定された場合は、指定された順番に検索します。
-
-
-ただし、 テンプレート名に ``!`` が含まれていたら、上記の検索は行わず、``!`` の左側をパッケージ名とし、そのパッケージの ``templates`` ディレクトリを検索します。
-
-e.g. ``miyadaiku.themes.sample.blog!test.html`` というテンプレート名なら、``miyadaiku.themes.sample.blog`` パッケージの、``templates/test.html`` を取得します。
+2. The ``templates`` directory of the package specified as the theme. When multiple themes are specified, search is performed in the specified order.
 
 
+However, if ``!`` Is included in the template name, it does not perform the above search, searches the ``templates`` directory of the package with the package name on the left side of ``!``.
 
-
+e.g.  ``{% import 'miyadaiku.themes.sample.blog!Test.html' %}`` imports ``templates/test.html`` in the ``miyadaiku.themes.sample.blog`` package.
 
 

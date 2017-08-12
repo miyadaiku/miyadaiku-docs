@@ -2,25 +2,25 @@
 .. article::
   :order: 100
 
-オブジェクトリファレンス 
+オブジェクト リファレンス 
 ================================
 
 .. blank
 
 .. target:: content_obj
 
-コンテントオブジェクト
+コンテント オブジェクト
 --------------------------
 
 Miyadaikuで、``contents`` ディレクトリや ``files`` ディレクトリのファイルは、:jinja:`{{ content.link(fragment='content_obj') }}` として読み込まれます。アーティクルやインデックスなどのファイルだけでなく、CSSや画像ファイルなどのMiyadaikuで処理されないファイルも、コンテントオブジェクトとして参照できます。
 
 
-コンテントオブジェクトは、:jinja:`{{ content.link_to('./article.rst', fragment='propsofarticle') }}` や :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}` に加え、次のメソッドを使用できます。
+コンテントオブジェクトは、:jinja:`{{ content.link_to('./property.rst') }}` や :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}` に加え、次のメソッドを使用できます。
 
 
 
 load(target)
-  ``target`` で指定したパスのコンテントオブジェクトを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートはプロジェクトの ``contents`` ディレクトリです。
+  ``target`` で指定したパスのコンテントオブジェクトを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。
 
   .. code-block:: jinja
      :caption: Sample of content.load() method
@@ -31,7 +31,7 @@ load(target)
 
 
 path(fragment=None, abs_path=False, values=None, npage=None):
-  現在のページからのパスを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートは、プロジェクトの ``contents`` ディレクトリです。
+  現在のページからのパスを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。
 
   ``fragment`` は、ページ内の要素idを指定します。
 
@@ -49,7 +49,7 @@ path(fragment=None, abs_path=False, values=None, npage=None):
 
 
 path_to(target, fragment=None, abs_path=False, values=None, npage=None):
-  ``target`` で指定するコンテントオブジェクトへのパスを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートは、プロジェクトの ``contents`` ディレクトリです。
+  ``target`` で指定するコンテントオブジェクトへのパスを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。
 
   ``fragment`` は、リンク先ページ内の要素idを指定します。
 
@@ -91,8 +91,8 @@ link(text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=No
 
 
 link_to(target, text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=None):
-  ``target`` で指定するコンテントオブジェクトへリンクする<a>要素を取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートは、プロジェクトの ``contents`` ディレクトリです。
-
+  ``target`` で指定するコンテントオブジェクトへリンクする ``<a>`` 要素を取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。
+  
   ``text`` は、リンク文字列を指定します。省略時は、``fragment`` で指定するヘッダ要素のテキスト、または``target`` のタイトルとなります。
 
   ``fragment`` は、リンク先ページ内の要素idを指定します。
@@ -115,7 +115,7 @@ link_to(target, text=None, fragment=None, abs_path=False, attrs=None, values=Non
 
 .. target:: contents_collection
 
-コンテンツコレクション
+コンテンツ コレクション
 --------------------------
 
 
@@ -133,8 +133,7 @@ get_content(key, base=None)
 
      Link to 'page1.rst' of the parent directory
 
-     {{ contents.link_to("../page1.rst", base=content, fragment="id_in_page",
-                     attrs={"class":"class_a", "style":"border:solid;"}) }}
+     {{ contents.get_content("../page1.rst", base=content) }}
 
 
 get_contents(subdirs=None, base=None, filters=None)

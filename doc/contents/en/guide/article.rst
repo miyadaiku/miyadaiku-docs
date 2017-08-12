@@ -3,69 +3,23 @@
   :order: 30
   
 
-アーティクル
+Article
 ======================
 
-``contents`` ディレクトリの
+Following type of files in the ``contents`` directory are processed as **article object**.
 
-- reStructuredTextファイル
-- Markdownファイル
-- HTMLファイル
-- ipynbファイル
+- reStructuredText
+- Markdown
+- HTML
+- ipynb
 
-は、**アーティクルオブジェクト** として読み込まれます。アーティクルオブジェクトはHTMLに変換し、``outputs`` ディレクトリに出力されます。
-
-
-.. target:: propsofarticle 
-
-アーティクルのプロパティ
------------------------------------
-
-アーティクルオブジェクトは、:jinja:`{{ content.link_to('./property.rst', fragment='standardprofs') }}` に加え、以下のプロパティを指定できます。
-
-
-abstract
-  HTMLに変換したアーティクルを、 ``abstract_length`` プロパティで指定した文字数分取得します。``abstract_length`` が ``0`` の場合、全文を返します。
-
-
-abstract_length
-  インデックスファイルやRSSの摘要として使用するテキストの長さを、文字数で指定します。長さとして ``0`` を指定すると、本文すべてを摘要とします。未指定の場合は、``500`` 文字となります。
-
-article_template
-  アーティクルのHTMLページを生成するJinja2テンプレートの名前を指定します。未指定の場合は、``page_article.html`` となります。
-
-draft
-  未公開状態のアーティクルは ``true``、公開中のアーティクルは ``false`` を指定します。未指定の場合は ``false`` となります。
-
-ext
-  アーティクルの出力ファイル名の拡張子を指定します。未指定の場合は、``'.html'`` となります。
-
-filename
-  出力ファイル名を指定します。未指定の場合は、``filename_templ`` でファイル名を生成します。
-
-  ``filename`` には、相対ディレクトリ名も指定できます。ex) ``subdir/article1.html``,  ``../subdir/article1.html``
-
-filename_templ
-  出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、``'{{ content.stem }}.{{ content.ext }}'`` となります。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
-
-header
-  アーティクルのヘッダ要素のリストを取得します。リストの要素は、`(ヘッダのid, ヘッダ要素名, ヘッダテキスト)` のタプルとなります。。
-
-html
-  ページの内容をHTMLで取得します。
-
-order
-  アーティクルの順序を数値で指定します。
-
-stem
-  アーティクルの出力ファイル名(拡張子以外)を指定します。未指定の場合は、アーティクルソースファイルのファイル名(拡張子以外)となります。
-
+Article objects are converted to HTML and written to the ``outputs`` directory.
 
 
 reStructuredText
 ----------------------------
 
-拡張子が ``.rst`` のファイルは、 `reStructuredTextパーザ <http://docutils.sourceforge.net/>`_ でHTMLに変換されます。
+Files with the extension ``.rst`` are converted to HTML by the `reStructuredText parser <http://docutils.sourceforge.net/>`_.
 
 .. code-block:: rst
    :caption: Sample of article in reStructuredText:
@@ -77,23 +31,25 @@ reStructuredText
    My first article in reStructuredText.
 
 
-この例のように、文書の先頭にヘッダが記述されていれば、そのヘッダが文書の `title` プロパティとなります。`title` プロパティは、``article`` ディレクティブでも指定できます。
+As in this example above, if a header is described at the beginning of the document, that header is the document `title` property. The `title` property can also be specified with the` `article`` directive.
 
-Miyadaikuは、rst用の `ディレクティブ <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_ と `ロール <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_ を提供しており、文書のプロパティ設定、Jinja2テンプレートの埋め込みなどを行えます。
+Miyadaiku provides `directive <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_ and `role <http://docutils.sourceforge.net/docs/ref/rst /roles.html>`_ for rst to set properties,  to embed Jinja2 templates, etc.
 
-articleディレクティブ
+
+
+Article drective
 +++++++++++++++++++++++
 
-articleディレクティブは、アーティクルのプロパティを指定します。
+The ``article`` directive specifies the properties of the article.
 
 .. code-block:: rst
    :caption: Article directive in reStructuredText:
 
    .. article::
       :date: 2017-01-01
-      :title: 文書のタイトル
-      :category: カテゴリ1
-      :tags: タグ1, タグ2
+      :title: Title of the article
+      :category: category1
+      :tags: tag1, tag2
 
 
    Sample of article directive
@@ -102,17 +58,17 @@ articleディレクティブは、アーティクルのプロパティを指定�
    This is a miyadaiku article in reST.
 
 
-この例では、文書のプロパティとして ``date``、``title``、``category``、``tags`` を指定しています。
+In this example, we specify ``date``, ``title``, ``category``, ``tags`` as document properties.
 
-プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
+You can specify any item as a property. For property settings, see :jinja:`{{ content.link_to('./property.rst') }}`.
 
 
 .. target:: jinjadirective
 
-jinjaディレクティブ
+Jinja directive
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-``jinja`` ディレクティブに記述した内容は、Jinja2テンプレートエンジンによってHTMLに変換されます。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
+The contents written in the ``jinja`` directive are converted to HTML by the Jinja2 template engine. In the template you can reference :jinja:`{{content.link (fragment = 'jinja_vars')}}`.
 
 
 .. code-block:: rst
@@ -133,11 +89,10 @@ jinjaディレクティブ
 
 
 
-jinjaロール
+Jinja role
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-``:jinja:`` ロールで指定した文字列は、Jinja2テンプレートエンジンによってHTMLに変換されます。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
-
+The string specified in the ``:jinja:`` role is converted to HTML by the Jinja2 template engine. In the template you can reference :jinja:`{{content.link(fragment='jinja_vars')}}`.
 
 .. code-block:: rst
    :caption: Sample of Jinja role in reST:
@@ -150,11 +105,11 @@ jinjaロール
 
 
 
-code-blockディレクティブ
+Code-block directive
 +++++++++++++++++++++++++++++
 
+Source code in the `` code-block`` directive is syntax highlighted by `Pygments <http://pygments.org/>`_. You can specify a language in  `` .. code-block :: lang`` form.
 
-プログラムのソースコードなどは、``code-block`` ディレクティブで記述します。``.. code-block:: lang`` のように言語を指定すると、`Pygments <http://pygments.org/>`_ による構文ハイライトが行われます。
 
 .. code-block:: rst
    :caption: Sample of code-block directive:
@@ -167,10 +122,11 @@ code-blockディレクティブ
 
 .. target:: targetdirective
 
-targetディレクティブ
+
+Target directive
 +++++++++++++++++++++++
 
-HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして指定できるようにします。``<div>`` 要素の ``id`` として、ディレクティブの引数を指定します。
+Embed the ``<div>`` element with ``id`` to be specified as the target of the link.
 
 .. code-block:: rst
    :caption: Sample of target role:
@@ -185,35 +141,32 @@ HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして�
    Section II
    ------------------
 
-   Link to :jinja:`content.link_to(content, fragment='id_of_this_section1')`.
+   Link to :jinja:`content.link(fragment='id_of_this_section1')`.
 
 
 
 Markdown
 ----------------------------
 
-拡張子が ``.md`` のファイルは、 `Markdownモジュール <https://pypi.python.org/pypi/Markdown>`_ でHTMLに変換されます。
+Files with the extension ``.md`` are converted to HTML by the `Markdown module <https://pypi.python.org/pypi/Markdown>`_.
 
-デフォルトでは、Markdownモジュールの `Extra 拡張 <http://pythonhosted.org/Markdown/extensions/extra.html>`_ が有効になっています。
-
-また、Miyadaikuは、Markdownモジュールを独自に拡張しており、文書プロパティの指定・Jinja2テンプレートの埋め込みなどを行えます。
+By default, `Extra extension <http://pythonhosted.org/Markdown/extensions/extra.html>`_ of the the Markdown module is enabled.
 
 
 
-
-プロパティ
+Property
 +++++++++++++++++++++++
 
-文書ファイルの先頭に、プロパティ名とプロパティ値を指定できます。
+You can specify the property name and property value at the beginning of the document file.
 
 
 .. code-block:: md
    :caption: Sample of document properties in Markdown:
 
    date: 2017-01-01
-   title: 文書タイトル
-   category: カテゴリ1
-   tags: タグ1, タグ2
+   title: Title of document
+   category: category1
+   tags: tag1, tag2
 
    # Miyadaiku article
 
@@ -221,18 +174,13 @@ Markdown
   
 
 
-
-プロパティ値は各行に一つづつ、プロパティ名と値を ``:`` で区切って指定します。
-
-プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
+Property values are specified one per line, separating property names and value with ``:``.
 
 
-
-
-Jinja2テンプレート
+Jinja2 template
 ++++++++++++++++++++++++++
 
-Markdownでも、reStructuredTextと同様、*\:jinja:` Jinja2タグ `* の形式で、Jinja2テンプレートを指定できます。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
+Jinja2 templated can be written in the form **:jinja:`Jinja 2 tag`**.
 
 .. code-block:: md
    :caption: Sample of Jinja role in Markdown:
@@ -243,10 +191,10 @@ Markdownでも、reStructuredTextと同様、*\:jinja:` Jinja2タグ `* の形�
 
 
 
-target
+Target
 +++++++++++++++++++++++
 
-*\:target:`id_of_div`* の形式で記述し、HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして指定できるようにします。次の例では、``<div>`` 要素の ``id`` として、``id_of_div`` を指定します。
+You can generate ``<div>`` element with ``id`` with *\:target:`id_of_div`*. The ``div`` could be used as target of the link.
 
 .. code-block:: md
    :caption: Sample of target :
@@ -266,37 +214,35 @@ target
 HTML
 ----------------------------
 
-拡張子が ``.html`` のファイルは、文書の先頭に文書プロパティを指定したHTMLファイルとして読み込み、Jinja2テンプレートエンジンでHTMLとして出力します。
+Files with the extension ``.html`` is read as an HTML file with the document properties specified at the beginning of the document, and outputted as HTML by the Jinja2 template engine.
 
 
-プロパティ
+Property
 +++++++++++++++++++++++
 
-文書ファイルの先頭に、プロパティ名とプロパティ値を指定できます。
+
+You can specify the property name and property value at the beginning of the document file.
 
 
 .. code-block:: html
    :caption: Sample of document properties in HTML:
 
    date: 2017-01-01
-   title: 文書タイトル
-   category: カテゴリ1
-   tags: タグ1, タグ2
+   title: Document title
+   category: Category1
+   tags: Tag1, Tag2
 
    <p>This is a HTML file</p>
 
 
-
-プロパティ値は各行に一つづつ、プロパティ名と値を ``:`` で区切って指定します。
-
-プロパティとして、任意の項目を指定できます。プロパティ設定については、:jinja:`<a href="#propsofarticle">アーティクルのプロパティ</a>` を参照してください。
+Property values are specified one per line, separating property names and value with ``:``.
 
 
-
-Jinja2テンプレート
+Jinja2 template
 ++++++++++++++++++++++++++
 
-HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換されます。HTMLファイル内では、Jinja2タグを使って :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
+
+HTML files are processed by Jinja2 template engine. Jinja2 tags can be used in the HTML files.
 
 .. code-block:: html
    :caption: Sample of Jinja template in HTML:
@@ -307,31 +253,31 @@ HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換され
 
 .. target:: jinja_vars
 
-テンプレート変数
+Template variables
 -----------------------------------
 
 
-reStructuredText/Markdown/HTMLのいずれのアーティクルでも、内部に記述するJinjaテンプレートでは、次の変数を使用できます。
+Jinja templates in the articles, following variables can be used.
 
 content
-  現在のアーティクルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of current article.
 
 page
-  アーティクルを呼び出しているコンテンツの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the content calling the article.
 
 contents
-   プロジェクトの  :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}`  を参照します。
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='contents_collection')}}` of the project.
 
 
-content と page
------------------------------------
 
 
-Miyadaikuは、``contents`` ディレクトリを走査し、すべてのアーティクルをロードしてHTMLを作成します。この時、*\:jinja:* ロールなどでアーティクル内に記述したJinja2テンプレートでは、変数 ``content`` と ``page`` はどちらもHTMLを作成しているアーティクルオブジェクト自身を参照します。
+Content and page
++++++++++++++++++++++++
 
-アーティクルが、文章中で別のアーティクルを読み込んでいる場合、読み込まれているアーティクル内のJinja2テンプレートでは、読み込み元のアーティクルは変数 ``page``、読み込まれているアーティクル自身は 変数 ``content`` で参照できます。
+When converting an article to HTML, in the Jinja 2 template in the article, the variables ``content`` and ``page`` both refer to the same article object currently being processed. In this case ``content`` and ``page`` refer to the same object.
 
-例えば次のような2つのアーティクル ``parent.rst`` と ``child.rst`` がある場合
+However, if the article is loading another article, in the Jinja 2 template in the article being loaded, the article is referenced by the variable ``content``, and the article loading another article is referred by variable ``page``.
+
 
 .. code-block:: jinja
    :caption: parent.rst:
@@ -355,30 +301,31 @@ Miyadaikuは、``contents`` ディレクトリを走査し、すべてのアー�
    content: {{ content.name }}
 
 
-``parent.rst`` をHTMLに変換する際、 ``{{ content.load('./child.rst').html }}`` で ``child.rst`` が読み込まれます。
-
-この時、``parent.rst`` 内のテンプレートでは、 
-
-- ``page`` は ``parent.rst`` オブジェクト
-- ``content`` は ``parent.rst`` オブジェクト
+When converting ``parent.rst`` to HTML, ``{{content.load('./child.rst').html}}`` loads ``child.rst``.
 
 
-``child.rst`` 内のテンプレートでは、 
+In this case, in the template in ``parent.rst``,
 
-- ``page`` は ``parent.rst`` オブジェクト
-- ``content`` は ``child.rst`` オブジェクト
+- ``page`` refers  ``parent.rst`` object
+- ``content`` refers ``parent.rst`` object
 
-となります。
+
+In the template in ``child.rst``
+
+- ``page`` refers ``parent.rst`` object
+- ``content`` refers ``child.rst`` object
+
 
 .. target:: import_templ
 
 
-インポート済みテンプレート
------------------------------------
+Imported template
++++++++++++++++++++++++
 
-アーティクルの :jinja:`{{ content.link_to('./property.rst', fragment='prop_imports', text='importsプロパティ') }}` に指定したJinja2テンプレートは、自動的に `import <http://jinja.pocoo.org/docs/2.9/templates/#import>`_ され、内部のマクロなどを使用できます。
 
-テンプレートのモジュール名は、テンプレートの名の拡張子を除いたファイル名となります。
+The Jinja2 template specified in the :jinja:`{{content.link_to ('./property.rst', fragment='prop_imports', text='imports property')}}`  are `imported <http://jinja.pocoo.org/docs/2.9/templates/#import>`_. The module name of the template is the file name excluding the extension of the name of the template.
+
+
 
 .. code-block:: rst
    :caption: Using Jinja2 macros:
@@ -386,9 +333,11 @@ Miyadaikuは、``contents`` ディレクトリを走査し、すべてのアー�
    .. article::
       :imports: my_template.html
 
-   my_template.html をインポートし、my_macroを呼び出す
+   Imports my_template.html and use my_macro()
 
    {{ my_template.my_macro() }}
+
+
 
 
 

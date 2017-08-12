@@ -3,36 +3,36 @@
   :order: 60
   
 
-コンフィグ
+Config
 ======================
 
-コンフィグファイルは、Miyadaikuプロジェクト全体の設定や、文書プロパティのデフォルト値の指定する YAMLファイルです。
+The config file is a YAML file that specifies settings of the entire Miyadaiku project and default values ​​of document properties.
 
 
-アーティクルやインデックスなどのプロパティのデフォルト値は、ルートディレクトリの ``config.yml`` ファイルで指定します。
+The default values ​​of propertieof contents are specified in the `` config.yml`` file in the root directory.
 
-また、``contents`` ディレクトリ内のサブディレクトリにYAMLファイルを作成し、ディレクトリ別のデフォルト値を指定できます。``contents`` ディレクトリ内の、以下の条件を満たすファイルは、コンフィグファイルとして読み込まれます。
 
-- 拡張子が ``.yml`` である
-- ``type`` キーの値が ``config`` と指定されている
+You can also create a YAML file in a subdirectory within the ``contents`` directory and specify a default value for each directory. Files that satisfy the following conditions in the ``contents`` directory are read as config files.
 
-例として、``/dir1/config_dir1.yml`` と ``/dir1/dir2/config_dir2.yml`` の2つのコンフィグファイルを作成します。
+- Extension of file name is ``.yml``
+- ``type`` key value specified as ``config``
+
+As an example, we create two config files ``/dir1/config_dir1.yml`` and ``/dir1/dir2/config_dir2.yml``.
 
 .. code-block:: md
    :caption: contents/dir1/config_dir1.yml
 
-   type: config   # YAMLファイルのタイプを config に指定
-   lang: ja       # lang のデフォルト値を ja に設定
+   type: config   # Specify YAML file type as config
+   lang: ja       # Set the default value of lang to ja
 
 
 .. code-block:: md
    :caption: contents/dir1/dir2/config_dir2.yml
 
-   type: config   # YAMLファイルのタイプを config に指定
-   category: tutorial # categoryのデフォルト値を tutorial に設定
+   type: config   # Specify YAML file type as config
+   category: tutorial # Set the default value of category to tutorial
 
 
-``/dir1`` 以下のディレクトリでは、アーティクルの ``lang`` プロパティは ``ja`` がデフォルト値となります。
+In the ``/dir1`` directories and below, the article's ``lang`` property defaults to ``ja``.
 
-また、``/dir1/dir2`` 以下のディレクトリでは、アーティクルの ``category`` プロパティは ``tutorial`` がデフォルト値となります。
-
+Also, in the directories under ``/dir1/dir2``, the ``category`` property of the article defaults to ``tutorial``.

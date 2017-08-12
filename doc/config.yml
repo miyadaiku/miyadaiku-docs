@@ -7,5 +7,10 @@ themes:
   - miyadaiku.themes.bootstrap4
   - miyadaiku.themes.fontawesome
   
+lang_pages:
+  ja: '/ja/index.rst'
+  en: '/en/index.rst'
+
+lang_default: '/en/index.rst'
 
 

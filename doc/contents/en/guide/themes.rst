@@ -3,20 +3,19 @@
   :order: 110
   
 
-テーマ
+Themes
 ======================
 
-テーマは、 サイトのコンテンツやデザインなどをまとめたPythonのパッケージです。テーマに含まれるファイルは、プロジェクトの通常のファイルと同じように ``outputs`` ディレクトリにコンテンツとして出力されます。
 
+The theme is Python's package which contains the contents and design of the site. Files included in the theme are used to generate outputs just like regular contents in project.
 
 :jinja:`<img src="{{page.path_to('/img/themes.png')}}" width=500px>`
 
 
-テーマの使用
+Using themes
 ------------------
 
-
-テーマは、通常のパッケージと同じようように、PyPIなどから事前にインストールする必要があります。
+The theme needs to be installed in advance from PyPI or the like, just like a regular package.
 
 .. code-block:: console
    :caption: Install miyadaiku themes with pip
@@ -26,8 +25,7 @@
 
 
 
-プロジェクトで使用するテーマは、プロジェクト設定ファイル ``config.yml`` の ``themes`` に指定します。
-
+The themes used in the project are specified in ``themes`` of the project configuration file ``config.yml``.
 
 .. code-block:: yaml
    :caption: config.yml: Using two themes in the project
@@ -37,25 +35,26 @@
        - miyadaiku.themes.fontawesome
 
 
-テーマが別のテーマを使用する場合、そのテーマは再帰的に読み込まれます。また、Miyadaikuの組み込みテーマ ``miyadaiku.themes.base`` は、``themes`` に指定されなくとも常に読み込まれます。
+If the theme uses an another theme, that theme is recursively loaded. 
 
-テンプレート
+Miyadaiku's built-in theme ``miyadaiku.themes.base`` is always loaded even if it is not specified in ``themes``.
+
+
+Templates
 -------------------
 
-テーマに含まれるテンプレートも、プロジェクトのテンプレートと同様に使用できます。
 
-アーティクルのテンプレート名や、Jinja2の ``import`` 文などでテンプレート名を指定すると、プロジェクトの ``templates`` ディレクトリに続いて、使用中のテーマからテンプレートディレクトリを検索します。
+Templates included in themes can also be used like templates in the project.
 
-テンプレート名の検索順序については、:jinja:`{{ content.link_to("./template.rst", fragment="template_names") }}` を参照してください。
+If you specify a template name in the article's template name, Miyadaiku search the project's ``templates`` directory, then the template directory from the theme in use. See  :jinja:`{{content.link_to ("./template.rst", fragment ="template_names")}}` for details.
+
 
 
 
 load_package()
 -------------------------
 
-
-
-テーマパッケージに ``load_package(site)`` 関数があれば、起動時に呼び出されます。テーマ内でのデータの初期化などが必要であれば、ここで行います。
+If there is a `` load_package (site) `` in the theme package, it will be called at startup. If you need to initialize the data within the theme, do it here.
 
 
 .. code-block:: python

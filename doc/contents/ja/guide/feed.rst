@@ -40,5 +40,5 @@ filters
 
       type: feed   # YAMLファイルのタイプを index に指定
       filters:      
-        category: ['news', 'event']  # カテゴリが 'news' または 'events'  
-  
+        category: [news, event]  # カテゴリが 'news' または 'events'  
+        lang: [ja]

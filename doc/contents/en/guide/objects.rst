@@ -2,44 +2,45 @@
 .. article::
   :order: 100
 
-オブジェクトリファレンス 
+Object reference
 ================================
 
 .. blank
 
 .. target:: content_obj
 
-コンテントオブジェクト
+Content object
 --------------------------
 
-Miyadaikuで、``contents`` ディレクトリや ``files`` ディレクトリのファイルは、:jinja:`{{ content.link(fragment='content_obj') }}` として読み込まれます。アーティクルやインデックスなどのファイルだけでなく、CSSや画像ファイルなどのMiyadaikuで処理されないファイルも、コンテントオブジェクトとして参照できます。
+In Miyadaiku, the files in the ``contents`` directory and the ``files`` directory are loaded as :jinja:`{{ content.link(fragment='content_obj') }}`.  This is true not only for articles and indexes in the ``contents`` directory, but files that are not processed by Miyadaiku such as CSS and image files..
 
 
-コンテントオブジェクトは、:jinja:`{{ content.link_to('./article.rst', fragment='propsofarticle') }}` や :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}` に加え、次のメソッドを使用できます。
-
+Content object provides attributes listed :jinja:`{{ content.link_to('./property.rst') }}` や :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}`, and followinng methods.
 
 
 load(target)
-  ``target`` で指定したパスのコンテントオブジェクトを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートはプロジェクトの ``contents`` ディレクトリです。
+  Load the content object of the path specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path. 
+
+
 
   .. code-block:: jinja
      :caption: Sample of content.load() method
 
-     <p>/page1.rst の概要を表示します</p>
+     <p> Renders abstract of /page1.rst</p>
      
      {{ content.load('/page1.rst').abstract }}  
 
 
 path(fragment=None, abs_path=False, values=None, npage=None):
-  現在のページからのパスを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートは、プロジェクトの ``contents`` ディレクトリです。
+  Get the path from the current page. ``target`` can be absolute path which starts with ``'/'``, or relative path.
 
-  ``fragment`` は、ページ内の要素idを指定します。
+  ``fragment`` specifies the element id in the page.
 
-  ``abs_path`` が ``True`` の場合、プロトコルから始まる完全なURLを返します。
+  If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
-  ``values`` は、グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。
+  ``values`` specifies the value of the group on the grouped index page. It can be specified only on the index page.
 
-  ``npage`` は、インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。
+  ``npage`` specifies the landing page number of the index page. It can be specified only on the index page.
 
   .. code-block:: jinja
      :caption: Sample of content.path() method
@@ -49,15 +50,15 @@ path(fragment=None, abs_path=False, values=None, npage=None):
 
 
 path_to(target, fragment=None, abs_path=False, values=None, npage=None):
-  ``target`` で指定するコンテントオブジェクトへのパスを取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートは、プロジェクトの ``contents`` ディレクトリです。
+  Get the path to the content object specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path. 
 
-  ``fragment`` は、リンク先ページ内の要素idを指定します。
+  ``fragment`` specifies the element id in the page.
 
-  ``abs_path`` が ``True`` の場合、プロトコルから始まる完全なURLを返します。
+  If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
-  ``values`` は、グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。
+  ``values`` specifies the value of the group on the grouped index page. It can be specified only on the index page.
 
-  ``npage`` は、インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。
+  ``npage`` specifies the landing page number of the index page. It can be specified only on the index page.
 
 
   .. code-block:: jinja
@@ -68,19 +69,19 @@ path_to(target, fragment=None, abs_path=False, values=None, npage=None):
 
 
 link(text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=None):
-  現在のページからリンクする<a>要素を取得します。
+  Get the ``<a>`` element to link to the object.  
 
-  ``text`` は、リンク文字列を指定します。省略時は、``fragment`` で指定するヘッダ要素のテキスト、または``target`` のタイトルとなります。
+  ``text`` specifies the link text in the ``<a>`` element. If omitted, it is the text of the header element specified by ``fragment``, or the title of the object.
 
-  ``fragment`` は、リンク先ページ内の要素idを指定します。
+  ``fragment`` specifies the element id in the page.
 
-  ``abs_path`` が ``True`` の場合、プロトコルから始まる完全なURLを返します。
+  If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
-  ``attrs`` は、<a>要素の属性を辞書で指定します。
+  ``attrs`` specifies the dictionary of attribute of ``<a>`` elements.
 
-  ``values`` は、グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。
+  ``values`` specifies the value of the group on the grouped index page. It can be specified only on the index page.
 
-  ``npage`` は、インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。
+  ``npage`` specifies the landing page number of the index page. It can be specified only on the index page.
 
   .. code-block:: jinja
      :caption: Sample of content.link() method
@@ -91,19 +92,20 @@ link(text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=No
 
 
 link_to(target, text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=None):
-  ``target`` で指定するコンテントオブジェクトへリンクする<a>要素を取得します。``target`` には、``'/'`` から始まる絶対パス、または相対パスを指定できます。絶対パスのルートは、プロジェクトの ``contents`` ディレクトリです。
+  Get the ``<a>`` element to link to the object specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path.
 
-  ``text`` は、リンク文字列を指定します。省略時は、``fragment`` で指定するヘッダ要素のテキスト、または``target`` のタイトルとなります。
+  ``text`` specifies the link text in the ``<a>`` element. If omitted, it is the text of the header element specified by ``fragment``, or the title of the object.
 
-  ``fragment`` は、リンク先ページ内の要素idを指定します。
+  ``fragment`` specifies the element id in the page.
 
-  ``abs_path`` が ``True`` の場合、プロトコルから始まる完全なURLを返します。
+  If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
-  ``attrs`` は、<a>要素の属性を辞書で指定します。
+  ``attrs`` specifies the dictionary of attribute of ``<a>`` elements.
 
-  ``values`` は、グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。
+  ``values`` specifies the value of the group on the grouped index page. It can be specified only on the index page.
 
-  ``npage`` は、インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。
+  ``npage`` specifies the landing page number of the index page. It can be specified only on the index page.
+
 
   .. code-block:: jinja
      :caption: Sample of content.link_to() method
@@ -115,47 +117,42 @@ link_to(target, text=None, fragment=None, abs_path=False, attrs=None, values=Non
 
 .. target:: contents_collection
 
-コンテンツコレクション
+Contents collection
 --------------------------
 
 
-コンテンツコレクションは、Miyadaikuプロジェクトのすべてのコンテンツを管理するオブジェクトです。
-
+Content collection is the object that manages all contents of Miyadaiku project.
 
 
 get_content(key, base=None)
-   コレクションから、指定したファイル名の :jinja:`{{ content.link(fragment='content_obj')}}` を取得します。
+  Load the content object of the path specified by ``key``. ``key`` can be absolute path which starts with ``'/'``, or relative path. 
 
-   ``key`` は、コンテントオブジェクトのパスを、``/`` で始まる絶対パス、または相対パスで指定します。相対パスで指定する場合は、``base`` に起点となるコンテントオブジェクトを指定します。
+  If ``key`` is relative path,  specify ``base`` as the originating content object.
 
   .. code-block:: jinja
      :caption: Sample of contents.get_content() method
 
      Link to 'page1.rst' of the parent directory
 
-     {{ contents.link_to("../page1.rst", base=content, fragment="id_in_page",
-                     attrs={"class":"class_a", "style":"border:solid;"}) }}
+     {{ contents.get_content("../page1.rst", base=content) }}
 
 
 get_contents(subdirs=None, base=None, filters=None)
-   コレクションから、指定した条件の :jinja:`{{ content.link(fragment='content_obj')}}` を検索します。
+   Search :jinja:`{{content.link (fragment = 'content_obj')}}` from the collection on the specified condition.
 
-   特定のディレクトリに含まれるコンテントのみを取得する場合は、``subdirs`` に、ディレクトリ名のリストを指定します。ディレクトリ名は、``/`` で始まる絶対パス、または相対パスで指定します。相対パスで指定する場合は、``base`` に起点となるコンテントオブジェクトを指定します。
 
-   結果として、:jinja:`{{ content.link(fragment='content_obj')}}` のリストを返します。
+   If you want to retrieve only the content contained in a specific directory, specify a list of directory names in ``subdirs``. The directory name is specified as an absolute path starting with ``/`` or a relative path. If specified as a relative path, specify ``base`` as the originating content object.
 
    .. code-block:: jinja
-      :caption: ./myfolder のアーティクルを検索
+      :caption: Search for articles in the ./myfolder 
 
       {% set items = contents.get_contents(subdirs=['./myfolder'], base=content) %}
 
+   ``Filtes`` specifies search criteria for content. Specify a dictionary whose key is the document property name to be searched and whose value is the list of property values to be displayed. By default, ``get_content()`` searches article object with ``draft`` is ``false``.
 
-   ``filtes`` は、コンテンツの検索条件を指定します。検索する文書プロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。
-
-   省略時は、文書プロパティ ``draft`` が ``false`` かつ ``type`` が ``article`` のコンテントオブジェクトを検索します。
 
    .. code-block:: jinja
-      :caption: カテゴリが 'news' または 'event' のアーティクルを検索
+      :caption: Search articles with category 'news' or 'event'
 
       {% set items = contents.get_contents(filters={'type':['artile'], 'category': ['news', 'event']}) %}
 
@@ -163,20 +160,23 @@ get_contents(subdirs=None, base=None, filters=None)
 
 
 group_items(group, subdirs=None, base=None, filters=None):
-   ``contents.get_contents()`` と同様に、アーティクルを検索します。検索結果は、``group`` で指定するプロパティ名の値で分類します。
+   Search :jinja:`{{content.link (fragment = 'content_obj')}}` from the collection on the specified condition like ``contents.get_contents()``. Search results are classified by the value of the property name specified by ``group``.
 
-   ``subdirs``、``base``、``filters`` の使い方は、``contents.get_contents()`` と同じです。
 
-   戻り値は、
+   Return value is list of tuple of property value and list of articles.
 
    .. code-block:: python
+      :caption: Return value of group_items()
 
-      [(['プロパティ値1'], [article1, article2,]), 
-       (['プロパティ値2'], [article3, article4, article5]),] 
+      [(['property value 1'], [article1, article2,]), 
+       (['property value 2'], [article3, article4, article5]),] 
 
-  のように、プロパティ値と該当するコンテントオブジェクトのリストのタプルを要素とするリストを返します。
+
+   Usage of ``subdirs``, ``base``, ``filters`` is the same as ``contents.get_contents ()``.
 
    .. code-block:: jinja
       :caption: Group articles in '/dir1' directory with 'tags' property
 
       {% set items = contents.group_items(group='tags', subdirs=['/dir1']) %}
+
+

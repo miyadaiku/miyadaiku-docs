@@ -3,42 +3,44 @@
   :order: 80
   
 
-フィード
+Feed
 ======================
 
-Atom/RSSフィードは、**フィードオブジェクト** で作成します。フィードオブジェクトは ``contents`` ディレクトリのYAMLファイルで定義します。 
+The Atom / RSS feed is created with the **feed object**. Feed objects are defined in the YAML file in the `` contents`` directory.
+
 
 .. code-block:: yaml
    :caption: contents/atom.yml
 
-   type: feed   # YAMLファイルのタイプを feed に指定
-   feedtype: atom  # Atomフィードを作成
-   feed_num_articles: 10
+   type: feed   #  Specify YAML file type as feed
+   feedtype: atom  # Create an Atom feed
+   feed_num_articles: 10 
 
 
-フィードオブジェクトには、:jinja:`{{ content.link_to('./property.rst', fragment='standardprofs') }}` に加え、以下のプロパティを設定できます。
+In addition to :jinja:`{{ content.link_to ('./property.rst', fragment='standardprofs') }}`, you can set the following properties for the feed object.
+
 
 type
-  YAMLファイルのタイプを指定します。インデックスページの場合は ``feed`` を指定します。
+  Specify the type of YAML file. For index pages, specify ``feed``.
 
 feedtype
-  フィードの種類を、``atom`` または ``rss`` で指定します。未指定の場合は ``atom`` となります。
+  Specify the feed type as ``atom`` or ``rss``. Default value is ``atom``.
 
 feed_num_articles
-  フィードに含まれるアーティクルの数を指定します。未指定の場合は ``10`` となります。
+  Specify the number of articles included in the feed. Default value ``10``.
 
 filename
-  出力ファイル名を指定します。未指定の場合は、YAMLファイルの拡張子を ``.atom`` または ``.html`` としたファイルを作成します。
+  File name of feed file. Default value is name of the YAML file with the extension is ``.atom`` or ``.html``.
 
 filters
-   フィードに登録するアーティクルの検索条件を指定します。検索する文書プロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。
+  Specify search conditions for articles to be registered in the feed. Specify a dictionary whose value is the document property name to be searched and whose value is the list of property values ​​to be displayed.
 
-   省略時は、プロパティ ``draft`` が ``true`` の、すべてのアーティクルを表示します。
+  If omitted, all articles whose property ``draft`` is ``true`` are displayed.
 
-   .. code-block:: yaml
-      :caption: 'news' または 'event' カテゴリの日本語アーティクルのみを登録する
+  .. code-block:: yaml
+      :caption: Register only Japanese articles in 'news' or 'event' category
 
-      type: feed   # YAMLファイルのタイプを index に指定
+      type: feed
       filters:      
-        category: ['news', 'event']  # カテゴリが 'news' または 'events'  
-  
+        category: [news, event]
+        lang: [ja]

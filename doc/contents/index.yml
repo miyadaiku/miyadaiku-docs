@@ -1,9 +1,4 @@
 type: article
 og_type: website
 article_template: page_redirect.html
-lang_pages: >
-  { ja: './ja/index.html',
-    en: './en/index.html',
-  }
 
-lang_default: ./en/index.html

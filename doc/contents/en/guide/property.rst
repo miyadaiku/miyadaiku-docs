@@ -3,28 +3,40 @@
   :order: 20
   
 
-プロパティ
+Property
 =================
 
-コンテンツには、自由にプロパティを設定できます。プロパティの設定方法は、reStructuredText・Markdownなどの、ドキュメント形式によって異なります。
+Contents has property values to keep extra values. The syntax to provide properties differ to document format such as reStructuredText, Markdown.
 
 
 .. target:: standardprofs
 
 
-標準プロパティ
-----------------
+Standard properties
+----------------------------
 
-標準プロパティとして、すべてのコンテンツに以下の値が設定されています。
+Following properties are standard property which are defined for all contents.
+
+
+
+abstract
+   Short summary of the article. Default is taken from beggining of the HTML of the article. Length of letters taken from HTML is specified by ``abstract_length`` property. 
+
+
+abstract_length
+   Specify the number of characters of the text to be used as ``abstract``. If ``0`` is specified, all the text is used. Default value is ``500`` characters.
+
+article_template
+   Name of the Jinja2 template that generates the HTML page of the article. Default value is ``page_article.html``.
 
 cagegory
-  コンテンツのカテゴリを指定します。未指定の場合は ``''`` となります。
+  Category of content. Default value is ``''``.
 
 charset
-  生成されるHTMLの ``charset`` を指定します。未指定の場合は ``'utf-8'`` となります。
+  Character set of output HTML. Default values is ``'utf-8'``.
 
 date
-  コンテンツの作成日を指定します。
+  Created date of the content. Default value is ``None``.
 
   e.g.
 
@@ -36,36 +48,63 @@ date
 
 .. target:: prop_imports
 
+draft
+   ``true`` if the article is unpublished. Default value is ``false``.
+
+ext
+   Extension of the article's output file name. Default value is ``'.html'``.
+
+filename
+   Specify the output file name. If unspecified, file name is generated with ``filename_templ``.
+
+   ``Filename`` can be a relative path. Ex) ``subdir/article1.html``, ``../subdir/article1.html``
+
+filename_templ
+   Specify the file name of the output HTML file with Jina 2 template. Default value is ``'{{content.stem}}.{{Content.ext}}'``. In the template you can reference :jinja:`{{content.link (fragment='jinja_vars')}}`.
+
+
+header
+   Gets a list of the header elements of an article. The elements of the list are tuples of `(header id, header element name, header text)`. 
+
+html
+   Get article in HTML.
+
+
 imports
-   Jinja2のモジュールとして import するテンプレートを、``,`` 区切りで指定します。指定したモジュールは、:jinja:`{{ content.link_to('./article.rst', fragment='import_templ') }}` として使用できます。
+  File names of templates to be imported as Jinja2 modules. File names are separated by ``,``. Specified modules can be used as :jinja:`{{content.link_to ('./article.rst', fragment='import_templ')}}`.
 
    e.g.
 
-   ``macro1.html, other.package!macro2.html``
+     ``macro1.html, other.package!macro2.html``
 
 lang
-  生成されるHTMLの ``lang`` を指定します。未指定の場合は ``'en'``  となります。
+  Language code of output HTML. Default values is ``'en'``.
+
+
+order
+  Numeric order of the article. Default value is ``0``.
 
 
 site_title
-  サイトのタイトルを指定します。未指定の場合は ``'(FIXME-site_title)``  となります。
+  Title of the site. Defautl value is ``'(FIXME - site_title)'``.
 
 site_url
-  コンテンツの親となるURLを指定します。 e.g. ``https://www.example.com/my-site``
+  Base URL of the site. Defautl value is ``'http://localhost:8888'``.
 
-  未指定の場合は ``'http://localhost:8888'``  となります。
+stem
+  Specify the output file name without extension of the article. Default value is same as file name name without extension of article.
 
 tags
-  コンテンツのタグを、``,`` で区切って指定します。未指定の場合は ``''`` となります。
+  Tags of the content, separeted by ``,``. Default value is ``''``.
 
 timezone
-  コンテンツの作成日などを表示するタイムゾーンを指定します。e.g. ``'Europe/Warsaw'``, ``'Asia/Tokyo'``
+  Timezone of the content. e.g. ``'Europe/Warsaw'``, ``'Asia/Tokyo'``
 
-  未指定の場合は、プラットフォームから取得したタイムゾーンとなります。
+  Default is taken from the platform.
 
 title
-  コンテンツのタイトルを指定します。未指定の場合は ``''`` となります。
+  Title of the content. Default value is ``''``.
 
 url
-  アーティクルのURLを指定します。
+  Url of the content. Default value is ``site_url`` + ``path_from_the_root``.
 
