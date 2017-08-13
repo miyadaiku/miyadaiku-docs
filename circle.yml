@@ -15,4 +15,6 @@ deployment:
   github:
     branch: master
     commands:
+      - git config --global user.email "autp@example.com"
+      - git config --global user.name "auto circleci"
       - ./deploy_ghp.sh

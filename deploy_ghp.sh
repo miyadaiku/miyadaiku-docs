@@ -1,8 +1,6 @@
 #!/bin/bash -e
 
 REPO="git@github.com:miyadaiku/miyadaiku.github.io.git"
-git config --global user.email "autp@example.com"
-git config --global user.name "auto circleci"
   
 rm -rf miyadaiku.github.io || true
 rm -rf doc/outputs/samples || true
