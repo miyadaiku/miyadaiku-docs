@@ -6,7 +6,8 @@
 プロパティ
 =================
 
-コンテンツには、自由にプロパティを設定できます。プロパティの設定方法は、reStructuredText・Markdownなどの、ドキュメント形式によって異なります。
+コンテンツには、自由にプロパティを設定できます。プロパティの設定方法は、reStructuredText・Markdownなどの、ドキュメント形式によって異なります。コンテンツのプロパティは、:jinja:`{{ content.link_to('./config.rst', fragment='external_prop_file') }}` でも指定できます。
+
 
 
 .. target:: standardprofs

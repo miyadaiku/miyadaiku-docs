@@ -260,6 +260,45 @@ HTMLファイルは、Jinja2テンプレートエンジンでHTMLに変換され
 
 
 
+Jupyter notebook
+----------------------------
+
+拡張子が ``.ipynb`` のファイルは、`Jupyter notebook <http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/>`_ として読み込まれます。
+
+プロパティ
++++++++++++++++
+
+Jupyter notebook のプロパティは、:jinja:`{{ content.link_to('./config.rst', fragment='external_prop_file') }}` か、Notebookのメタデータとして指定します。
+
+Jupyter notebookのメタデータ設定
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Jupyter Web画面のメニューで ``Edit`` -> ``Edit Notebook Metadata`` を選択します。
+
+   :jinja:`<img src="{{content.path_to('/img/jupyter-metadata.png')}}" width=400px>`
+
+
+2. JSONに ``miyadaiku`` キーを追加し、プロパティ値を指定します。次の例では、``title`` プロパティと ``date`` プロパティを指定しています。
+
+   .. code-block:: json
+      :caption: Sample property of Jupyter notebook:
+   
+      {
+        "kernelspec": {
+          "name": "python3",
+          "display_name": "Python 3",
+
+          "": 
+          " ommit inrelevant lines"
+          " ... "
+          " ... "
+   
+        "miyadaiku": {
+          "title": "Title of Jupyter notebook",
+          "date": "2017-01-01",
+        }
+      }
+   
 .. target:: jinja_vars
 
 テンプレート変数
