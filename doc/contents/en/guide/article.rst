@@ -251,6 +251,47 @@ HTML files are processed by Jinja2 template engine. Jinja2 tags can be used in t
 
 
 
+Jupyter notebook
+----------------------------
+
+Files with extension ".ipynb" are read as `Jupyter notebook <http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/>`_.
+
+Property
++++++++++++++++
+
+Jupyter notebook properties are specified as: jinja:`{{content.link_to('./config.rst', fragment= 'external_prop_file')}}` or as notebook metadata.
+
+
+Jupyter notebook metadata settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Select **Edit -> Edit Notebook Metadata** on the Jupyter.
+
+   :jinja:`<img src="{{content.path_to('/img/jupyter-metadata.png')}}" width=400px>`
+
+
+2. Add the ``miyadaiku`` key to JSON and specify the property value. The following example specifies the ``title`` property and ``date`` property.
+
+   .. code-block:: json
+      :caption: Sample property of Jupyter notebook:
+   
+      {
+        "kernelspec": {
+          "name": "python3",
+          "display_name": "Python 3",
+
+          "": 
+          " ommit inrelevant lines"
+          " ... "
+          " ... "
+   
+        "miyadaiku": {
+          "title": "Title of Jupyter notebook",
+          "date": "2017-01-01",
+        }
+      }
+
+
 .. target:: jinja_vars
 
 Template variables

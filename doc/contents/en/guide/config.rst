@@ -36,3 +36,19 @@ As an example, we create two config files ``/dir1/config_dir1.yml`` and ``/dir1/
 In the ``/dir1`` directories and below, the article's ``lang`` property defaults to ``ja``.
 
 Also, in the directories under ``/dir1/dir2``, the ``category`` property of the article defaults to ``tutorial``.
+
+
+.. target:: external_prop_file
+
+External property file
+------------------------
+
+For content such as articles and images, you can create an external properties file to specify properties.
+
+The external property file is a YAML file whose file name is ``destination_file_name.props.yml``. You can specify properties even for binary files such as images.
+
+Automatic generation of external property file
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
+In articles with the ``generate_metadata_file`` property set to ``true``, external property file for the article is created if the article does not have a ``date`` property.
+
