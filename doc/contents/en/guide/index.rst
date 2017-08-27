@@ -32,7 +32,7 @@ Index object has following properties, in addition to :jinja:`{{content.link_to(
 filters
    Specify search criteria for the article to be displayed as a dictionary. The keys of the dictionary are name of property to search, and the values is a list of values to be selected.
 
-   If omitted, all articles whose property `` draft`` is `` true`` are displayed.
+   If omitted, all articles whose property `` draft`` is ``false`` are displayed.
 
 
    .. code-block:: yaml
