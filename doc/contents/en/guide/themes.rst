@@ -7,7 +7,8 @@ Themes
 ======================
 
 
-The theme is Python's package which contains the contents and design of the site. Files included in the theme are used to generate outputs just like regular contents in project.
+The theme is Python's package which contains the contents and design of the site. As regular project, ``contents`` directory, ``files`` directory and ``templates`` directory can be used to store contents and templates.
+
 
 :jinja:`<img src="{{page.path_to('/img/themes.png')}}" width=500px>`
 
