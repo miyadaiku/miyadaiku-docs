@@ -20,7 +20,7 @@ Create a project
 -------------------------
 
 
-At first, create Miyadaiku project in the `` first_doc`` directory with the following command.
+At first, create Miyadaiku project to the ``first_doc`` directory with the following command.
 
 .. code-block:: console
 
@@ -47,7 +47,7 @@ Create an article
 -------------------------
 
 
-Let's create a file in reStructuredText format as the first article.
+Let's create the your first article in reStructuredText format.
 
 
 
@@ -85,7 +85,7 @@ If the command succeeds, the ``first_doc/output/hello.html`` file will be create
 Article link
 -------------------------
 
-Create the another article ``first_doc/contents/link.rst``.
+Create the another article file ``first_doc/contents/link.rst``.
 
 
 .. code-block:: rst
@@ -112,7 +112,7 @@ This command creates ``first_doc/output/link.html`` file.
 Content written in the ``:jinja:`` role is processed as ``Jinja2`` template and converted to HTML.
 
 
-The variable ``content`` is :jinja:`{{content.link_to('../guide/objects.rst', fragment='content_obj')}}` refers to the article being processed. Here we use the ``link_to(pagename)`` method to create a link to another page. The title of the landing page is used as the text of the link.
+The variable ``content`` is :jinja:`{{content.link_to('../guide/objects.rst', fragment='content_obj')}}` refers to the article being processed. We use the ``link_to(pagename)`` method to create a link to another page. The title of the landing page is used as the text of the link.
 
 
 
@@ -122,7 +122,7 @@ The variable ``content`` is :jinja:`{{content.link_to('../guide/objects.rst', fr
 Customizing templates
 -------------------------------
 
-Article files are converted to HTML with a Jinja 2 template named ``page_article.html``.
+Article files are converted to HTML with a Jinja2 template named ``page_article.html``.
 
 As an example, let's create a template ``page_article.html`` in the template directory ``first_doc/templates``.
 
@@ -170,7 +170,7 @@ Add a CSS file
 -------------------------
 
 
-Files in the ``files/`` directory of the project are copied directly to the ``outputs`` directory without converting them to HTML.
+Files in the ``files/`` directory of the project are copied to the ``outputs`` directory directly without converting them to HTML.
 
 Let's add ``copyright.css`` file to the ``first_doc/files/static/css`` directory.
 

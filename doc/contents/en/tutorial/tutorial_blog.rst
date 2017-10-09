@@ -16,7 +16,7 @@ You can download source files in this tutorial from:
 Create a project
 -------------------------
 
-At first, create Miyadaiku project in the ``first_blog`` directory with the following command.
+At first, create Miyadaiku project to the ``first_blog`` directory with the following command.
 
 .. code-block:: console
 
@@ -54,7 +54,7 @@ By default, the project configuration file ``first_blog/config.yml`` file looks 
    #   - miyadaiku.themes.sample.blog
 
 
-Modify ``themes`` in ``first_blog/config.yml`` file to use the built-in theme `` miyadaiku.themes.sample.blog``.
+Modify ``themes`` in ``first_blog/config.yml`` file to use the built-in theme ``miyadaiku.themes.sample.blog``.
 
 
 .. code-block:: yaml
@@ -97,7 +97,7 @@ Create an  article file ``first_blog/contents/first_entry.rst``.
    This is my first blog entry.
 
 
-Write properties such as blog date and category in the ``article`` role. Here, we specify the date, category, tag of the article.
+You can rite properties of the article such as blog date and category in the ``article`` role. Here, we specify the date, category, tag of the article.
 
 Create the second article ``first_blog/contents/second_entry.rst`` file.
 
