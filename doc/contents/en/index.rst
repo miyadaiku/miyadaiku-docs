@@ -7,7 +7,7 @@ About Miyadaiku
 
 Miyadaiku is a flexible static site generator for Jinja2 artists.
 
-- Contents are written in reStructuredText, Markdown, HTML and YAML. 
+- Contents are written in reStructuredText, Markdown, HTML, Jupyter Notebook and YAML. 
 
 - Jinja2 templates to create HTML pages.
 

@@ -8,7 +8,7 @@ About Miyadaiku
 Miyadaiku は、 Jinja2職人のための静的サイトジェネレータです。
 
 
-- コンテンツを reStructuredText, Markdown, HTML, YAML で記述できます。
+- コンテンツを reStructuredText, Markdown, HTML, Jupyter Notebook, YAML で記述できます。
 
 - Jinja2 テンプレートでコンテンツからHTMLを作成します。
 
