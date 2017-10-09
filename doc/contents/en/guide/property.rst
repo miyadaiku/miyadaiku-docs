@@ -6,7 +6,7 @@
 Property
 =================
 
-Contents has property values to keep extra values. The syntax to provide properties differ to document format such as reStructuredText, Markdown.
+Contents has property values to provide meta data. The syntax to provide properties differ to document format such as reStructuredText, Markdown.
 
 
 .. target:: standardprofs
