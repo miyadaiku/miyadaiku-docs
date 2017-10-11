@@ -77,7 +77,7 @@ Example
 
    .. code-block:: rst
 
-      Image with a link: :jinja:`{{ macro.image('/img/img.png', link='http://example.com') }}`
+      Image with a link: :jinja:`{{ macro.image(page.load('/img/img.png'), link='http://example.com') }}`
 
 
 macro.google_analytics()
