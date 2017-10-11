@@ -75,7 +75,7 @@ macro.image(src, alt=None, _class=None, style=None, width=None, height=None, lin
 
    .. code-block:: rst
 
-      リンク付き画像ファイル: :jinja:`{{ macro.image('/img/img.png', link='http://example.com') }}`
+      リンク付き画像ファイル: :jinja:`{{ macro.image(page.load('/img/img.png'), link='http://example.com') }}`
 
 
 macro.google_analytics()
