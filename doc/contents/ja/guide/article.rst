@@ -311,7 +311,7 @@ content
   現在のアーティクルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
 
 page
-  アーティクルを呼び出しているコンテンツの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
+  現在生成しているHTMLファイルの :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` を参照します。
 
 contents
    プロジェクトの  :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}`  を参照します。
@@ -320,7 +320,7 @@ contents
 content と page
 +++++++++++++++++++++++
 
-アーティクルをHTMLに変換する時、アーティクル内のJinja2テンプレートでは、変数 ``content`` と ``page`` はどちらも同じ、現在処理中のアーティクルオブジェクトを参照します。この場合、 ``content`` と ``page`` が参照しているのは同じオブジェクトです。
+アーティクルをHTMLに変換する時、通常 Jinja2テンプレートの 変数 ``content`` と ``page`` はどちらも同じ、現在処理中のアーティクルオブジェクトを参照します。この場合、 ``content`` と ``page`` が参照しているのは同じオブジェクトです。
 
 しかし、アーティクルが、文章中で別のアーティクルを読み込んでいる場合、読み込まれているアーティクル内のJinja2テンプレートでは、読み込み元のアーティクルは変数 ``page``、読み込まれているアーティクル自身は 変数 ``content`` で参照できます。
 

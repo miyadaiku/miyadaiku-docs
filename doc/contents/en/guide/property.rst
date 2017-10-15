@@ -55,19 +55,21 @@ ext
    Extension of the article's output file name. Default value is ``'.html'``.
 
 filename
-   Specify the output file name. If unspecified, file name is generated with ``filename_templ``.
+   Specify the output file name. If unspecified, file name is generated with ``filename_templ`` property.
 
    ``Filename`` can be a relative path. Ex) ``subdir/article1.html``, ``../subdir/article1.html``
 
 filename_templ
-   Specify the file name of the output HTML file with Jina 2 template. Default value is ``'{{content.stem}}.{{Content.ext}}'``. In the template you can reference :jinja:`{{content.link (fragment='jinja_vars')}}`.
+   Specify the file name of the output HTML file with Jina 2 template. Default value is ``'{{content.stem}}.{{Content.ext}}'``. In the template you can reference :jinja:`{{content.link(fragment='jinja_vars')}}`.
 
-
+generate_metadata_file
+   ``true`` if :jinja:`{{ content.link_to('config.rst', fragment='external_prop_file') }}` is produced if the article doesn't has ``date`` property. Default value is ``false``.
+   
 header
-   Gets a list of the header elements of an article. The elements of the list are tuples of `(header id, header element name, header text)`. 
+   Returns a list of the header elements of an article. The items of the list are tuples of `(header id, header element name, header text)`. 
 
 html
-   Get article in HTML.
+   Returns an article in HTML.
 
 
 imports
@@ -92,7 +94,7 @@ site_url
   Base URL of the site. Defautl value is ``'http://localhost:8888'``.
 
 stem
-  Specify the output file name without extension of the article. Default value is same as file name name without extension of article.
+  Specify the output file name without extension of the article. Default value is file name of source article  without extension.
 
 tags
   Tags of the content, separeted by ``,``. Default value is ``''``.

@@ -6,16 +6,14 @@
 Snippet
 ======================
 
-As article object, **Snippet objects** are created from source files in the ``contents`` directory. But unlike article, snippet does not output HTML file. 
-
-Snippet is not used to create an independent HTML page, but be embedded in the another article objects.
+As article object, **Snippet objects** are created from source files in the ``contents`` directory. But unlike article, snippet does not produce HTML file. Snippets are intended to be embedded in the another article objects.
 
 
 
 Create snipprt
 -----------------------
 
-As with articles, create snippets with reStructuredText / Markdown / HTML etc., with a ``type`` property set to ``snippet``.
+As with articles, snippets are created with reStructuredText / Markdown / HTML etc., with a ``type`` property set to ``snippet``.
 
 
 - Snippet in reStructuredText

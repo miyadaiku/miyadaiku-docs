@@ -6,10 +6,10 @@
 Config
 ======================
 
-The config file is a YAML file that specifies settings of the entire Miyadaiku project and default values ​​of document properties.
+The config file is a YAML file that specifies default values ​​of document properties.
 
 
-The default values ​​of propertieof contents are specified in the `` config.yml`` file in the root directory.
+The default values ​​of properts are specified in the ``config.yml`` file in the root directory.
 
 
 You can also create a YAML file in a subdirectory within the ``contents`` directory and specify a default value for each directory. Files that satisfy the following conditions in the ``contents`` directory are read as config files.
@@ -43,12 +43,13 @@ Also, in the directories under ``/dir1/dir2``, the ``category`` property of the 
 External property file
 ------------------------
 
-For content such as articles and images, you can create an external properties file to specify properties.
+To specify properties For content such as articles and images, you can create an external properties file .
 
 The external property file is a YAML file whose file name is ``destination_file_name.props.yml``. You can specify properties even for binary files such as images.
 
-Automatic generation of external property file
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
 
-In articles with the ``generate_metadata_file`` property set to ``true``, external property file for the article is created if the article does not have a ``date`` property.
+Automatic generation of external property file
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In articles with the ``generate_metadata_file`` property set to ``true``, external property file for the article is produced if the article does not have a ``date`` property.
 

@@ -12,14 +12,14 @@ Object reference
 Content object
 --------------------------
 
-In Miyadaiku, the files in the ``contents`` directory and the ``files`` directory are loaded as :jinja:`{{ content.link(fragment='content_obj') }}`.  This is true not only for articles and indexes in the ``contents`` directory, but files that are not processed by Miyadaiku such as CSS and image files..
+In Miyadaiku, the files in the ``contents`` directory and the ``files`` directory are loaded as :jinja:`{{ content.link(fragment='content_obj') }}`.
 
 
-Content object provides attributes listed :jinja:`{{ content.link_to('./property.rst') }}` や :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}`, and followinng methods.
+Content object provides attributes listed :jinja:`{{ content.link_to('./property.rst') }}` or :jinja:`{{ content.link_to('./index.rst', fragment='propertyofindex') }}`, and followinng methods.
 
 
 load(target)
-  Load the content object of the path specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path. 
+  Load the content object specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path. 
 
 
 
@@ -32,15 +32,15 @@ load(target)
 
 
 path(fragment=None, abs_path=False, values=None, npage=None):
-  Get the path from the current page. ``target`` can be absolute path which starts with ``'/'``, or relative path.
+  Get the path from the current page to the content.. 
 
-  ``fragment`` specifies the element id in the page.
+  ``fragment`` specifies the element id in the content.
 
   If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
-  ``values`` specifies the value of the group on the grouped index page. It can be specified only on the index page.
+  ``values`` specifies the value of the group on the grouped index page. It can be specified if content is the index page.
 
-  ``npage`` specifies the landing page number of the index page. It can be specified only on the index page.
+  ``npage`` specifies the landing page number of the index page. It can be specified if content is the index page.
 
   .. code-block:: jinja
      :caption: Sample of content.path() method
@@ -52,7 +52,7 @@ path(fragment=None, abs_path=False, values=None, npage=None):
 path_to(target, fragment=None, abs_path=False, values=None, npage=None):
   Get the path to the content object specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path. 
 
-  ``fragment`` specifies the element id in the page.
+  ``fragment`` specifies the element id in the target.
 
   If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
@@ -65,15 +65,15 @@ path_to(target, fragment=None, abs_path=False, values=None, npage=None):
      :caption: Sample of content.path_to() method
 
      <a href='{{ page.path_to('../page1.rst') }}'>
-        親ディレクトリのpage1.html</a>
+        Link to the page1.html in the parent directory</a>
 
 
 link(text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=None):
-  Get the ``<a>`` element to link to the object.  
+  Get the ``<a>`` element to link to the content.
 
   ``text`` specifies the link text in the ``<a>`` element. If omitted, it is the text of the header element specified by ``fragment``, or the title of the object.
 
-  ``fragment`` specifies the element id in the page.
+  ``fragment`` specifies the element id in the content.
 
   If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
@@ -92,11 +92,11 @@ link(text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=No
 
 
 link_to(target, text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=None):
-  Get the ``<a>`` element to link to the object specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path.
+  Get the ``<a>`` element to link to the content specified by ``target``. ``target`` can be absolute path which starts with ``'/'``, or relative path.
 
   ``text`` specifies the link text in the ``<a>`` element. If omitted, it is the text of the header element specified by ``fragment``, or the title of the object.
 
-  ``fragment`` specifies the element id in the page.
+  ``fragment`` specifies the element id in the target content.
 
   If ``abs_path`` is ``True``, it returns the complete URL starting with the protocol.
 
@@ -121,13 +121,13 @@ Contents collection
 --------------------------
 
 
-Content collection is the object that manages all contents of Miyadaiku project.
+Content collection is the object that manages all contents in the Miyadaiku project.
 
 
 get_content(key, base=None)
-  Load the content object of the path specified by ``key``. ``key`` can be absolute path which starts with ``'/'``, or relative path. 
+  Load the content object specified by ``key``. ``key`` can be absolute path which starts with ``'/'``, or relative path. 
 
-  If ``key`` is relative path,  specify ``base`` as the originating content object.
+  If ``key`` is relative path,  ``base`` should be the current content object.
 
   .. code-block:: jinja
      :caption: Sample of contents.get_content() method
@@ -140,15 +140,14 @@ get_content(key, base=None)
 get_contents(subdirs=None, base=None, filters=None)
    Search :jinja:`{{content.link (fragment = 'content_obj')}}` from the collection on the specified condition.
 
-
-   If you want to retrieve only the content contained in a specific directory, specify a list of directory names in ``subdirs``. The directory name is specified as an absolute path starting with ``/`` or a relative path. If specified as a relative path, specify ``base`` as the originating content object.
+   If you want to search in specific directories, specify a list of directory names in ``subdirs``. The directory name is specified as an absolute path starting with ``/`` or a relative path. If specified as a relative path, ``base`` should be the current content object.
 
    .. code-block:: jinja
       :caption: Search for articles in the ./myfolder 
 
       {% set items = contents.get_contents(subdirs=['./myfolder'], base=content) %}
 
-   ``Filtes`` specifies search criteria for content. Specify a dictionary whose key is the document property name to be searched and whose value is the list of property values to be displayed. By default, ``get_content()`` searches article object with ``draft`` is ``false``.
+   ``filters`` specifies search criteria for content. Specify a dictionary whose key is the document property name and whose value is the list of property values to match. By default, ``get_content()`` searches article object with ``draft`` is ``false``.
 
 
    .. code-block:: jinja
@@ -160,7 +159,7 @@ get_contents(subdirs=None, base=None, filters=None)
 
 
 group_items(group, subdirs=None, base=None, filters=None):
-   Search :jinja:`{{content.link (fragment = 'content_obj')}}` from the collection on the specified condition like ``contents.get_contents()``. Search results are classified by the value of the property name specified by ``group``.
+   Search :jinja:`{{content.link (fragment = 'content_obj')}}` from the collection on the specified condition as ``contents.get_contents()``. Search results are classified by the value of the property name specified by ``group``.
 
 
    Return value is list of tuple of property value and list of articles.
@@ -172,7 +171,7 @@ group_items(group, subdirs=None, base=None, filters=None):
        (['property value 2'], [article3, article4, article5]),] 
 
 
-   Usage of ``subdirs``, ``base``, ``filters`` is the same as ``contents.get_contents ()``.
+   Usage of ``subdirs``, ``base``, ``filters`` are the same as ``contents.get_contents ()``.
 
    .. code-block:: jinja
       :caption: Group articles in '/dir1' directory with 'tags' property

@@ -36,18 +36,18 @@ The themes used in the project are specified in ``themes`` of the project config
        - miyadaiku.themes.fontawesome
 
 
-If the theme uses an another theme, that theme is recursively loaded. 
+If the theme uses another themes, these themes are loaded recursively. 
 
-Miyadaiku's built-in theme ``miyadaiku.themes.base`` is always loaded even if it is not specified in ``themes``.
+The built-in theme ``miyadaiku.themes.base`` is always loaded even if it is not specified in ``themes``.
 
 
 Templates
 -------------------
 
 
-Templates included in themes can also be used like templates in the project.
+Templates in themes can also be used just like as templates in the project.
 
-If you specify a template name in the article's template name, Miyadaiku search the project's ``templates`` directory, then the template directory from the theme in use. See  :jinja:`{{content.link_to ("./template.rst", fragment ="template_names")}}` for details.
+On searching Jinja2 templates, Miyadaiku searches the project's ``templates`` directory at first, then the template directory of themes in use. See  :jinja:`{{content.link_to ("./template.rst", fragment ="template_names")}}` for details.
 
 
 
@@ -55,7 +55,7 @@ If you specify a template name in the article's template name, Miyadaiku search 
 load_package()
 -------------------------
 
-If there is a `` load_package (site) `` in the theme package, it will be called at startup. If you need to initialize the data within the theme, do it here.
+If there is a ``load_package(site)`` function in the theme package, it will be called at startup. If you need to initialize the data within the theme, do it here.
 
 
 .. code-block:: python

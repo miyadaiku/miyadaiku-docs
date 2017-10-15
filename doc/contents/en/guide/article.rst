@@ -31,9 +31,9 @@ Files with the extension ``.rst`` are converted to HTML by the `reStructuredText
    My first article in reStructuredText.
 
 
-As in this example above, if a header is described at the beginning of the document, that header is the document `title` property. The `title` property can also be specified with the` `article`` directive.
+As in this example above, a header at the beginning of the document is used as the `title` property of the document. The `title` property can also be specified with the` `article` directive.
 
-Miyadaiku provides `directive <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_ and `role <http://docutils.sourceforge.net/docs/ref/rst /roles.html>`_ for rst to set properties,  to embed Jinja2 templates, etc.
+Miyadaiku provides `directives <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_ and `roles <http://docutils.sourceforge.net/docs/ref/rst /roles.html>`_ for rst to specifying propertie, to embedding Jinja2 templates, etc.
 
 
 
@@ -58,9 +58,9 @@ The ``article`` directive specifies the properties of the article.
    This is a miyadaiku article in reST.
 
 
-In this example, we specify ``date``, ``title``, ``category``, ``tags`` as document properties.
+In this example, ``date``, ``title``, ``category``, ``tags`` properties are specified.
 
-You can specify any item as a property. For property settings, see :jinja:`{{ content.link_to('./property.rst') }}`.
+You can specify any item as a property. For property, see :jinja:`{{ content.link_to('./property.rst') }}` for detail.
 
 
 .. target:: jinjadirective
@@ -108,7 +108,7 @@ The string specified in the ``:jinja:`` role is converted to HTML by the Jinja2 
 Code-block directive
 +++++++++++++++++++++++++++++
 
-Source code in the `` code-block`` directive is syntax highlighted by `Pygments <http://pygments.org/>`_. You can specify a language in  `` .. code-block :: lang`` form.
+Source code in the ``code-block`` directive is syntax highlighted by `Pygments <http://pygments.org/>`_. You can specify a language as an argument. e.g.  ``.. code-block :: lang``.
 
 
 .. code-block:: rst
@@ -126,7 +126,7 @@ Source code in the `` code-block`` directive is syntax highlighted by `Pygments 
 Target directive
 +++++++++++++++++++++++
 
-Embed the ``<div>`` element with ``id`` to be specified as the target of the link.
+Creates the ``<div>`` element with ``id`` attribute to be specified as the target of the link.
 
 .. code-block:: rst
    :caption: Sample of target role:
@@ -174,13 +174,13 @@ You can specify the property name and property value at the beginning of the doc
   
 
 
-Property values are specified one per line, separating property names and value with ``:``.
+Property values are specified one per line, separating property name and value with ``:``.
 
 
 Jinja2 template
 ++++++++++++++++++++++++++
 
-Jinja2 templated can be written in the form **:jinja:`Jinja 2 tag`**.
+Jinja2 templated can be written in the form **:jinja:`Jinja 2 tag`**. `Jinja2 tag` can contain newlines.
 
 .. code-block:: md
    :caption: Sample of Jinja role in Markdown:
@@ -194,7 +194,8 @@ Jinja2 templated can be written in the form **:jinja:`Jinja 2 tag`**.
 Target
 +++++++++++++++++++++++
 
-You can generate ``<div>`` element with ``id`` with *\:target:`id_of_div`*. The ``div`` could be used as target of the link.
+**\:target:`id_of_div`** creates the ``<div>`` element with ``id`` attribute to be specified as the target of the link.
+
 
 .. code-block:: md
    :caption: Sample of target :
@@ -235,7 +236,7 @@ You can specify the property name and property value at the beginning of the doc
    <p>This is a HTML file</p>
 
 
-Property values are specified one per line, separating property names and value with ``:``.
+Property values are specified one per line, separating property name and value with ``:``.
 
 
 Jinja2 template
@@ -259,7 +260,7 @@ Files with extension ".ipynb" are read as `Jupyter notebook <http://jupyter-note
 Property
 +++++++++++++++
 
-Jupyter notebook properties are specified as: jinja:`{{content.link_to('./config.rst', fragment= 'external_prop_file')}}` or as notebook metadata.
+Jupyter notebook properties are specified as :jinja:`{{content.link_to('./config.rst', fragment= 'external_prop_file')}}` or as notebook metadata.
 
 
 Jupyter notebook metadata settings
@@ -298,13 +299,13 @@ Template variables
 -----------------------------------
 
 
-Jinja templates in the articles, following variables can be used.
+In the Jinja2 templates, following variables can be used to refer articles.
 
 content
    Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of current article.
 
 page
-   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the content calling the article.
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the article producing current HTML page.
 
 contents
    Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='contents_collection')}}` of the project.
@@ -315,9 +316,9 @@ contents
 Content and page
 +++++++++++++++++++++++
 
-When converting an article to HTML, in the Jinja 2 template in the article, the variables ``content`` and ``page`` both refer to the same article object currently being processed. In this case ``content`` and ``page`` refer to the same object.
+When converting an article to HTML, in the Jinja 2 template, the variables ``content`` and ``page`` both refer to the same article object currently being processed. In this case ``content`` and ``page`` refer to the same object.
 
-However, if the article is loading another article, in the Jinja 2 template in the article being loaded, the article is referenced by the variable ``content``, and the article loading another article is referred by variable ``page``.
+However, if the article is loaded by another article, variable ``page`` refers the article of the current HTML page, and the variable ``content`` refers the article being loaded.
 
 
 .. code-block:: jinja

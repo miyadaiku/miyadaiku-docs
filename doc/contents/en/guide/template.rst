@@ -6,7 +6,7 @@
 Template
 ======================
 
-Content files in the ``contents`` directory are converted with Jinja2 template file. The template is created in the ``templates`` directory of the project directory.
+Content files in the ``contents`` directory are converted with Jinja2 template file. The templates are created in the ``templates`` directory of the project directory.
 
 
 Aritcle template
@@ -21,13 +21,13 @@ Template variable
 
 Within the template, you can refer to the following variables.
 
+
+
 page
-
-   Refer to :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the article to be processed. Most article templates get the HTML to render from the ``html`` property of the ``page`` variable.
-
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the article producing current HTML page. Most article templates get the HTML to render from the ``html`` property of the ``page`` variable.
 
 contents
-   Refer to :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` of the project.
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='contents_collection')}}` of the project.
 
 
 .. code-block:: jinja
@@ -51,9 +51,9 @@ Index template
 ------------------------------
 
 
-For an index that outputs a list of articles, the generated HTML file may be multiple pages. You can specify different templates for the first page, and the second and subsequent pages.
+For an index that produces list of articles, the generated HTML file may be multiple pages. You can specify different templates for the first page, and the second and subsequent pages.
 
-The template of the first page is specified by the ``indexpage_template`` property. Default template name is ``'page_index.html'``.  The template pf the second and subsequent pages are specified with the ``indexpage_template2`` property. Default template name is ``'page_index.html'``.
+The template of the first page is specified by the ``indexpage_template`` property. Default template name is ``'page_index.html'``.  The template df the second and subsequent pages are specified with the ``indexpage_template2`` property. Default template name is ``'page_index.html'``.
 
 
 Template variables
@@ -62,7 +62,8 @@ Template variables
 Within the template, you can refer to the following variables.
 
 page
-   Refer to :jinja:`{{ content.link_to('./objects.rst', fragment='content_obj') }}` of the index to be processed.
+   Refer to the :jinja:`{{content.link_to('./objects.rst', fragment='content_obj')}}` of the index producing current HTML page.
+
 
 contents
    Refer to :jinja:`{{ content.link_to('./objects.rst', fragment='contents_collection') }}` of the project.
@@ -131,8 +132,7 @@ Miyadaiku searches Jinja2 template in the following order.
 
 2. The ``templates`` directory of the package specified as the theme. When multiple themes are specified, search is performed in the specified order.
 
-
-However, if ``!`` Is included in the template name, it does not perform the above search, searches the ``templates`` directory of the package with the package name on the left side of ``!``.
+However, if ``!`` is included in the template name, templates are obtained from the ``templates`` directory of the package which the package name is the left side of ``!``.
 
 e.g.  ``{% import 'miyadaiku.themes.sample.blog!Test.html' %}`` imports ``templates/test.html`` in the ``miyadaiku.themes.sample.blog`` package.
 

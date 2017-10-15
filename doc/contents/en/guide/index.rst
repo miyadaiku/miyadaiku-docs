@@ -6,9 +6,9 @@
 Index
 ======================
 
-Web sites like blog require index pages, which is a list of articles in the site. Miyadaiku creates index pages from **index object**. 
+Web sites like blog sites require index pages, which is a list of articles in the site. Miyadaiku creates index pages from **index object**. 
 
-Index objects are created by YAML file which type is ``index``.  
+Index objects are produced by YAML file which type is ``index``.  
 
 
 .. code-block:: yaml
@@ -19,7 +19,7 @@ Index objects are created by YAML file which type is ``index``.
    filters:      # List articles where lang is 'ja'
      lang: [ja] 
 
-Index object may output multiple pages of HTML file if the article to be displayed does not fit on one page.
+Index object may output multiple pages of HTML file if the articles to be displayed does not fit on one page.
 
 .. target:: propertyofindex
 
@@ -30,13 +30,13 @@ Index object has following properties, in addition to :jinja:`{{content.link_to(
 
 
 filters
-   Specify search criteria for the article to be displayed as a dictionary. The keys of the dictionary are name of property to search, and the values is a list of values to be selected.
+   Specify search criteria for the article to match as a dictionary. The keys of the dictionary are name of property to search, and the values is a list of values to match.
 
-   If omitted, all articles whose property `` draft`` is ``false`` are displayed.
+   If omitted, all articles whose property ``draft`` is ``false`` are displayed.
 
 
    .. code-block:: yaml
-      :caption: Display only Japanese articles with category 'news' or 'event'
+      :caption: Display Japanese articles with category 'news' or 'event'
 
       type: index   # Set the type of YAML file as index
       filters:      
@@ -94,21 +94,21 @@ type
 Grouped index
 -------------------------
 
-To create index grouped by property value, specify the name of the property to classify as ``groupby`` property of the index object.
+To produce index grouped by property value, specify the name of the property to classify as ``groupby`` property of the index object.
 
 
 .. code-block:: yaml
    :caption: contents/index_category.yml
 
    type: index        # Set the type of YAML file as index
-   groupby: category  # Create index grouped by category name
+   groupby: category  # Produce index grouped by category name
 
 
-Grouped index creates a series of index page for each value of the specified property. In this example, if there are articles with category "catA" and articles with "catB", the index creates two groups of subsequent pages.
+Grouped index produces a series of index page for each value of the specified property. In this example, if there are articles with category "catA" and articles with "catB", the index produces two groups of subsequent pages as following.
 
-- ``index_category_catA.html``、``index_category_catA_2.html``、``index_category_catA_3.html`` ... 
+- ``index_category_catA.html``, ``index_category_catA_2.html``, ``index_category_catA_3.html`` ... 
 
-- ``index_category_catB.html``、``index_category_catB_2.html``、``index_category_catB_3.html`` ... 
+- ``index_category_catB.html``, 、``index_category_catB_2.html``, ``index_category_catB_3.html`` ... 
 
 
 
@@ -135,7 +135,7 @@ indexpage_group_filename_templ
   The following variables can be used in the template.
 
   cur_page
-    Page number
+    Current page number
 
   groupby
     Name of the property that classifies the article.

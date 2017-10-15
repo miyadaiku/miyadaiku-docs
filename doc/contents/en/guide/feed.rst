@@ -6,7 +6,7 @@
 Feed
 ======================
 
-The Atom / RSS feed is created with the **feed object**. Feed objects are defined in the YAML file in the `` contents`` directory.
+The Atom / RSS feed is produced with the **feed object**. Feed objects are defined in the YAML file in the `` contents`` directory.
 
 
 .. code-block:: yaml
@@ -17,11 +17,11 @@ The Atom / RSS feed is created with the **feed object**. Feed objects are define
    feed_num_articles: 10 
 
 
-In addition to :jinja:`{{ content.link_to ('./property.rst', fragment='standardprofs') }}`, you can set the following properties for the feed object.
+In addition to :jinja:`{{ content.link_to('./property.rst', fragment='standardprofs') }}`, you can set the following properties for the feed object.
 
 
 type
-  Specify the type of YAML file. For index pages, specify ``feed``.
+  Specify the type of YAML file. For feed objects, specify ``feed``.
 
 feedtype
   Specify the feed type as ``atom`` or ``rss``. Default value is ``atom``.
@@ -33,7 +33,7 @@ filename
   File name of feed file. Default value is name of the YAML file with the extension is ``.atom`` or ``.html``.
 
 filters
-  Specify search conditions for articles to be registered in the feed. Specify a dictionary whose value is the document property name to be searched and whose value is the list of property values ​​to be displayed.
+  Specify search conditions for articles to be registered in the feed. Specify a dictionary whose key is the document property name to be searched and whose value is the list of property values ​​to be displayed.
 
   If omitted, all articles whose property ``draft`` is ``true`` are displayed.
 

@@ -19,7 +19,7 @@ Atom/RSSフィードは、**フィードオブジェクト** で作成します�
 フィードオブジェクトには、:jinja:`{{ content.link_to('./property.rst', fragment='standardprofs') }}` に加え、以下のプロパティを設定できます。
 
 type
-  YAMLファイルのタイプを指定します。インデックスページの場合は ``feed`` を指定します。
+  YAMLファイルのタイプを指定します。フィードオブジェクトの場合は ``feed`` を指定します。
 
 feedtype
   フィードの種類を、``atom`` または ``rss`` で指定します。未指定の場合は ``atom`` となります。
