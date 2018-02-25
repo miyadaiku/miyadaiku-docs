@@ -31,6 +31,20 @@ article_template
 cagegory
   コンテンツのカテゴリを指定します。未指定の場合は ``''`` となります。
 
+canonical_url
+  コンテンツへの、公式なURLを指定します。
+
+  e.g.
+
+  - ``http://www.example.com/a/b/c``
+
+  - ``/index.html``
+
+  - ``/``
+
+  - ``anothername.html``
+
+
 charset
   生成されるHTMLの ``charset`` を指定します。未指定の場合は ``'utf-8'`` となります。
 

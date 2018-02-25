@@ -32,6 +32,19 @@ article_template
 cagegory
   Category of content. Default value is ``''``.
 
+canonical_url
+  Canonical URL of the content.
+
+  e.g.
+
+  - ``http://www.example.com/a/b/c``
+
+  - ``/index.html``
+
+  - ``/``
+
+  - ``anothername.html``
+
 charset
   Character set of output HTML. Default values is ``'utf-8'``.
 
