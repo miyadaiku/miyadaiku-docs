@@ -70,7 +70,7 @@ path_to(target, fragment=None, abs_path=False, values=None, npage=None):
 link(text=None, fragment=None, abs_path=False, attrs=None, values=None, npage=None):
   現在のページからリンクする<a>要素を取得します。
 
-  ``text`` は、リンク文字列を指定します。省略時は、``fragment`` で指定するヘッダ要素のテキスト、または``target`` のタイトルとなります。
+  ``text`` は、リンク文字列を指定します。省略時は、``fragment`` で指定するヘッダ要素のテキスト、またはオブジェクトのタイトルとなります。
 
   ``fragment`` は、リンク先ページ内の要素idを指定します。
 
