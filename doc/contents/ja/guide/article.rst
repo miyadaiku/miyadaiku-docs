@@ -201,12 +201,12 @@ Markdownでも、reStructuredTextと同様、*\:jinja:` Jinja2タグ `* の形�
 target
 +++++++++++++++++++++++
 
-*\:target:`id_of_div`* の形式で記述し、HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして指定できるようにします。次の例では、``<div>`` 要素の ``id`` として、``id_of_div`` を指定します。
+*.. target:: id_of_div* の形式で記述し、HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして指定できるようにします。次の例では、``<div>`` 要素の ``id`` として、``id_of_this_section1`` を指定します。
 
 .. code-block:: md
    :caption: Sample of target :
 
-   :target:`id_of_this_section1`
+   .. target:: id_of_this_section1
 
    # Section I
 

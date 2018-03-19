@@ -194,13 +194,13 @@ Jinja2 templated can be written in the form **:jinja:`Jinja 2 tag`**. `Jinja2 ta
 Target
 +++++++++++++++++++++++
 
-**\:target:`id_of_div`** creates the ``<div>`` element with ``id`` attribute to be specified as the target of the link.
+**.. target:: id_of_div** creates ``<div>`` element with ``id`` attribute to be specified as the target of the link.
 
 
 .. code-block:: md
    :caption: Sample of target :
 
-   :target:`id_of_this_section1`
+   .. target:: id_of_this_section1
 
    # Section I
 

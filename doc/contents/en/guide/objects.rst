@@ -147,13 +147,13 @@ get_contents(subdirs=None, base=None, filters=None)
 
       {% set items = contents.get_contents(subdirs=['./myfolder'], base=content) %}
 
-   ``filters`` specifies search criteria for content. Specify a dictionary whose key is the document property name and whose value is the list of property values to match. By default, ``get_content()`` searches article object with ``draft`` is ``false``.
+   ``filters`` specifies search criteria for content. Specify a dictionary whose key is the document property name and whose value is the list of property values to match. By default, ``get_content()`` searches ``article`` objects with ``draft`` is ``false``.
 
 
    .. code-block:: jinja
       :caption: Search articles with category 'news' or 'event'
 
-      {% set items = contents.get_contents(filters={'type':['artile'], 'category': ['news', 'event']}) %}
+      {% set items = contents.get_contents(filters={'type':['artile'], 'draft': [false], ''category': ['news', 'event']}) %}
 
 
 
