@@ -156,7 +156,7 @@ get_contents(subdirs=None, base=None, filters=None)
    .. code-block:: jinja
       :caption: カテゴリが 'news' または 'event' のアーティクルを検索
 
-      {% set items = contents.get_contents(filters={'type':['artile'], 'draft': [false], 'category': ['news', 'event']}) %}
+      {% set items = contents.get_contents(filters={'type':['article'], 'draft': [false], 'category': ['news', 'event']}) %}
 
 
 
