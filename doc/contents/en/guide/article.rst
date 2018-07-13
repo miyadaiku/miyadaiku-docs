@@ -141,7 +141,7 @@ Creates the ``<div>`` element with ``id`` attribute to be specified as the targe
    Section II
    ------------------
 
-   Link to :jinja:`content.link(fragment='id_of_this_section1')`.
+   Link to :jinja:`{{ content.link(fragment='id_of_this_section1') }}`.
 
 
 
