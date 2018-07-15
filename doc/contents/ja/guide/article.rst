@@ -140,7 +140,7 @@ HTMLに ``<div>`` 要素を埋め込み、リンクのターゲットとして�
    Section II
    ------------------
 
-   Link to :jinja:`content.link_to(content, fragment='id_of_this_section1')`.
+   Link to :jinja:`{{ content.link_to(content, fragment='id_of_this_section1') }}`.
 
 
 
