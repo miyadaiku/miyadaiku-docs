@@ -181,7 +181,7 @@ miyadaiku.themes.ipynb
 
       {% block head %}
         {{ super() }}
-        {{ ipynb.load_css(page) }}
+        {{ ipynb.set_header() }}
       {% endblock head %}
 
 
