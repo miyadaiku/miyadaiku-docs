@@ -19,9 +19,7 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
             - ".venv"
-      - run:
-          command:
-            git config --global user.email "auto@example.com"
-            git config --global user.name "auto circleci"
-            pipenv shell
-            ./deploy_ghp.sh
+      - run: git config --global user.email "auto@example.com"
+      - run: git config --global user.name "auto circleci"
+      - run: pipenv shell
+      - run: ./deploy_ghp.sh
