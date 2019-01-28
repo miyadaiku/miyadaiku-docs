@@ -71,7 +71,7 @@ filename
   ``filename`` には、相対ディレクトリ名も指定できます。ex) ``subdir/article1.html``,  ``../subdir/article1.html``
 
 filename_templ
-  出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、``'{{ content.stem }}.{{ content.ext }}'`` となります。テンプレートでは、 :jinja:`{{ content.link(fragment='jinja_vars') }}` を参照できます。
+  出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、``'{{ content.stem }}.{{ content.ext }}'`` となります。テンプレートでは、 :jinja:`{{ content.link_to('./article.rst', fragment='jinja_vars') }}` を参照できます。
 
 generate_metadata_file
    ``true`` の場合は、アーティクルに ``date`` プロパティが指定されていなければ自動的に :jinja:`{{ content.link_to('config.rst', fragment='external_prop_file') }}` を生成します。未指定の場合は ``false`` となります。

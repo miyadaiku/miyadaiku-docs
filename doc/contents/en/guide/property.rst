@@ -73,7 +73,7 @@ filename
    ``Filename`` can be a relative path. Ex) ``subdir/article1.html``, ``../subdir/article1.html``
 
 filename_templ
-   Specify the file name of the output HTML file with Jina 2 template. Default value is ``'{{content.stem}}.{{Content.ext}}'``. In the template you can reference :jinja:`{{content.link(fragment='jinja_vars')}}`.
+   Specify the file name of the output HTML file with Jina 2 template. Default value is ``'{{content.stem}}.{{Content.ext}}'``. In the template you can use :jinja:`{{content.link_to('./article.rst', fragment='jinja_vars')}}`.
 
 generate_metadata_file
    ``true`` if :jinja:`{{ content.link_to('config.rst', fragment='external_prop_file') }}` is produced if the article doesn't has ``date`` property. Default value is ``false``.
