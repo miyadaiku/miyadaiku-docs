@@ -20,7 +20,7 @@ miyadaiku.themes.base
 ---------------------------
 
 
-``miyadaiku.themes.base`` provides default HTML templates for projects. This theme is always included to the project without explicit  declaration in the ``config.py`` file.
+``miyadaiku.themes.base`` provides default HTML templates for projects. This theme is always included to the project without explicit declaration in the ``config.yml`` file.
 
 Templates
 ~~~~~~~~~~~~~~~~~~~
