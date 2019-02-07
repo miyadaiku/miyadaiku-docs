@@ -12,6 +12,11 @@ You can download source files in this tutorial from:
     https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog
 
 
+You can view the created site at:
+
+    https://miyadaiku.github.io/samples/first_blog/index.html
+
+
 
 Create a project
 -------------------------

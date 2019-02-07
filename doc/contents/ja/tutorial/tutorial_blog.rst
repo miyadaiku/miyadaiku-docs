@@ -13,6 +13,12 @@ Blogサイトの作成
 
 からダウンロードできます。
 
+作成したサイトは、
+
+    https://miyadaiku.github.io/samples/first_blog/index.html
+
+で参照できます。
+
 
 プロジェクトの作成
 -------------------------

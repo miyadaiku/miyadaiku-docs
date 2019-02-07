@@ -13,6 +13,13 @@
 
 からダウンロードできます。
 
+作成したサイトは、
+
+   https://miyadaiku.github.io/samples/first_doc/hello.html
+
+で参照できます。
+
+
 
 .. target:: create_project
 

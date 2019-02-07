@@ -1,0 +1,17 @@
+
+{% extends 'miyadaiku.themes.sample.blog!page_index.html' %}
+
+
+{% block rightcol %}
+
+  Recent entries:
+    
+  <ul>
+  {% for content in (contents.get_contents() | sort(reverse=True, attribute='date'))[:3]   %}
+
+    <li> {{ page.link_to(content)}} </li>
+  {% endfor %}
+  </ul>
+
+  {{ super() }}
+{% endblock rightcol %}
