@@ -61,7 +61,7 @@ Blogサイトの作成
    #   - miyadaiku.themes.sample.blog
 
 
-``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ ``miyadaiku.themes.sample.blog`` を使用するように設定します。
+``first_blog/config.yml`` の ``themes`` を修正し、組み込みテーマ `miyadaiku.themes.sample.blog <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/sample/blog>`__ を使用するように設定します。
 
 .. code-block:: yaml
    :caption: first_blog/config.yml:
@@ -136,3 +136,37 @@ Blogサイトの作成
 
 正常に終了すると、``first_blog/outputs/index.html`` にBlogが出力されます。
 
+
+テンプレートのカスタマイズ
+--------------------------------
+
+アーティクルの一覧ページ(インデックス)は、``page_index.html`` という名前の Jinja2 テンプレートでHTMLに変換されます。 ``miyadaiku.themes.sample.blog`` テーマは、`page_index.html <https://github.com/miyadaiku/miyadaiku/blob/master/miyadaiku/themes/sample/blog/templates/page_index.html>`__ を提供しています。
+
+
+独自のテンプレートを使用する場合は、テンプレートディレクトリ ``first_doc/templates`` に ``page_index.html`` ファイルを作成します。
+
+ここでは、Jinja2 の継承機能を利用して、デフォルトのテンプレートをカスタマイズし、独自のテンプレートを作成します。継承元のテンプレートの指定方法は、:jinja:`{{ page.link_to('./tutorial.rst', fragment='template') }}` を参照してください。
+
+
+.. code-block:: jinja
+   :caption: first_doc/templates/page_index.html:
+
+   {% extends 'miyadaiku.themes.sample.blog!page_index.html' %}
+
+
+   {% block rightcol %}
+
+     Recent entries:
+    
+     <ul>
+     {% for content in (contents.get_contents() | sort(reverse=True, attribute='date'))[:3]   %}
+
+       <li> {{ page.link_to(content)}} </li>
+     {% endfor %}
+     </ul>
+
+     {{ super() }}
+   {% endblock rightcol %}
+
+
+このテンプレートでは、:jinja:`{{ page.link_to('../guide/objects.rst', fragment='contents_collection') }}` を参照して最新のアーティクルを3件取得し、表示します。

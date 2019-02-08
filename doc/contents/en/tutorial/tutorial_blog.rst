@@ -136,3 +136,36 @@ Build the site with the following command.
 If the command succeeds, the ``first_blog/outputs/index.html`` file will be created.
 
 
+
+
+Customizing templates
+-------------------------------
+
+Index pages of the site are converted to HTML with a Jinja2 template file named ``page_index.html``. The ``miyadaiku.themes.sample.blog`` theme provides `page_index.html <https://github.com/miyadaiku/miyadaiku/blob/master/miyadaiku/themes/sample/blog/templates/page_index.html>`__ as an index template.
+
+
+To use custom template, you can create template file ``page_index.html`` in the template directory ``first_blog/templates`` as the template file.
+
+As an example, we create new custom template file inherited from default template file. For reference to the template files in the theme, please refer to :jinja:`{{ page.link_to('./tutorial.rst', fragment='template') }}`
+
+.. code-block:: jinja
+   :caption: first_blog/templates/page_index.html:
+
+   {% extends 'miyadaiku.themes.sample.blog!page_index.html' %}
+
+   {% block rightcol %}
+
+     Recent entries:
+    
+     <ul>
+     {% for content in (contents.get_contents() | sort(reverse=True, attribute='date'))[:3]   %}
+
+       <li> {{ page.link_to(content)}} </li>
+     {% endfor %}
+     </ul>
+
+     {{ super() }}
+   {% endblock rightcol %}
+
+
+In this template file, :jinja:`{{ page.link_to('../guide/objects.rst', fragment='contents_collection') }}` is used to retrieve recent three articles.

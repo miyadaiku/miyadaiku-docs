@@ -122,9 +122,11 @@
 テンプレートのカスタマイズ
 -------------------------------
 
-アーティクルは、``page_article.html`` という名前の Jinja2 テンプレートでHTMLに変換されます。 
+アーティクルは、``page_article.html`` という名前の Jinja2 テンプレートでHTMLに変換されます。 デフォルトでは、`miyadaiku.themes.base <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_  パッケージの `page_article.html <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ が使われます。
 
-例として、テンプレートディレクトリ ``first_doc/templates`` に、 テンプレートとなる ``page_article.html`` ファイルを作成しましょう。
+独自のテンプレートを使用する場合は、テンプレートディレクトリ ``first_doc/templates`` に ``page_article.html`` ファイルを作成します。
+
+ここでは、Jinja2 の継承機能を利用して、デフォルトのテンプレートをカスタマイズし、独自のテンプレートを作成します。
 
 
 .. code-block:: jinja
@@ -144,18 +146,16 @@
 
    {% endblock body %}
 
-Miyadaikuでは、デフォルトのテンプレートとして、`miyadaiku.themes.base <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_  パッケージに `page_article.html <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ を提供しています。ここでは、Jinja2 の継承機能を利用してこのテンプレートをカスタマイズし、独自のテンプレートを作成します。
-
-Pythonパッケージの ``templates`` ディレクトリにあるテンプレートを使用するときは、次のようにパッケージ名とファイル名を ``!`` 記号で区切って指定します。
-
-    ``パッケージ名!テンプレートファイル名``
-
-この例で使用している
+この例の
 
     ``miyadaiku.themes.base!page_article.html``
 
+は、``miyadaiku.themes.base`` テーマの ``templates/page_article.html`` ファイルを指定しています。
 
-は、``miyadaiku.themes.base`` パッケージの ``page_article.html`` ファイルを指定しています。
+テーマパッケージの ``templates`` ディレクトリにあるテンプレートを使用するときは、次のようにパッケージ名とファイル名を ``!`` 記号で区切って指定します。
+
+    ``パッケージ名!テンプレートファイル名``
+
 
 
 ``page_article.html`` には、``head`` ブロックと ``body`` ブロックがあり、それぞれ ``<head>`` 要素と ``<body>`` 要素を出力します。この例では、``body`` ブロックをオーバライドして、``body`` 要素にコピーライト表記を追加しています。

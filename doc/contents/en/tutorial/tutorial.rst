@@ -126,11 +126,11 @@ The variable ``content`` is :jinja:`{{content.link_to('../guide/objects.rst', fr
 Customizing templates
 -------------------------------
 
-Article files are converted to HTML with a Jinja2 template named ``page_article.html``.
+Article files are converted to HTML with a Jinja2 template file named ``page_article.html``. The `page_article.html <https: //github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ file in `miyadaiku.themes.base <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_ package is used as a default article template. 
 
-As an example, let's create a template ``page_article.html`` in the template directory ``first_doc/templates``.
+To use custom template, you can create template file ``page_article.html`` in the template directory ``first_doc/templates`` as the template file.
 
-
+As an example, we create new custom template file inherited from default template file.
 
 .. code-block:: jinja
    :caption: first_doc/templates/page_article.html:
@@ -150,10 +150,7 @@ As an example, let's create a template ``page_article.html`` in the template dir
    {% endblock body %}
 
 
-Miyadaiku provides `page_article.html <https: //github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates/page_article.html>`_ file in `miyadaiku.themes.base <https://github.com/miyadaiku/miyadaiku/tree/master/miyadaiku/themes/base/templates>`_ package as default article template. Here, we customize this template with Jinja2's inheritance to create a new template.
-
-
-To use templates in the ``templates`` directory of the Python package, specify the package name and file name separated by the ``!`` as follows.
+To use templates in the ``templates`` directory of the theme package, specify the theme package name and file name separated by the ``!`` as follows.
 
     ``package!filename``
 
@@ -161,7 +158,7 @@ In the code above, we wrote
 
     ``miyadaiku.themes.base!page_article.html``
 
-to refer ``page_article.html`` file in ``miyadaiku.themes.base`` package.
+to refer ``templates/page_article.html`` file in ``miyadaiku.themes.base`` package.
 
 
 ``page_article.html`` has a ``head`` block and a ``body`` block, which generates ``<head>`` element and ``<body>`` element, respectively. In this example, we override the ``body`` block and add copyright notation to the ``body`` element.
