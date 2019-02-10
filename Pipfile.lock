@@ -163,10 +163,10 @@
         },
         "miyadaiku-themes-bootstrap4": {
             "hashes": [
-                "sha256:f5ac4dfdb744e01820b7413ff6447b2d7857359fc2c2955b9ca727443279cef7"
+                "sha256:e64af4939224bc339319d0bbe2e8fcac1c0a762a7466b1481d0d334db9ab961d"
             ],
             "index": "pypi",
-            "version": "==0.0.9"
+            "version": "==0.10"
         },
         "miyadaiku-themes-fontawesome": {
             "hashes": [
@@ -189,19 +189,18 @@
             ],
             "version": "==0.0.10"
         },
-        "miyadaiku.themes.tether": {
+        "miyadaiku.themes.popper-js": {
             "hashes": [
-                "sha256:21f8ada34d4c113bf54d367fd085adfe64d83ed298dc5d2e175bf3562cad6551",
-                "sha256:863552a2c65a01a4a980dacb84814080e77d0b086646cb10e596eeba7a9e49e1"
+                "sha256:61c70a043b0fa24d31a3109553bdda6b9748b5787ab05d21b19094f2f9cbb466"
             ],
-            "version": "==0.0.7"
+            "version": "==0.1"
         },
         "nbconvert": {
             "hashes": [
-                "sha256:08d21cf4203fabafd0d09bbd63f06131b411db8ebeede34b0fd4be4548351779",
-                "sha256:a8a2749f972592aa9250db975304af6b7337f32337e523a2c995cc9e12c07807"
+                "sha256:302554a2e219bc0fc84f3edd3e79953f3767b46ab67626fdec16e38ba3f7efe4",
+                "sha256:5de8fb2284422272a1d45abc77c07b888127550a6d602ce619592a2b08a474ff"
             ],
-            "version": "==5.4.0"
+            "version": "==5.4.1"
         },
         "nbformat": {
             "hashes": [

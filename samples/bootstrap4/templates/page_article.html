@@ -1,7 +1,11 @@
+
 {% extends 'miyadaiku.themes.base!page_article.html' %}
 
 {% block head %}
   {{ super() }}
+  
+  <!-- include pygments -->
+  {{ pygments.load_css(page) }}
 
   <!-- include boolstrap4 -->
   {{ bootstrap4.load_css(page) }}
@@ -9,21 +13,40 @@
   <!-- include jquery.js -->
   {{ jquery.load_js(page) }}
 
-  <!-- include tether.js -->
-  {{ tether.load_js(page) }}
+  <!-- include popper.js -->
+  {{ popper_js.load_js(page) }}
 
   <!-- include boolstrap4 js -->
   {{ bootstrap4.load_js(page) }}
 
-  {{ macros.opengraph(page) }}
+  <script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
 
 {% endblock head %}
 
-
 {% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="container">
-  {{ super() }}
-</div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item {{ page.is_same(page.load('/index.html')) and 'active' or '' }}">
+        <a class="nav-link" href="{{ page.path_to('/index.html') }}">Carousel demo</a>
+      </li>
+      <li class="nav-item {{ page.is_same(page.load('/page2.rst')) and 'active' or '' }}">
+        <a class="nav-link" href="{{ page.path_to('/page2.rst') }}">Tooltip demo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
+  <div class="container">
+  {{ page.html }}
+  </div>
 {% endblock body %}
