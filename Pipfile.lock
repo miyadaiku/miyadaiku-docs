@@ -156,10 +156,9 @@
         },
         "miyadaiku": {
             "hashes": [
-                "sha256:500c61c47301a2ba56b77412616e5e318279619c768473e0d9c547bf0b62ab64",
-                "sha256:cce39765211a704ce05aae8558e1704718a62af464b6c88788e35b93c7e2691e"
+                "sha256:f6caea4650bae823ebad4b3b7776184a66cf3495d855901d2b4c7dd4c15a29f2"
             ],
-            "version": "==0.0.64"
+            "version": "==0.0.65"
         },
         "miyadaiku-themes-bootstrap4": {
             "hashes": [
@@ -267,10 +266,10 @@
         },
         "soupsieve": {
             "hashes": [
-                "sha256:466910df7561796a60748826781ebe9a888f7a1668a636ae86783f44d10aae73",
-                "sha256:87db12ae79194f0ff9808d2b1641c4f031ae39ffa3cab6b907ea7c1e5e5ed445"
+                "sha256:afa56bf14907bb09403e5d15fbed6275caa4174d36b975226e3b67a3bb6e2c4b",
+                "sha256:eaed742b48b1f3e2d45ba6f79401b2ed5dc33b2123dfe216adb90d4bfa0ade26"
             ],
-            "version": "==1.7.3"
+            "version": "==1.8"
         },
         "testpath": {
             "hashes": [
