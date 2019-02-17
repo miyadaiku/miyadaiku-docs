@@ -193,5 +193,6 @@ blockquote {
 
 .samplebox img {
   width: 200px;
+  height: 135px;
   border: solid 1px;
 }

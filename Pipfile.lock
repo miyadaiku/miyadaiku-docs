@@ -156,10 +156,10 @@
         },
         "miyadaiku": {
             "hashes": [
-                "sha256:06b49a80c72f1fad6688cdd60c56521a81d52b4be7d8c2d48f3d8c9ab7ca9163",
-                "sha256:1a8ba9f33331f604cd3b1758ccdc3826946e295e3382bab68db5baa5a0618226"
+                "sha256:500c61c47301a2ba56b77412616e5e318279619c768473e0d9c547bf0b62ab64",
+                "sha256:cce39765211a704ce05aae8558e1704718a62af464b6c88788e35b93c7e2691e"
             ],
-            "version": "==0.0.62"
+            "version": "==0.0.64"
         },
         "miyadaiku-themes-bootstrap4": {
             "hashes": [

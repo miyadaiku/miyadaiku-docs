@@ -14,7 +14,7 @@ Miyadaiku's document project is created with ``miyadaiku-start`` command.
   
    $ miyadaiku-start new-project
    $ ls new-project/
-   config.yml	contents	files		templates
+   config.yml	contents	files	modules	templates
 
 
 
@@ -33,6 +33,8 @@ The document project consists of the following files.
         │
         ├─── files/       Directory to store files such as images.
         │
+        ├─── modules/     Directory to store Python modules files.
+        │
         ├─── templates/   Directory to store Jinja2 template files.
         │
         └─── outputs/     Directory to output generated files.
@@ -46,6 +48,9 @@ The document project consists of the following files.
 
 :files dirctory:
    Files in the directory are not converted by ``miyadaiku-build`` command, but copied to the ``outputs`` directory as is.
+
+:modules directory: 
+   ``*.py`` files in the directory are imported as Python module. The module names can be refered within jinja2 script.
 
 :templates directory: 
    Stores jinja2 template files.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- include boolstrap4 -->
+  {{ bootstrap4.load_css(page) }}
+  
+  <title>{{ page.title }} - {{ page.site_title }}</title>
+</head>
+
+<body>
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    {% for parent in page.parents_dirs %}
+      <li class="breadcrumb-item">
+        {{ page.link_to((parent, 'index.rst'), text=config.get(parent, 'foldername')) }}
+      </a></li>
+    {% endfor %}
+
+    <li class="breadcrumb-item active">
+      {{ page.title }}
+    </li>
+  </ol>
+</nav>
+
+
+<div class="container-fluid">
+ <div class="row">
+    <div class="col-sm">
+      {{ page.html }}
+    </div>
+    <div class="col-sm">
+      <ul>
+        {% for article in contents.get_contents(subdirs=[page.dirname]) %}
+          <li>{{ article.link(text="%s (/%s)" % (article.title, "/".join(article.dirname+(article.name,)))) }}
+        {%endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

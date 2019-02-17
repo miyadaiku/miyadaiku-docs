@@ -41,6 +41,8 @@ This command creates following directories.
         │
         ├─── files/       Directory to store files such as images.
         │
+        ├─── modules/     Directory to store Python modules.
+        │
         └─── templates/   Directory to store Jinja2 template files.
 
 

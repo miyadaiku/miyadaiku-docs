@@ -140,10 +140,11 @@ Blogサイトの作成
 テンプレートのカスタマイズ
 --------------------------------
 
-アーティクルの一覧ページ(インデックス)は、``page_index.html`` という名前の Jinja2 テンプレートでHTMLに変換されます。 ``miyadaiku.themes.sample.blog`` テーマは、`page_index.html <https://github.com/miyadaiku/miyadaiku/blob/master/miyadaiku/themes/sample/blog/templates/page_index.html>`__ を提供しています。
-
+アーティクルの一覧ページ(インデックス)は、``page_index.html`` という名前の Jinja2 テンプレートでHTMLに変換されます。 ``miyadaiku.themes.sample.blog`` テーマには `page_index.html <https://github.com/miyadaiku/miyadaiku/blob/master/miyadaiku/themes/sample/blog/templates/page_index.html>`__ があり、HTMLページの生成に使用されます。
 
 独自のテンプレートを使用する場合は、テンプレートディレクトリ ``first_doc/templates`` に ``page_index.html`` ファイルを作成します。
+
+例として、`first_doc/templates/page_index.html` にテンプレートを作成し、:jinja:`{{ page.link_to('../guide/objects.rst', fragment='contents_collection') }}` を参照して最新のアーティクルを3件取得し、表示する機能を追加します。
 
 ここでは、Jinja2 の継承機能を利用して、デフォルトのテンプレートをカスタマイズし、独自のテンプレートを作成します。継承元のテンプレートの指定方法は、:jinja:`{{ page.link_to('./tutorial.rst', fragment='template') }}` を参照してください。
 
@@ -167,6 +168,3 @@ Blogサイトの作成
 
      {{ super() }}
    {% endblock rightcol %}
-
-
-このテンプレートでは、:jinja:`{{ page.link_to('../guide/objects.rst', fragment='contents_collection') }}` を参照して最新のアーティクルを3件取得し、表示します。
