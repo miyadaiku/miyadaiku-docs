@@ -97,8 +97,12 @@ lang
 
 
 order
-  Numeric order of the article. Default value is ``0``.
+  Numeric order of the content. Default value is ``0``.
 
+parents_dirs
+  Readonly property returns list of parent directories of the content. The ``parent_dirs`` property of the article at ``/dir1/dir2/article.rst`` is
+
+    ``[(), ('dir1'), ('dir1', 'dir2')]``
 
 site_title
   Title of the site. Defautl value is ``'(FIXME - site_title)'``.
