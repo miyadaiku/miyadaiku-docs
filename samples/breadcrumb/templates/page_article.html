@@ -15,7 +15,8 @@
 
     {% for parent in page.parents_dirs %}
       <li class="breadcrumb-item">
-        {{ page.link_to((parent, 'index.rst'), text=config.get(parent, 'foldername')) }}
+        {{ page.link_to((parent, 'index.rst'),
+                         text=config.get(parent, 'foldername')) }}
       </a></li>
     {% endfor %}
 
@@ -34,7 +35,9 @@
     <div class="col-sm">
       <ul>
         {% for article in contents.get_contents(subdirs=[page.dirname]) %}
-          <li>{{ article.link(text="%s (/%s)" % (article.title, "/".join(article.dirname+(article.name,)))) }}
+          <li>{{ article.link(text="%s (/%s)" % (
+                 article.title,
+                 "/".join(article.dirname+(article.name,)))) }}
         {%endfor %}
       </ul>
     </div>

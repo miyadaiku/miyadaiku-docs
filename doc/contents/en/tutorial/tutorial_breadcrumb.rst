@@ -3,27 +3,27 @@
   :order: 3
 
 
-Breadcrumbの実装
-======================
+Implementing breadcrumbs
+=============================
 
-Miyadaikuの :jinja:`{{ page.link_to('../guide/config.rst') }}` を利用して、Breadcrumb付きのサイトを作成します。Breadcrumbは、`Bootstrap4 <https://getbootstrap.com/>`__ の `Breadclumbs <https://getbootstrap.com/docs/4.3/components/breadcrumb/>`__ で表示します。
+In this tutorial, we implement a site with breadcrumb using :jinja:`{{ page.link_to('../guide/config.rst') }}`. To render breadcrumb, we use `Breadclumbs <https://getbootstrap.com/docs/4.3/components/breadcrumb/>`__ of the `Bootstrap4 <https://getbootstrap.com/>`__.
 
-このチュートリアルで作成するソースコードは、
+
+You can download source files in this tutorial from:
 
     https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/breadcrumb
 
-からダウンロードできます。
 
-作成したサイトは、
+You can view the created site at:
 
     https://miyadaiku.github.io/samples/breadcrumb/index.html
 
-で参照できます。
 
-プロジェクトの作成
+
+Create a project
 -------------------------
 
-はじめに、次のコマンドで ``breadcrumb`` ディレクトリに ``miyadaiku`` のプロジェクトを作成します
+At first, create Miyadaiku project to the ``breadcrumb`` directory with the following command.
 
 .. code-block:: console
 
@@ -31,41 +31,38 @@ Miyadaikuの :jinja:`{{ page.link_to('../guide/config.rst') }}` を利用して�
 
 
 
-Bootstrap4テーマのインストール
+Install Bootstrap4 theme
 ------------------------------------------
 
-Miyadaikuでは、かんたんにBootstrap4を使えるように、`miyadaiku.themes.bootstrap4 <https://github.com/miyadaiku/miyadaiku-themes-bootstrap4>`__ テーマを用意しています。``miyadaiku.themes.bootstrap4`` は、次のコマンドでインストールできます。
+We use `miyadaiku.themes.bootstrap4 <https://github.com/miyadaiku/miyadaiku-themes-bootstrap4>`__ theme to import Bootstrap files. The pip3 command could be used to install ``miyadaiku.themes.bootstrap4``.
 
 .. code-block:: bash
 
    $ pip3 install miyadaiku.themes.bootstrap4
 
 
-プロジェクト設定
+Project setting
 -------------------------
 
-プロジェクト設定ファイル ``breadcrumb/config.yml`` の ``themes`` を修正し、`miyadaiku.themes.bootstrap4 <https://github.com/miyadaiku/miyadaiku-themes-bootstrap4>`__ を使用するように設定します。
+
+
+Modify ``themes`` in ``breadcrumb/config.yml`` file to use `miyadaiku.themes.bootstrap4 <https://github.com/miyadaiku/miyadaiku-themes-bootstrap4>`__ theme.
+
 
 .. code-block:: yaml
-   :caption: first_blog/config.yml:
+   :caption: breadcrumb/config.yml:
 
-   # Title of the site
-   site_title: FIXME - site title
-
-   # Default language code
-   lang: ja
-
-   (... 中略 ...)
-
+   
    # List of site theme
-   themes:                            # <--- この行を修正
-     - miyadaiku.themes.bootstrap4    # <--- この行を修正
+   themes:                            # <--- FIX HERE
+     - miyadaiku.themes.bootstrap4    # <--- FIX HERE
 
 
-記事の作成
+Create articles
 -------------------------
 
-表示する記事として、``breadcrumb/contents`` ディレクトリと ``breadcrumb/contents/child1`` ディレクトリに、次の4ファイルを作成します。
+Create four article files to ``breadcrumb/contents`` directory and ``breadcrumb/contents/child1``.
+
 
 .. code-block:: rst
    :caption: breadcrumb/contents/index.rst:
@@ -104,14 +101,12 @@ Miyadaikuでは、かんたんにBootstrap4を使えるように、`miyadaiku.th
    This is child1-2.rst file in the /child1 directory.
 
 
-コンフィグの作成
+Create configs
 -------------------------
 
-:jinja:`{{ page.link_to('../guide/config.rst') }}` は、ディレクトリごとの設定を指定するYAMLファイルです。
+:jinja:`{{ page.link_to('../guide/config.rst') }}` is YAML file to specify configuration of the directories.
 
-
-``breadcrumb/contents`` ディレクトリと ``breadcrumb/contents/child1`` ディレクトリにコンフィグを作成し、Breadcrumb に表示するタイトルを ``foldername`` 属性に指定します。
-
+Create config files to ``breadcrumb/contents`` directory and ``breadcrumb/contents/child1``. The ``foldername`` attribute of the each YAML files are used as caption in the breadcrumbs.
 
 .. code-block:: yaml
    :caption: breadcrumb/contents/root.yml:
@@ -125,10 +120,10 @@ Miyadaikuでは、かんたんにBootstrap4を使えるように、`miyadaiku.th
    foldername: Child1 folder
 
 
-テンプレートの作成
+Create template
 -------------------------
 
-Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成します。
+Create Jinja2 template ``breadcrumb/templates/page_article.html``.
 
 .. code-block:: jinja
    :caption: breadcrumb/templates/page_article.html:
@@ -143,7 +138,6 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
    </head>
 
    <body>
-
 
    <nav aria-label="breadcrumb">
      <ol class="breadcrumb">
@@ -160,7 +154,6 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
        </li>
      </ol>
    </nav>
-
 
     <div class="container-fluid">
     <div class="row">
@@ -183,8 +176,7 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
    </html>
    
 
-
-次のように ``bootstrap4.load_css()`` を呼び出し、Bootstrap4のCSSをロードする ``<link>`` 要素を出力します。
+``bootstrap4.load_css()`` generates ``<link>`` to import CSS file of Bootstrap.
 
 .. code-block:: jinja
 
@@ -193,7 +185,7 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
      {{ bootstrap4.load_css(page) }}
 
 
-ページオブジェクトの ``parents_dirs`` 属性で親ディレクトリの一覧を取得し、各ディレクトリの ``index.rst`` へのリンクをBreadcrumbとして出力します。
+Following code generates breadcrumb to parent directories. The parent directories of the page could be obtained from ``parents_dirs`` attribute. Link to ``index.rst`` in the each parent directories are output as breadcrumbs.
 
 .. code-block:: jinja
 
@@ -205,7 +197,8 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
    {% endfor %}
 
 
-一番最後のBreadcrumbは、現在のページのタイトルを出力します。
+
+The last breadcrumb is a title of the current page.
 
 .. code-block:: jinja
 
@@ -216,10 +209,10 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
 
 
 
-サイトのビルド
+Building the site
 -------------------------
 
-次のコマンドでサイトをビルドします。
+Build the site with the following command.
 
 
 .. code-block:: console
@@ -227,5 +220,5 @@ Jinja2テンプレート ``breadcrumb/templates/page_article.html`` を作成し
    $ miyadaiku-build ./breadcrumb
 
 
-正常に終了すると、``breadcrumb/outputs/index.html`` が出力されます。
+If the command succeeds, the ``breadcrumb/outputs/index.html`` file will be created.
 
