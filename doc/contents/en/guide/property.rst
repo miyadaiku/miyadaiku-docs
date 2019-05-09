@@ -78,7 +78,7 @@ filename_templ
 generate_metadata_file
    ``true`` if :jinja:`{{ content.link_to('config.rst', fragment='external_prop_file') }}` is produced if the article doesn't has ``date`` property. Default value is ``false``.
    
-header
+headers
    Returns a list of the header elements of an article. The items of the list are tuples of `(header id, header element name, header text)`. 
 
 html
