@@ -76,7 +76,7 @@ filename_templ
 generate_metadata_file
    ``true`` の場合は、アーティクルに ``date`` プロパティが指定されていなければ自動的に :jinja:`{{ content.link_to('config.rst', fragment='external_prop_file') }}` を生成します。未指定の場合は ``false`` となります。
 
-header
+headers
   アーティクルのヘッダ要素のリストを取得します。リストの要素は、`(ヘッダのid, ヘッダ要素名, ヘッダテキスト)` のタプルとなります。
 
 html
