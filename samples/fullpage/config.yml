@@ -17,5 +17,5 @@ timezone: Asia/Tokyo
 
 # List of site theme
 themes:
-  - miyadaiku.themes.fullpagejs
+  - miyadaiku_theme_fullpagejs
 

@@ -21,4 +21,5 @@ jobs:
             - ".venv"
       - run: git config --global user.email "auto@example.com"
       - run: git config --global user.name "auto circleci"
+      - run: pipenv run ./build_all.sh
       - run: pipenv run ./deploy_ghp.sh
