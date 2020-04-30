@@ -1,2 +1,6 @@
 miyadaiku_theme_bootstrap4
 miyadaiku_theme_fontawesome
+miyadaiku_theme_jquery
+miyadaiku_theme_popper_js
+miyadaiku_theme_tether
+
