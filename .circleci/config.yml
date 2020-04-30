@@ -7,18 +7,18 @@ jobs:
           PIPENV_VENV_IN_PROJECT: 1
     steps:
       - checkout
-      - run: # install and activate virtual environment with pip
+      - run: # install and activate virtual environment
           command: |
-            pip install pipenv
-      - restore_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+            python3 -m venv .venv
+#      - restore_cache:
+#          key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           command: |
-            pipenv install
-      - save_cache: # special step to save dependency cache
-          key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-          paths:
-            - ".venv"
+            pip install -r requirements.txt
+#      - save_cache: # special step to save dependency cache
+#          key: deps1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+#          paths:
+#            - ".venv"
       - run: git config --global user.email "auto@example.com"
       - run: git config --global user.name "auto circleci"
-      - run: pipenv run ./deploy_ghp.sh
+      - run: PATH=./.venv/bin:$PATH ./deploy_ghp.sh

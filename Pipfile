@@ -6,9 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-miyadaiku-themes-bootstrap4 = "*"
-miyadaiku-themes-fontawesome = "*"
-miyadaiku-themes-fullpagejs = "*"
+miyadaiku_theme_bootstrap4 = "*"
+miyadaiku_theme_fontawesome = "*"
 
 [requires]
 python_version = "3.7"
