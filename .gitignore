@@ -13,3 +13,4 @@ _depends.pickle
 
 outputs
 .eggs
+.ipynb_checkpoints

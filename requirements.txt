@@ -3,4 +3,5 @@ miyadaiku_theme_fontawesome
 miyadaiku_theme_jquery
 miyadaiku_theme_popper_js
 miyadaiku_theme_tether
+miyadaiku_theme_newblog
 
