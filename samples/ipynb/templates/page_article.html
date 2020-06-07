@@ -4,7 +4,7 @@
   {{ super() }}
 
   <!-- set ipynb headers -->
-  {{ ipynb.set_header() }}
+  {{ ipynb.load_css_min(page) }}
 
 {% endblock head %}
 
