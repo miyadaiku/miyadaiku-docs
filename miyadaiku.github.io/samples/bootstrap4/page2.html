@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tooltip sample - miyadaiku-themes-popper_js test</title>
+  
+  
+  <!-- include pygments -->
+  <link rel="stylesheet" href="static/pygments/native.css">
+
+  <!-- include boolstrap4 -->
+  <link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+  <!-- include jquery.js -->
+  <script src="static/jquery/jquery.min.js"></script>
+
+  <!-- include popper.js -->
+  <script src="static/popper.js/popper.min.js"></script>
+
+  <!-- include boolstrap4 js -->
+  <script src="static/bootstrap4/bootstrap.min.js"></script>
+
+  <script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
+
+
+</head>
+
+<body>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="index.html">Carousel demo</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="page2.html">Tooltip demo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="container">
+    <div>Visit <a href="https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/bootstrap4">Github</a> for source.</div>
+    <p>Hover mouse <a data-toggle="tooltip" href="#" style="font-size:40px;" title="This is tooltip text">HERE</a> for tooltip.</p>
+
+  </div>
+
+
+
+
+</body>
+</html>

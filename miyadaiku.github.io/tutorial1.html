@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>チュートリアル - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='tutorial1.html#h_tutorial1_md_チュートリアル_1' >チュートリアル</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='tutorial1.html#h_tutorial1_md_プロジェクトの作成_2' >プロジェクトの作成</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='tutorial1.html#h_tutorial1_md_プロジェクトのビルド_3' >プロジェクトのビルド</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='tutorial1.html#h_tutorial1_md_テンプレートのカスタマイズ_4' >テンプレートのカスタマイズ</a></li>
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_tutorial1_md_チュートリアル_1"><a class="md_header_anchor" id="a_tutorial1_md_チュートリアル_1"></a><h1>チュートリアル</h1></div>
+<p>Miyadaikuプロジェクトの作成と、簡単なカスタマイズ方法を紹介します。</p>
+<div class="md_header_block" id="h_tutorial1_md_プロジェクトの作成_2"><a class="md_header_anchor" id="a_tutorial1_md_プロジェクトの作成_2"></a><h2>プロジェクトの作成</h2></div>
+<p>まず、<code>miyadaiku-start</code> コマンドで、<code>first_doc</code>ディレクトリにMiyadaikuのプロジェクトディレクトリを作成します。</p>
+<div class="highlight"><pre><span></span><code>$ miyadaiku-start first_doc
+</code></pre></div>
+<div class="md_header_block" id="h_tutorial1_md_プロジェクトのビルド_3"><a class="md_header_anchor" id="a_tutorial1_md_プロジェクトのビルド_3"></a><h2>プロジェクトのビルド</h2></div>
+<p>プロジェクトを作成したら、さっそく<code>miyadaiku-build</code>コマンドでHTMLを作成してみましょう。</p>
+<div class="highlight"><pre><span></span><code>$ miyadaiku-build first_doc
+
+Building first_doc ...
+Loading first_doc/contents
+Loading first_doc/files
+Loading miyadaiku.themes.base/contents
+Loading miyadaiku.themes.base/files
+Building first_doc/contents/index.md
+Build finished... Built <span class="m">1</span> files. <span class="m">0</span> error found.
+</code></pre></div>
+<p><code>miyadaiku-start</code> コマンドは、サンプルとして <code>first_doc/contents/index.md</code> ファイルを作成します。このファイルから、つぎのようなHTMLファイル <code>first_doc/outputs/index.html</code> が生成されます。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"ja-JP"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>sample document - FIXME - site title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>sample document<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello world.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><code>first_doc/contents/index.md</code> を編集してから <code>miyadaiku-build</code>コマンドを実行し、<code>first_doc/outputs/index.html</code> ファイルの内容が変化することを確認してください。</p>
+<div class="md_header_block" id="h_tutorial1_md_テンプレートのカスタマイズ_4"><a class="md_header_anchor" id="a_tutorial1_md_テンプレートのカスタマイズ_4"></a><h2>テンプレートのカスタマイズ</h2></div>
+<p>ページのHTMLを生成するJinjaテンプレートを作ってみましょう。<code>first_doc/templates/</code>ディレクトリに、<code>page_article.html</code> という名前のファイルを作成します。</p>
+<div class="highlight"><pre><span></span><code><span class="c">&lt;!-- first_doc/templates/page_article.html --&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ page.title }} <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">"border: solid 1px;"</span><span class="p">&gt;</span>
+    {{ page.html }}
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Jinjaテンプレートで参照している <code>page</code> 変数は、現在のドキュメントファイルを示します。ここでは、<code>page.title</code> プロパティと <code>page.html</code> プロパティで、ドキュメントのタイトルと本文を埋め込んでいます。</p>
+<p>もう一度 <code>miyadaiku-build</code> コマンドでHTMLファイルを生成すると、<code>first_doc/outputs/index.html</code> は次のようになります。</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>hello <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">"border: solid 1px;"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello world.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+
+</div>
+
+
+</body>
+</html>

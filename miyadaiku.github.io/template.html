@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>テンプレート - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='template.html#h_template_md_テンプレート_1' >テンプレート</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='template.html#h_template_md_アーティクルテンプレート_2' >アーティクルテンプレート</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='template.html#h_template_md_インデックステンプレート_3' >インデックステンプレート</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='template.html#h_template_md_グループ別インデックスページ_4' >グループ別インデックスページ</a></li>
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_template_md_テンプレート_1"><a class="md_header_anchor" id="a_template_md_テンプレート_1"></a><h1>テンプレート</h1></div>
+<p>Miyadaikuは、<code>contents</code> ディレクトリを走査し、アーティクルやインデックスなどのコンテンツをJinja2テンプレートに渡してHTMLを作成します。テンプレートは、プロジェクトディレクトリの <code>templates</code> ディレクトリに作成します。</p>
+<div class="md_header_block" id="h_template_md_アーティクルテンプレート_2"><a class="md_header_anchor" id="a_template_md_アーティクルテンプレート_2"></a><h2>アーティクルテンプレート</h2></div>
+<p>アーティクルに適用するテンプレートは、<code>article_template</code> プロパティで指定します。未指定の場合は、<code>'page_article.html'</code> となります。</p>
+<p>アーティクルテンプレートでは、次の変数を参照できます。</p>
+<dl>
+<dt>page</dt>
+<dd>ページに表示する <code>Article</code>オブジェクト を参照します。</dd>
+<dt>contents</dt>
+<dd><code>ContentFiles</code>オブジェクトを参照します。</dd>
+</dl>
+<p>アーティクルテンプレートでは、次のようにアーティクルのHTMLを表示します。</p>
+<p><strong>例: シンプルなアーティクルテンプレート</strong></p>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;html&gt;</span>
+<span class="x">&lt;head&gt;</span>
+<span class="x">  &lt;title&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"> &lt;/title&gt;</span>
+<span class="x">&lt;/head&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">  &lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">page.title</span> <span class="cp">}}</span><span class="x"> &lt;/h1&gt;</span>
+
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">page.html</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<div class="md_header_block" id="h_template_md_インデックステンプレート_3"><a class="md_header_anchor" id="a_template_md_インデックステンプレート_3"></a><h2>インデックステンプレート</h2></div>
+<p><a href="indexobj.html">インデックス</a>に適用するテンプレートは、1ページ目を<code>indexpage_template</code> プロパティと <code>indexpage_template2</code> プロパティで指定します。未指定の場合は、どちらも <code>page_index.html</code> となります。</p>
+<p>インデックステンプレートでは、次の変数を参照できます。</p>
+<dl>
+<dt>page</dt>
+<dd>ページに表示する <code>IndexPage</code> オブジェクト を参照します。</dd>
+<dt>contents</dt>
+<dd><code>ContentFiles</code>オブジェクトを参照します。</dd>
+<dt>articles</dt>
+<dd>ページに表示する<code>Article</code>オブジェクトのリストを参照します。</dd>
+<dt>cur_page</dt>
+<dd>現在のページ番号(1~)。</dd>
+<dt>num_pages</dt>
+<dd>インデックスのページ数。</dd>
+<dt>is_last</dt>
+<dd>最終ページならTrue</dd>
+</dl>
+<div class="md_header_block" id="h_template_md_グループ別インデックスページ_4"><a class="md_header_anchor" id="a_template_md_グループ別インデックスページ_4"></a><h3>グループ別インデックスページ</h3></div>
+<p><code>groupby</code> プロパティを指定したグループ別インデックスページでは、テンプレートで次の変数を参照できます。</p>
+<dl>
+<dt>group_value</dt>
+<dd>グループの値</dd>
+</dl>
+<p><strong>例: シンプルなインデックステンプレート</strong></p>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;html&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">&lt;!-- エントリへのリンク --&gt;</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">article</span> <span class="k">in</span> <span class="nv">articles</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;p&gt;</span><span class="cp">{{</span> <span class="nv">article.link</span><span class="o">()</span> <span class="cp">}}</span><span class="x">&lt;/p&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">cur_page</span> <span class="o">!=</span> <span class="m">1</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;!-- 前ページへのリンク&gt;</span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">page.link</span><span class="o">(</span><span class="nv">group_value</span><span class="o">=</span><span class="nv">group_value</span><span class="o">,</span> <span class="nv">npage</span><span class="o">=</span><span class="nv">cur_page-1</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">is_last</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;!-- 次ページへのリンク&gt;</span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">page.link</span><span class="o">(</span><span class="nv">page</span><span class="o">,</span> <span class="nv">group_value</span><span class="o">=</span><span class="nv">group_value</span><span class="o">,</span> <span class="nv">npage</span><span class="o">=</span><span class="nv">cur_page</span><span class="o">+</span><span class="m">1</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+
+</div>
+
+
+</body>
+</html>

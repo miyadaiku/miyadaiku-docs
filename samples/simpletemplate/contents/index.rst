@@ -8,4 +8,4 @@ Link to :jinja:`{{ content.link_to("page2.rst") }}`.
 This is index.rst
 ++++++++++++++++++++++
 
-    https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/simpletemplate
+https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/simpletemplate

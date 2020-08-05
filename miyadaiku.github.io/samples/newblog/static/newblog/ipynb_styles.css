@@ -1,0 +1,112 @@
+/* --------------------------------------------------- */
+/*   miyadaiku style                                   */
+/*-----------------------------------------------------*/
+
+div.cell {
+  padding: 0;
+}
+
+/*
+div.input_area {
+  background: #efefef;
+}
+*/
+
+.article_summary_body .cell {
+  padding: 0;
+}
+
+.article_summary_body h1 {
+  margin-top: 0;
+}
+
+.rendered_html img, .rendered_html svg {
+  max-width: 95%;
+}
+
+.output_png img {
+  max-width: 95%;
+}
+
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+
+div.input {
+  margin-bottom: 1em;
+}
+
+.input_prompt {
+    min-width:0;
+    display: none;
+}
+
+.output {
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+}
+
+.output_area .prompt {
+    display: none !important;
+}
+
+.output_area .output_text {
+  display:flex;
+}
+
+.output_area .output_text:before {
+  content: ">>>";
+  color: #887c7c;
+  font-size:9pt;
+  font-family: Arial Black;
+  padding-left: 10px;;
+  padding-right: 10px;
+  padding-top: 0.2em;
+}
+
+
+.output_area .output {
+.  margin: 0.4em 0 0 0;
+}
+
+.output_area pre {
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+.output_subarea {
+  max-width: 100%;
+}
+
+.output_area pre {
+  color: #212529 !important;
+}
+
+
+.input {
+  background-color: #e8e8e8;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+
+
+.highlight {
+  padding: 10px 0 10px 10px;
+  margin-bottom: 1em;
+  background-color: #e8e8e8;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+
+.input_area > .highlight {
+  margin-bottom: 0em;
+}
+
+.text_cell_render > pre {
+  margin: 10px 0 1em 0em;
+}
+
+
+.highlight pre {
+  margin-bottom: 0em;
+}

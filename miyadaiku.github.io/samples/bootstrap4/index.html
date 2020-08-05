@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>index - miyadaiku-themes-popper_js test</title>
+  
+  
+  <!-- include pygments -->
+  <link rel="stylesheet" href="static/pygments/native.css">
+
+  <!-- include boolstrap4 -->
+  <link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+  <!-- include jquery.js -->
+  <script src="static/jquery/jquery.min.js"></script>
+
+  <!-- include popper.js -->
+  <script src="static/popper.js/popper.min.js"></script>
+
+  <!-- include boolstrap4 js -->
+  <script src="static/bootstrap4/bootstrap.min.js"></script>
+
+  <script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
+
+
+</head>
+
+<body>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Carousel demo</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="page2.html">Tooltip demo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="container">
+    <div>Visit <a href="https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/bootstrap4">Github</a> for source.</div>
+    <style>
+  .carousel-body {
+    width: 100%;
+    height: 400px;
+    padding: 40px 100px 40px 100px;
+    background-color: red;
+    font-size: 40px;
+  }
+</style>
+<div class="carousel slide" data-interval="1000" data-ride="carousel" id="carouselExampleIndicators">
+<ol class="carousel-indicators">
+<li class="active" data-slide-to="0" data-target="#carouselExampleIndicators"></li>
+<li data-slide-to="1" data-target="#carouselExampleIndicators"></li>
+<li data-slide-to="2" data-target="#carouselExampleIndicators"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="carousel-body"><div class="section" id="this-is-carousel1-rst">
+<div class="md_header_block" id="h_carousel1_rst_This_is_carousel1_rst__1"><a class="md_header_anchor" id="a_carousel1_rst_This_is_carousel1_rst__1"></a><h1>This is carousel1.rst.</h1></div>
+</div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="carousel-body"><table>
+<colgroup>
+<col style="width: 34%"/>
+<col style="width: 34%"/>
+<col style="width: 31%"/>
+</colgroup>
+<thead>
+<tr><th class="head"><p>Header 1</p></th>
+<th class="head"><p>Header 2</p></th>
+<th class="head"><p>Header 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>body row 1</p></td>
+<td><p>column 2</p></td>
+<td><p>column 3</p></td>
+</tr>
+<tr><td><p>body row 2</p></td>
+<td colspan="2"><p>Cells may span columns.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="carousel-item">
+<div class="carousel-body">
+<div class="code-block">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button">
+<span aria-hidden="true" class="carousel-control-prev-icon"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" data-slide="next" href="#carouselExampleIndicators" role="button">
+<span aria-hidden="true" class="carousel-control-next-icon"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+  </div>
+
+
+
+
+</body>
+</html>

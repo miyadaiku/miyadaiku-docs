@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>コンテンツのプロパティ - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='contents_props.html#h_contents_props_md_コンテンツのプロパティ_1' >コンテンツのプロパティ</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_contents_props_md_コンテンツのプロパティ_1"><a class="md_header_anchor" id="a_contents_props_md_コンテンツのプロパティ_1"></a><h1>コンテンツのプロパティ</h1></div>
+<p>コンテンツには、以下のプロパティを指定できます。</p>
+<div class="md_header_block" id="h_contents_props_md_abstract_length_2"><a class="md_header_anchor" id="a_contents_props_md_abstract_length_2"></a><h4>abstract_length</h4></div>
+<p>インデックスファイルやフィードの摘要として使用するテキストの長さを、文字数で指定します。長さとして 0 を指定すると、本文すべてを摘要とします。未指定の場合は、500 文字となります。</p>
+<div class="md_header_block" id="h_contents_props_md_article_template_3"><a class="md_header_anchor" id="a_contents_props_md_article_template_3"></a><h4>article_template</h4></div>
+<p>HTMLページを生成するJinja2テンプレートの名前を指定します。未指定の場合は、<code>page_article.html</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_cagegory_4"><a class="md_header_anchor" id="a_contents_props_md_cagegory_4"></a><h4>cagegory</h4></div>
+<p>アーティクルのカテゴリを指定します。</p>
+<div class="md_header_block" id="h_contents_props_md_canonical_url_5"><a class="md_header_anchor" id="a_contents_props_md_canonical_url_5"></a><h4>canonical_url</h4></div>
+<p>アーティクルへの、公式なURLを指定します。Miyadaikuがこのファイルへのリンクを生成する際に、URLとしてこの値を使用します。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>http://www.example.com/a/b/c</li>
+<li>/index.html</li>
+<li>/</li>
+<li>anothername.html</li>
+</ul>
+<div class="md_header_block" id="h_contents_props_md_charset_6"><a class="md_header_anchor" id="a_contents_props_md_charset_6"></a><h4>charset</h4></div>
+<p>生成されるHTMLの charset を指定します。未指定の場合は <code>utf-8</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_date_7"><a class="md_header_anchor" id="a_contents_props_md_date_7"></a><h4>date</h4></div>
+<p>アーティクルの作成日を指定します。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>2017/01/01</li>
+<li>2017/01/01 12:00:00</li>
+<li>2017/01/01 12:00:00 +0900</li>
+</ul>
+<p><code>date</code> が指定されていない場合、ファイルのファイル名から作成日を取得します。たとえば、ファイル名が <code>document2020-04-01.md</code> のように、日付と推測できるような文字列が含まれていれば、その日付を <code>date</code> として採用します。ファイル名から <code>date</code> を取得しない場合は、<code>date_from_filename</code> プロパティを <code>false</code> とします。</p>
+<div class="md_header_block" id="h_contents_props_md_draft_8"><a class="md_header_anchor" id="a_contents_props_md_draft_8"></a><h4>draft</h4></div>
+<p>未公開状態のアーティクルは <code>true</code>、公開中のアーティクルは <code>false</code> を指定します。未指定の場合は <code>false</code> となります。<code>draft</code> が <code>true</code> のファイルは、デフォルトではインデックスやフィードには含まれません。</p>
+<div class="md_header_block" id="h_contents_props_md_ext_9"><a class="md_header_anchor" id="a_contents_props_md_ext_9"></a><h4>ext</h4></div>
+<p>アーティクルの出力ファイル名の拡張子を指定します。未指定の場合は、<code>.html</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_filename_10"><a class="md_header_anchor" id="a_contents_props_md_filename_10"></a><h4>filename</h4></div>
+<p>出力ファイル名を指定します。未指定の場合は、<code>filename_templ</code> プロパティで指定したテンプレートでファイル名を生成します。</p>
+<p><code>filename</code> には、相対ディレクトリ名も指定できます。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>subdir/article1.html</li>
+<li>../subdir/article1.html</li>
+</ul>
+<div class="md_header_block" id="h_contents_props_md_filename_templ_11"><a class="md_header_anchor" id="a_contents_props_md_filename_templ_11"></a><h4>filename_templ</h4></div>
+<p>出力HTMLファイルのファイル名を、Jina2テンプレートで指定します。未指定の場合は、<code>{{ content.stem }}.{{ content.ext }}</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_generate_metadata_file_12"><a class="md_header_anchor" id="a_contents_props_md_generate_metadata_file_12"></a><h4>generate_metadata_file</h4></div>
+<p><code>true</code> の場合は、アーティクルに <code>date</code> プロパティが指定されていなければ自動的に外部プロパティファイルを生成します。未指定の場合は <code>false</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_lang_13"><a class="md_header_anchor" id="a_contents_props_md_lang_13"></a><h4>lang</h4></div>
+<p>生成されるHTMLの <code>lang</code> を指定します。未指定の場合は <code>en</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_imports_14"><a class="md_header_anchor" id="a_contents_props_md_imports_14"></a><h4>imports</h4></div>
+<p>Jinja2のモジュールとして <code>import</code> するテンプレートのリストを指定します。指定したモジュールは、インポート済みテンプレート として使用できます。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>macro1.html</li>
+<li>other.package!macro2.html</li>
+</ul>
+<div class="md_header_block" id="h_contents_props_md_order_15"><a class="md_header_anchor" id="a_contents_props_md_order_15"></a><h4>order</h4></div>
+<p>アーティクルの順序を数値で指定します。未指定の場合は <code>0</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_site_title_16"><a class="md_header_anchor" id="a_contents_props_md_site_title_16"></a><h4>site_title</h4></div>
+<p>サイトのタイトルを指定します。</p>
+<div class="md_header_block" id="h_contents_props_md_site_url_17"><a class="md_header_anchor" id="a_contents_props_md_site_url_17"></a><h4>site_url</h4></div>
+<p>アーティクルの親となるURLを指定します。 e.g. https://www.example.com/my-site</p>
+<div class="md_header_block" id="h_contents_props_md_stem_18"><a class="md_header_anchor" id="a_contents_props_md_stem_18"></a><h4>stem</h4></div>
+<p>出力ファイル名(拡張子以外)を指定します。未指定の場合は、ソースファイルのファイル名(拡張子以外)となります。</p>
+<div class="md_header_block" id="h_contents_props_md_tags_19"><a class="md_header_anchor" id="a_contents_props_md_tags_19"></a><h4>tags</h4></div>
+<p>タグのリストを指定します。</p>
+<div class="md_header_block" id="h_contents_props_md_timezone_20"><a class="md_header_anchor" id="a_contents_props_md_timezone_20"></a><h4>timezone</h4></div>
+<p>アーティクルの作成日などを表示するタイムゾーンを指定します。e.g. 'Europe/Warsaw', 'Asia/Tokyo'</p>
+<div class="md_header_block" id="h_contents_props_md_title_21"><a class="md_header_anchor" id="a_contents_props_md_title_21"></a><h4>title</h4></div>
+<p>アーティクルのタイトルを指定します。</p>
+<div class="md_header_block" id="h_contents_props_md_title_abstract_len_22"><a class="md_header_anchor" id="a_contents_props_md_title_abstract_len_22"></a><h4>title_abstract_len</h4></div>
+<p><code>title_fallback</code> が <code>abstract</code> のとき、本文から取得する文字数を指定します。未指定時は <code>80</code> となります。</p>
+<div class="md_header_block" id="h_contents_props_md_title_fallback_23"><a class="md_header_anchor" id="a_contents_props_md_title_fallback_23"></a><h4>title_fallback</h4></div>
+<p><code>title</code> プロパティが指定されていないとき、<code>title</code> を取得する方法を指定します。未指定の場合は <code>filename</code> となります。</p>
+<ul>
+<li>
+<p>filename<br/>
+タイトルをファイル名から取得します。</p>
+</li>
+<li>
+<p>abstract<br/>
+本文から <code>title_abstract_len</code>文字を取得して、タイトルにします。</p>
+</li>
+<li>
+<p>header<br/>
+本文から最初のヘッダ要素 (&lt;h1~6&gt;) を取得してタイトルにします。</p>
+</li>
+</ul>
+<div class="md_header_block" id="h_contents_props_md_updated_24"><a class="md_header_anchor" id="a_contents_props_md_updated_24"></a><h4>updated</h4></div>
+<p>アーティクルの更新日を指定します。</p>
+<p><strong>例</strong></p>
+<ul>
+<li>2017/01/01</li>
+<li>2017/01/01 12:00:00</li>
+<li>2017/01/01 12:00:00 +0900</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>

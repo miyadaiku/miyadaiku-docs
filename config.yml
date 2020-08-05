@@ -1,0 +1,27 @@
+# Miyadaiku config file
+
+pygments_style: default
+
+# Base URL of the site
+site_url: http://localhost:8888/
+
+# Title of the site
+site_title: Miyadaiku
+
+# Default language code
+lang: ja-JP
+
+# Default charset
+charset: utf-8
+
+# Default timezone
+timezone: Asia/Tokyo
+
+title_fallback: header
+
+# List of site theme
+themes:
+  - miyadaiku.themes.pygments
+  - miyadaiku_theme_bootstrap4
+  - miyadaiku_theme_fontawesome
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>フィード - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='feed.html#h_feed_md_フィード_1' >フィード</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='feed.html#h_feed_md_プロパティ_2' >プロパティ</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_feed_md_フィード_1"><a class="md_header_anchor" id="a_feed_md_フィード_1"></a><h1>フィード</h1></div>
+<p>Atom/RSSフィードは、<code>type</code>を<code>feed</code>と指定したYAMLファイルで定義します。</p>
+<p><strong>フィード定義の例: contents/atom.ymlファイル</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">feed</span>             <span class="c1"># YAMLファイルのタイプを feed に指定</span>
+<span class="nt">feedtype</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">atom</span>         <span class="c1"># Atomフィードを作成</span>
+<span class="nt">feed_num_articles</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>  <span class="c1"># 最新10件を出力</span>
+</code></pre></div>
+<div class="md_header_block" id="h_feed_md_プロパティ_2"><a class="md_header_anchor" id="a_feed_md_プロパティ_2"></a><h2>プロパティ</h2></div>
+<p><code>feed</code>オブジェクトには、以下のプロパティを指定できます。</p>
+<div class="md_header_block" id="h_feed_md_feedtype_3"><a class="md_header_anchor" id="a_feed_md_feedtype_3"></a><h4>feedtype</h4></div>
+<p>フィードの種類を、<code>atom</code> または <code>rss</code> で指定します。未指定の場合は <code>atom</code> となります。</p>
+<div class="md_header_block" id="h_feed_md_feed_num_articles_4"><a class="md_header_anchor" id="a_feed_md_feed_num_articles_4"></a><h4>feed_num_articles</h4></div>
+<p>フィードに出力するファイルの件数を指定します。</p>
+<div class="md_header_block" id="h_feed_md_filters_5"><a class="md_header_anchor" id="a_feed_md_filters_5"></a><h4>filters</h4></div>
+<p>表示するファイルの検索条件を指定します。検索する文書プロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。</p>
+<p>省略時は、プロパティ <code>draft</code> が <code>false</code> で、<code>date</code> が指定されているすべてのファイルを表示します。</p>
+<p><strong>例: カテゴリが 'news' または 'event' の日本語ファイルのみを表示</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">feed</span>
+<span class="nt">filters</span><span class="p">:</span>
+  <span class="nt">lang</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">ja</span><span class="p p-Indicator">]</span>  <span class="c1"># langが日本語</span>
+  <span class="nt">category</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">news</span><span class="p p-Indicator">,</span> <span class="nv">event</span><span class="p p-Indicator">]</span>  <span class="c1"># カテゴリが news または events</span>
+</code></pre></div>
+<div class="md_header_block" id="h_feed_md_excludes_6"><a class="md_header_anchor" id="a_feed_md_excludes_6"></a><h4>excludes</h4></div>
+<p>インデックスに含めないファイルの検索条件を指定します。検索する文書プロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。</p>
+<p><strong>例: タグが 'Programming'のファイルを除外</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">feed</span>
+<span class="nt">excludes</span><span class="p">:</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">programming</span><span class="p p-Indicator">]</span>  <span class="c1"># タグが programming</span>
+</code></pre></div>
+<div class="md_header_block" id="h_feed_md_directories_7"><a class="md_header_anchor" id="a_feed_md_directories_7"></a><h4>directories</h4></div>
+<p>表示するファイルのディレクトリのリストを、絶対パスまたは相対パスで指定します。次の例を <code>contents/feeds/atom.yml</code> に保存すると、<code>contents/docs</code> ディレクトリと<code>contents/index/subdir/</code> ディレクトリ以下のファイルを出力します。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># contents/index/index.yml</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">feed</span>
+<span class="nt">directories</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/docs</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./subdir</span>
+</code></pre></div>
+
+</div>
+
+
+</body>
+</html>

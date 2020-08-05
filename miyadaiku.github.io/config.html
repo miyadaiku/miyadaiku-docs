@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>設定ファイル - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='config.html#h_config_md_設定ファイル_1' >設定ファイル</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='config.html#h_config_md_設定の親子関係_2' >設定の親子関係</a></li>
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_config_md_設定ファイル_1"><a class="md_header_anchor" id="a_config_md_設定ファイル_1"></a><h1>設定ファイル</h1></div>
+<p>通常、アーティクルのプロパティは文書ファイルに指定しますが、設定ファイルを使うと、ディレクトリごとに未設定なプロパティのデフォルト値を指定できます。</p>
+<p>プロジェクトディレクトリの <a href="proj.html#config_yml">config.yml ファイル</a> に指定したプロパティは、全ディレクトリのデフォルト値となります。</p>
+<p>設定ファイルは、Atom/RSSフィードは、<code>type</code>を<code>config</code>と指定したYAMLファイルで定義します。</p>
+<p><strong>設定ファイルの例: contents/sample.ymlファイル</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span>    <span class="c1"># YAMLファイルのタイプを config に指定</span>
+<span class="nt">category</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">一般</span>  <span class="c1"># カテゴリのデフォルト値を「一般」に設定</span>
+</code></pre></div>
+<div class="md_header_block" id="h_config_md_設定の親子関係_2"><a class="md_header_anchor" id="a_config_md_設定の親子関係_2"></a><h2>設定の親子関係</h2></div>
+<p>設定ファイルのプロパティは、設定ファイルが保存されているディレクトリと、その子ディレクトリで有効です。</p>
+<p>Miyadaikuのデフォルト設定では、アーティクルのHTMLページを生成するJinja2テンプレートは、<code>page_article.html</code> です。次の例では、ディレクトリ <code>A</code> では <code>page_dir_A.html</code>、その子ディレクトリの <code>A/B</code> では <code>page_dir_B.html</code> となるように設定します。</p>
+<p><strong>contents/A/dircondig.yml</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span> 
+<span class="nt">article_template</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">page_dir_A.html</span>  <span class="c1"># A/以下の全ディレクトリのデフォルトテンプレート名を指定</span>
+</code></pre></div>
+<p><strong>contents/A/B/dircondig.yml</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span> 
+<span class="nt">article_template</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">page_dir_AB.html</span>  <span class="c1"># A/B以下の全ディレクトリのデフォルトテンプレート名を指定</span>
+</code></pre></div>
+
+</div>
+
+
+</body>
+</html>

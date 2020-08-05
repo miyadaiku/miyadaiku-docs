@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hello jQuery - FIXME - site title</title>
+  
+
+  <!-- include jquery.js -->
+  <script src="static/jquery/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#article").fadeIn("slow");
+      });
+    });
+  </script>
+
+  <meta property="og:url" content="http://localhost:8888/index.html" />
+<meta property="og:locale" content="ja" />
+<meta property="og:type" content="article" />
+
+<meta property="og:title" content="hello jQuery - FIXME - site title" />
+
+<meta name="description" content="jQuery works! https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/jquery"/>
+<meta property="og:description" content="jQuery works! https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/jquery" />
+
+
+
+</head>
+
+<body>
+  
+
+<h1>jQuery sample</h1>
+
+<button>Click me to show article</button>
+
+<div id="article" style="display:none;">
+  
+<div>
+  <h1>
+    hello jQuery
+  </h1>
+
+  <div>
+    <p>jQuery works!</p>
+<p><a class="reference external" href="https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/jquery">https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/jquery</a></p>
+
+  </div>
+
+</div>
+
+</div>
+
+
+</body>
+</html>

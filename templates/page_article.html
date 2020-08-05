@@ -1,0 +1,65 @@
+{% extends 'miyadaiku.themes.base!base.html' %} 
+
+{% block head %} 
+  {{ super() }}
+
+
+<!-- include boolstrap4 -->
+{{ bootstrap4.load_css(page) }}
+
+<!-- include jquery.js -->
+{{ jquery.load_js(page) }}
+
+<!-- include popper.js -->
+{{ popper_js.load_js(page) }}
+
+<!-- include boolstrap4 js -->
+{{ bootstrap4.load_js(page) }}
+
+<!-- include pygments css -->
+{{ pygments.load_css(page) }}
+
+<!-- include pygments css -->
+{{ fontawesome.load_css(page) }}
+
+
+<link rel="stylesheet" href="{{ page.path_to('/static/miyadaiku_docs/styles.css') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ page.path_to('/favicon') }}">
+
+
+{% endblock head %} 
+
+{% block body %}
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='{{ page.path_to('/favicon') }}' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    {% for p in content.pages %}
+      {% set curpage = content.load(p) %}
+      {% if content.contentpath == curpage.contentpath %}
+        <ul class="toc_curpage">
+          {% for h in content.headers %}
+            {% if h.tag[1] <= '3' %}
+              <li class="h_{{h.tag}}">{{ curpage.link(fragment=h.id) }}</li>
+            {% endif %}
+          {% endfor%}
+        </ul>
+      {% else %}
+        <li class="h_h1 toc_closedpage">{{ curpage.link()}}</li>
+      {% endif %}
+    {% endfor%}
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+{{ page.html }}
+
+</div>
+
+{% endblock body %}
+

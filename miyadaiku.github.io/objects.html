@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>オブジェクトリファレンス - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='objects.html#h_objects_md_オブジェクトリファレンス_1' >オブジェクトリファレンス</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='objects.html#h_objects_md_コンテントオブジェクト_2' >コンテントオブジェクト</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='objects.html#h_objects_md_プロパティ_3' >プロパティ</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="h_h3"><a href='objects.html#h_objects_md_メソッド_9' >メソッド</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="h_h2"><a href='objects.html#h_objects_md_コンテンツ_コレクション_16' >コンテンツ コレクション</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='objects.html#h_objects_md_メソッド_17' >メソッド</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_objects_md_オブジェクトリファレンス_1"><a class="md_header_anchor" id="a_objects_md_オブジェクトリファレンス_1"></a><h1>オブジェクトリファレンス</h1></div>
+<div class="header_target" id="content_obj"></div>
+<div class="md_header_block" id="h_objects_md_コンテントオブジェクト_2"><a class="md_header_anchor" id="a_objects_md_コンテントオブジェクト_2"></a><h2>コンテントオブジェクト</h2></div>
+<p>Miyadaikuで、<code>contents</code> ディレクトリや <code>files</code> ディレクトリのファイルは、コンテントオブジェクトとして読み込まれます。アーティクルやインデックスなどのファイルだけでなく、CSSや画像ファイルなどのMiyadaikuで処理されないファイルも、コンテントオブジェクトとして参照できます。</p>
+<div class="md_header_block" id="h_objects_md_プロパティ_3"><a class="md_header_anchor" id="a_objects_md_プロパティ_3"></a><h3>プロパティ</h3></div>
+<p><code>tags</code> や <code>title</code> など、コンテントオブジェクトに設定された <a href="contents_props.html">プロパティ</a> は、コンテントオブジェクトの属性として参照できます。</p>
+<p><strong>例: titleプロパティを表示</strong></p>
+<div class="highlight"><pre><span></span><code>この文書のタイトルは、:jinja:`{{ content.title}}` です。
+</code></pre></div>
+<p>コンテンツのプロパティ以外にも、以下の属性を参照できます。</p>
+<div class="md_header_block" id="h_objects_md_abstract_4"><a class="md_header_anchor" id="a_objects_md_abstract_4"></a><h4>abstract</h4></div>
+<p>コンテンツの先頭から、<code>abstract_length</code> で指定した文字数のテキストを取得します。</p>
+<div class="md_header_block" id="h_objects_md_filename_5"><a class="md_header_anchor" id="a_objects_md_filename_5"></a><h4>filename</h4></div>
+<p>コンテンツの出力ファイル名(ディレクトリを含まない)を取得します。</p>
+<div class="md_header_block" id="h_objects_md_headers_6"><a class="md_header_anchor" id="a_objects_md_headers_6"></a><h4>headers</h4></div>
+<p>コンテンツのヘッダ要素の一覧を、次の <a href="https://docs.python.org/3/library/collections.html#collections.namedtuple">NamedTuple</a> で返します。</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HTMLIDInfo</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>   <span class="c1"># ヘッダ部分のid</span>
+    <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># ヘッダタグ名 (h1~h6)</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="c1"># ヘッダ要素内のテキスト</span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_html_7"><a class="md_header_anchor" id="a_objects_md_html_7"></a><h4>html</h4></div>
+<p>コンテンツのHTMLを取得します。</p>
+<div class="md_header_block" id="h_objects_md_url_8"><a class="md_header_anchor" id="a_objects_md_url_8"></a><h4>url</h4></div>
+<p>コンテンツの絶対URLを取得します。</p>
+<div class="md_header_block" id="h_objects_md_メソッド_9"><a class="md_header_anchor" id="a_objects_md_メソッド_9"></a><h3>メソッド</h3></div>
+<div class="md_header_block" id="h_objects_md_get_abstract_abstract_length_None_plain_False__10"><a class="md_header_anchor" id="a_objects_md_get_abstract_abstract_length_None_plain_False__10"></a><h4>get_abstract(abstract_length=None, plain=False)</h4></div>
+<p>コンテンツの先頭から、<code>abstract_length</code> で指定した文字数のテキストを取得します。</p>
+<dl>
+<dt>abstract_length</dt>
+<dd>取得する文字数を指定します。省略時は、<code>abstract_length</code> プロパティを使用します。</dd>
+<dt>plain</dt>
+<dd><code>True</code>の場合はHTML、<code>False</code>の場合は plain text を返します。</dd>
+</dl>
+<div class="md_header_block" id="h_objects_md_link_text_None_fragment_None_abs_path_False_attrs_None_group_value_None_npa_11"><a class="md_header_anchor" id="a_objects_md_link_text_None_fragment_None_abs_path_False_attrs_None_group_value_None_npa_11"></a><h4>link(text=None, fragment=None, abs_path=False, attrs=None, group_value=None, npage=None):</h4></div>
+<p>現在のページからリンクする<a>要素を返します。</a></p>
+<dl>
+<dt>text</dt>
+<dd>リンク文字列を指定します。省略時は、<code>fragment</code> で指定するヘッダ要素のテキスト、またはオブジェクトのタイトルとなります。</dd>
+<dt>fragment</dt>
+<dd>リンク先の要素idを指定します。</dd>
+<dt>abs_path</dt>
+<dd><code>True</code> の場合、プロトコルから始まる完全なURLを返します。</dd>
+<dt>attrs:</dt>
+<dd><code>&lt;a&gt;</code>要素の属性を辞書で指定します。e.g: <code>{'style':'border: solid 1px;'}</code></dd>
+<dt>group_value</dt>
+<dd>グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。</dd>
+<dt>npage</dt>
+<dd>インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">content.link</span><span class="o">(</span><span class="nv">fragment</span><span class="o">=</span><span class="s2">"id_in_page"</span><span class="o">,</span>
+    <span class="nv">attrs</span><span class="o">={</span><span class="s2">"class":"class_a"</span><span class="o">,</span> <span class="s2">"style":"border:solid;"</span><span class="o">})</span> <span class="cp">}}</span><span class="x"></span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_link_to_target_text_None_fragment_None_abs_path_False_attrs_None_group_valu_12"><a class="md_header_anchor" id="a_objects_md_link_to_target_text_None_fragment_None_abs_path_False_attrs_None_group_valu_12"></a><h4>link_to(target, text=None, fragment=None, abs_path=False, attrs=None, group_value=None, npage=None):</h4></div>
+<p><code>target</code> で指定するコンテントオブジェクトへリンクする <code>&lt;a&gt;</code> 要素を返します。<code>content.load(target).link_to()</code> と同様です。</p>
+<dl>
+<dt>target</dt>
+<dd>リンク先のコンテントオブジェクト、<code>'/'</code> から始まる絶対パス、または相対パスのいずれかを指定します。</dd>
+</dl>
+<p>現在のページからリンクする<a>要素を返します。</a></p>
+<dl>
+<dt>text</dt>
+<dd>リンク文字列を指定します。省略時は、<code>fragment</code> で指定するヘッダ要素のテキスト、またはオブジェクトのタイトルとなります。</dd>
+<dt>fragment</dt>
+<dd>リンク先の要素idを指定します。</dd>
+<dt>abs_path</dt>
+<dd><code>True</code> の場合、プロトコルから始まる完全なURLを返します。</dd>
+<dt>attrs:</dt>
+<dd><code>&lt;a&gt;</code>要素の属性を辞書で指定します。e.g: <code>{'style':'border: solid 1px;'}</code></dd>
+<dt>group_value</dt>
+<dd>グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。</dd>
+<dt>npage</dt>
+<dd>インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">content.link_to</span><span class="o">(</span><span class="s2">"../page1.rst"</span><span class="o">,</span> <span class="nv">fragment</span><span class="o">=</span><span class="s2">"id_in_page"</span><span class="o">,</span>
+                <span class="nv">attrs</span><span class="o">={</span><span class="s2">"class":"class_a"</span><span class="o">})</span> <span class="cp">}}</span><span class="x"></span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_load_target__13"><a class="md_header_anchor" id="a_objects_md_load_target__13"></a><h4>load(target)</h4></div>
+<p><code>target</code> で指定したパスのコンテントオブジェクトを取得します。</p>
+<dl>
+<dt>target</dt>
+<dd><code>'/'</code> から始まる絶対パス、または相対パスを指定できます。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">content.load</span><span class="o">(</span><span class="s1">'/page1.rst'</span><span class="o">)</span><span class="nv">.abstract</span> <span class="cp">}}</span><span class="x">  </span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_path_fragment_None_abs_path_False_group_value_None_npage_None__14"><a class="md_header_anchor" id="a_objects_md_path_fragment_None_abs_path_False_group_value_None_npage_None__14"></a><h4>path(fragment=None, abs_path=False, group_value=None, npage=None)</h4></div>
+<p>現在のページから、自分自身へのパスを取得します。</p>
+<dl>
+<dt>fragment</dt>
+<dd>ページ内の要素idを指定します。</dd>
+<dt>abs_path</dt>
+<dd><code>True</code> の場合、プロトコルから始まる完全なURLを返します。</dd>
+<dt>group_value</dt>
+<dd>グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。</dd>
+<dt>npage</dt>
+<dd>インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。</dd>
+</dl>
+<p><strong>例:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">'{{ content.path() }}'</span><span class="p">&gt;</span>
+  Current content<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_path_to_target_fragment_None_abs_path_False_group_value_None_npage_None__15"><a class="md_header_anchor" id="a_objects_md_path_to_target_fragment_None_abs_path_False_group_value_None_npage_None__15"></a><h4>path_to(target, fragment=None, abs_path=False, group_value=None, npage=None)</h4></div>
+<p><code>target</code> で指定するコンテントオブジェクトへのパスを取得します。<code>content.load(target).path()</code> と同様です。</p>
+<dl>
+<dt>target</dt>
+<dd>リンク先のコンテントオブジェクト、<code>'/'</code> から始まる絶対パス、または相対パスのいずれかを指定します。</dd>
+<dt>fragment</dt>
+<dd>リンク先の要素idを指定します。</dd>
+<dt>abs_path</dt>
+<dd><code>True</code> の場合、プロトコルから始まる完全なURLを返します。</dd>
+<dt>group_value</dt>
+<dd>グループ別インデックスページの、グループの値を指定します。インデックスページでのみ指定できます。</dd>
+<dt>npage</dt>
+<dd>インデックスページの、リンク先ページ番号を指定します。インデックスページでのみ指定できます。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">'{{ page.path_to("../page1.rst") }}'</span><span class="p">&gt;</span>
+  親ディレクトリのpage1.html<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="header_target" id="contents_collection"></div>
+<div class="md_header_block" id="h_objects_md_コンテンツ_コレクション_16"><a class="md_header_anchor" id="a_objects_md_コンテンツ_コレクション_16"></a><h2>コンテンツ コレクション</h2></div>
+<p>コンテンツコレクションは、Miyadaikuプロジェクトのすべてのコンテントを管理するオブジェクトです。</p>
+<div class="md_header_block" id="h_objects_md_メソッド_17"><a class="md_header_anchor" id="a_objects_md_メソッド_17"></a><h3>メソッド</h3></div>
+<div class="md_header_block" id="h_objects_md_get_content_key_base_None__18"><a class="md_header_anchor" id="a_objects_md_get_content_key_base_None__18"></a><h4>get_content(key, base=None)</h4></div>
+<p>コレクションから、指定したファイル名の <a href="objects.html#content_obj">コンテントオブジェクト</a> を取得します。</p>
+<dl>
+<dt>key</dt>
+<dd>コンテントオブジェクトのパスを、<code>/</code> で始まる絶対パス、または相対パスで指定します。相対パスで指定する場合は、base に起点となるコンテントオブジェクトを指定します。</dd>
+<dt>base</dt>
+<dd><code>key</code> に相対パスを指定した場合に、起点となるコンテントオブジェクトを指定します。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">contents.get_content</span><span class="o">(</span><span class="s2">"../page1.rst"</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_get_contents_subdirs_None_recurse_bool_True_base_None_filters_None_exclud_19"><a class="md_header_anchor" id="a_objects_md_get_contents_subdirs_None_recurse_bool_True_base_None_filters_None_exclud_19"></a><h4>get_contents(subdirs=None, recurse: bool = True, base=None, filters=None, excludes=None)</h4></div>
+<p>コレクションから、指定した条件の <a href="objects.html#content_obj">コンテントオブジェクト</a> を検索します。結果として、<a href="objects.html#content_obj">コンテントオブジェクト</a> のリストを返します。</p>
+<dl>
+<dt>subdirs</dt>
+<dd>検索対象のディレクトリのリストを指定します。ディレクトリ名は、<code>/</code> で始まる絶対パス、または相対パスで指定します。相対パスで指定する場合は、<code>base</code> に起点となるコンテントオブジェクトを指定します。</dd>
+<dt>base</dt>
+<dd><code>subdirs</code> に相対パスを指定した場合に、起点となるコンテントオブジェクトを指定します。</dd>
+<dt>recurse</dt>
+<dd>指定したディレクトリのサブディレクトリも検索する場合は <code>True</code> とします。</dd>
+<dt>filters</dt>
+<dd>検索条件を指定します。検索するプロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。省略時は、文書プロパティ <code>draft</code> が <code>false</code> かつ <code>type</code> が <code>article</code> のコンテントオブジェクトを検索します。</dd>
+<dt>excludes</dt>
+<dd>検索結果から除外する条件を指定します。検索するプロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">found</span> <span class="k">in</span> <span class="nv">contents.get_contents</span><span class="o">(</span><span class="nv">filter</span><span class="o">={</span><span class="s1">'tags'</span><span class="o">:</span> <span class="o">[</span><span class="s1">'tag1'</span><span class="o">,</span> <span class="s1">'tag2'</span><span class="o">]})</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;p&gt;</span><span class="cp">{{</span> <span class="nv">found.title</span><span class="cp">}}</span><span class="x">&lt;/p&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<div class="md_header_block" id="h_objects_md_group_items_group_subdirs_None_recurse_bool_True_base_None_filters_None__20"><a class="md_header_anchor" id="a_objects_md_group_items_group_subdirs_None_recurse_bool_True_base_None_filters_None__20"></a><h4>group_items(group, subdirs=None, recurse: bool = True, base=None, filters=None, excludes=None)</h4></div>
+<p><code>contents.get_contents()</code> と同様に、アーティクルを検索します。検索結果は、<code>group</code> で指定するプロパティ名の値で分類します。</p>
+<p>戻り値は、</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+  <span class="p">([</span><span class="s1">'プロパティ値1'</span><span class="p">],</span> <span class="p">[</span><span class="n">article1</span><span class="p">,</span> <span class="n">article2</span><span class="p">,]),</span> 
+  <span class="p">([</span><span class="s1">'プロパティ値2'</span><span class="p">],</span> <span class="p">[</span><span class="n">article3</span><span class="p">,</span> <span class="n">article4</span><span class="p">,</span> <span class="n">article5</span><span class="p">]),</span>
+<span class="p">]</span> 
+</code></pre></div>
+<p>のように、プロパティ値と該当するコンテントオブジェクトのリストのタプルを要素とするリストを返します。</p>
+<dl>
+<dt>group</dt>
+<dd>分類するプロパティ名を指定します。</dd>
+<dt>subdirs</dt>
+<dd>検索対象のディレクトリのリストを指定します。ディレクトリ名は、<code>/</code> で始まる絶対パス、または相対パスで指定します。相対パスで指定する場合は、<code>base</code> に起点となるコンテントオブジェクトを指定します。</dd>
+<dt>base</dt>
+<dd><code>subdirs</code> に相対パスを指定した場合に、起点となるコンテントオブジェクトを指定します。</dd>
+<dt>recurse</dt>
+<dd>指定したディレクトリのサブディレクトリも検索する場合は <code>True</code> とします。</dd>
+<dt>filters</dt>
+<dd>検索条件を指定します。検索するプロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。省略時は、文書プロパティ <code>draft</code> が <code>false</code> かつ <code>type</code> が <code>article</code> のコンテントオブジェクトを検索します。</dd>
+<dt>excludes</dt>
+<dd>検索結果から除外する条件を指定します。検索するプロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;dl&gt;</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">values</span><span class="o">,</span> <span class="nv">items</span> <span class="k">in</span> <span class="nv">contents.group_items</span><span class="o">(</span><span class="s1">'tags'</span><span class="o">)</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;dt&gt;</span><span class="cp">{{</span> <span class="nv">values</span><span class="o">[</span><span class="m">0</span><span class="o">]</span> <span class="cp">}}</span><span class="x">&lt;/dt&gt;</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">items</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;dd&gt;</span><span class="cp">{{</span><span class="nv">item.link</span><span class="o">()</span><span class="cp">}}</span><span class="x">&lt;/dd&gt;</span>
+<span class="x">  </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/dl&gt;</span>
+</code></pre></div>
+
+</div>
+
+
+</body>
+</html>

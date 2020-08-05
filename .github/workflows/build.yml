@@ -1,0 +1,35 @@
+name: Build miyadaiku
+
+on:
+  push:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: build
+    # This job runs on Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip wheel
+
+      - name: build doc
+        run: |
+          ./build_all.sh
+
+#      - name: Deploy release
+#        uses: peaceiris/actions-gh-pages@v3
+#        if: github.event_name == 'release' && github.event.action == 'published'
+#        with:
+#          deploy_key: ${{ secrets.AISH_DEV_KEY }}
+#          external_repository: atsuoishimoto/atsuoishimoto.github.io
+#          publish_dir: ./public
+#          publish_branch: master

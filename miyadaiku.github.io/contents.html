@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>アーティクル - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='contents.html#h_contents_md_アーティクル_1' >アーティクル</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='contents.html#h_contents_md_Markdownファイル_2' >Markdownファイル</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_プロパティ_3' >プロパティ</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_マークアップ_4' >マークアップ</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_ファイル分割_7' >ファイル分割</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='contents.html#h_contents_md_Jupyter_Notebookファイル_8' >Jupyter Notebookファイル</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_プロパティ_9' >プロパティ</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_ファイル分割_10' >ファイル分割</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='contents.html#h_contents_md_HTMLファイル_11' >HTMLファイル</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_プロパティ_12' >プロパティ</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_ファイル分割_13' >ファイル分割</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='contents.html#h_contents_md_reStructuredTextファイル_14' >reStructuredTextファイル</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_プロパティ_15' >プロパティ</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='contents.html#h_contents_md_マークアップ_16' >マークアップ</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="h_h2"><a href='contents.html#h_contents_md_スニペット_21' >スニペット</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='contents.html#h_contents_md_テンプレート変数_22' >テンプレート変数</a></li>
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_contents_md_アーティクル_1"><a class="md_header_anchor" id="a_contents_md_アーティクル_1"></a><h1>アーティクル</h1></div>
+<p>プロジェクトの<code>contents</code>ディレクトリに作成したファイルのうち、以下の種類のファイルは、ビルド時に HTML に変換してから<code>outputs</code>ディレクトリに出力します。Miyadaikuでは、このようにHTMLファイルに変換するファイルを、「<strong>アーティクル</strong>」と呼びます</p>
+<p><code>contents</code>ディレクトリには、自由にサブディレクトリを作成できます。サブディレクトリのファイルは、そのままのディレクトリ構造で <code>outputs</code>ディレクトリに出力します。</p>
+<div class="md_header_block" id="h_contents_md_Markdownファイル_2"><a class="md_header_anchor" id="a_contents_md_Markdownファイル_2"></a><h2>Markdownファイル</h2></div>
+<p>拡張子が <code>'.md'</code>のファイルは、MarkdownファイルとしてHTMLに変換されます。Markdownの変換には、<a href="https://pypi.org/project/Markdown/">Markdownパッケージ</a> を使用しています。</p>
+<div class="md_header_block" id="h_contents_md_プロパティ_3"><a class="md_header_anchor" id="a_contents_md_プロパティ_3"></a><h3>プロパティ</h3></div>
+<p>ファイルのタイトル・タグなどのプロパティは、HTML ファイルの先頭に YAML 形式で指定できます。ファイルの一行目が <code>---</code> で始まっている場合、次の <code>---</code> までがプロパティとなります。</p>
+<div class="highlight"><pre><span></span><code>---
+title: ファイルのタイトル
+date: 2020/9/1
+tags:
+  - プログラミング
+  - Python
+---
+
+## Hello
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_マークアップ_4"><a class="md_header_anchor" id="a_contents_md_マークアップ_4"></a><h3>マークアップ</h3></div>
+<p>Miyadaikuでは、Markdownに以下の記法を追加しています。</p>
+<div class="md_header_block" id="h_contents_md__jinja__5"><a class="md_header_anchor" id="a_contents_md__jinja__5"></a><h4>:jinja:``</h4></div>
+<p>Markdownファイルには、<code>:jinja:`</code> と <code>`</code> の間にJinjaテンプレートを記述できます。</p>
+<div class="highlight"><pre><span></span><code>2の10乗は、 :jinja:`{{ 2**10 }}` です。
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md__target__6"><a class="md_header_anchor" id="a_contents_md__target__6"></a><h4>.. target::</h4></div>
+<p><code>.. target::</code> は、HTMLに <code>&lt;div&gt;</code> 要素を埋め込み、直後のヘッダ要素へのリンクターゲットとして指定できるようにします。<code>&lt;div&gt;</code> 要素の <code>id</code> を、ディレクティブの引数で指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">target</span><span class="p">::</span> id_of_section1
+
+# Section I
+
+Body of section I.
+
+## Section II
+
+Link to <span class="na">:jinja:</span><span class="nv">`{{ content.link_to(content, fragment='id_of_section1') }}`</span>.
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_ファイル分割_7"><a class="md_header_anchor" id="a_contents_md_ファイル分割_7"></a><h3>ファイル分割</h3></div>
+<p>Markdownファイルの一行目が <code>%%% ファイル名</code> から始まるファイルは、次の<code>%%% ファイル名</code> で始まる行までを分割して、複数のコンテンツを出力します。</p>
+<p>次の例は、一つのファイルを２つの別々のファイルとして出力します。それぞれのファイル名は、<code>split_file_1.md</code> と、<code>split_file_2.md</code> となります。</p>
+<div class="highlight"><pre><span></span><code>%%% split_file_1.md
+---
+title: 分割ファイル1
+---
+ファイル1
+
+%%% split_file_2.md
+---
+title: 分割ファイル2
+---
+ファイル2
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_Jupyter_Notebookファイル_8"><a class="md_header_anchor" id="a_contents_md_Jupyter_Notebookファイル_8"></a><h2>Jupyter Notebookファイル</h2></div>
+<p>Jupyter Notebookファイル(*.ipynb)ファイルは、HTMLに変換して結果を出力します。このHTMLにはCSSが含まれていないので、通常のNotebookとは表示が異なります。CSSの適用については、NotebookのCSS設定を参照してください。</p>
+<p>現在のMiyadaikuでは、NotebookにはJinjaテンプレートは記述できません。</p>
+<div class="md_header_block" id="h_contents_md_プロパティ_9"><a class="md_header_anchor" id="a_contents_md_プロパティ_9"></a><h3>プロパティ</h3></div>
+<p>ファイルのタイトル・タグなどのプロパティは、最初のセルの先頭に YAML 形式で指定できます。ファイルの一行目が <code>---</code> で始まっている場合、次の <code>---</code> までがプロパティとなります。プロパティは、タイプが <code>code</code> 以外のセル(<code>raw</code>, <code>markdown</code>など)に指定できます。</p>
+<div class="highlight"><pre><span></span><code>---
+title: ファイルのタイトル
+date: 2020/9/1
+tags:
+  - プログラミング
+  - Python
+---
+
+- sample markdown
+</code></pre></div>
+<p>また、NotebookのメタデータとしてもMiyadaikuのプロパティを設定できます。</p>
+<ol>
+<li>Jupyter Web画面のメニューで Edit -&gt; Edit Notebook Metadata を選択します。</li>
+<li>JSONに miyadaiku キーを追加し、プロパティ値を指定します。次の例では、<code>title</code> プロパティと <code>date</code> プロパティを指定しています。</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">"kernelspec"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"python3"</span><span class="p">,</span>
+    <span class="nt">"display_name"</span><span class="p">:</span> <span class="s2">"Python 3"</span><span class="p">,</span>
+
+    <span class="nt">""</span><span class="p">:</span>
+    <span class="s2">" ommit inrelevant lines"</span>
+    <span class="s2">" ... "</span>
+    <span class="s2">" ... "</span>
+
+  <span class="s2">"miyadaiku"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"title"</span><span class="p">:</span> <span class="s2">"Title of Jupyter notebook"</span><span class="p">,</span>
+    <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"2017-01-01"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_ファイル分割_10"><a class="md_header_anchor" id="a_contents_md_ファイル分割_10"></a><h3>ファイル分割</h3></div>
+<p>ノートブックの最初のセルの一行目が <code>%%% ファイル名</code> から始まるファイルは、以降のセルの<code>%%% ファイル名</code> で始まる行までを分割して、複数のコンテンツを出力します。ファイル分割は、タイプが <code>code</code> 以外のセル(<code>raw</code>, <code>markdown</code>など)に指定できます。</p>
+<p>次の例は、一つのファイルを２つの別々のファイルとして出力します。それぞれのファイル名は、<code>split_file_1.ipynb</code> と、<code>split_file_2.i@pynb</code> となります。</p>
+<div class="highlight"><pre><span></span><code>%%% split_file_1.ipynb
+---
+title: 分割ファイル1
+---
+ファイル1
+
+%%% split_file_2.ipynb
+---
+title: 分割ファイル2
+---
+ファイル2
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_HTMLファイル_11"><a class="md_header_anchor" id="a_contents_md_HTMLファイル_11"></a><h2>HTMLファイル</h2></div>
+<p>拡張子が <code>'.html'</code>, <code>'.htm'</code>, <code>'.j2'</code> のいずれかのファイルは、Jinja のテンプレートとして実行して結果を出力します。通常の Jinja テンプレートのように、<code>{{}}</code>や<code>{% 〜 %}</code> を使って処理を記述します。</p>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;h1&gt;HTMLコンテンツ サンプル&lt;/h1&gt;</span>
+
+<span class="x">&lt;ol&gt;</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">os</span> <span class="k">in</span> <span class="o">[</span><span class="s1">'Windows'</span><span class="o">,</span> <span class="s1">'macOS'</span><span class="o">,</span> <span class="s1">'Ubuntu'</span><span class="o">]</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;li&gt;</span><span class="cp">{{</span> <span class="nv">os</span> <span class="cp">}}</span><span class="x">&lt;/li&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;/ol&gt;</span>
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_プロパティ_12"><a class="md_header_anchor" id="a_contents_md_プロパティ_12"></a><h3>プロパティ</h3></div>
+<p>ファイルのタイトル・タグなどのプロパティは、HTML ファイルの先頭に YAML 形式で指定できます。ファイルの一行目が <code>---</code> で始まっている場合、次の <code>---</code> までがプロパティとなります。</p>
+<div class="highlight"><pre><span></span><code>---
+title: ファイルのタイトル
+date: 2020/9/1
+tags:
+  - プログラミング
+  - Python
+---
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ content.title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_ファイル分割_13"><a class="md_header_anchor" id="a_contents_md_ファイル分割_13"></a><h3>ファイル分割</h3></div>
+<p>HTMLファイルの一行目が <code>%%% ファイル名</code> から始まるファイルは、次の <code>%%% ファイル名</code> で始まる行までを分割して、複数のコンテンツを出力します。</p>
+<p>次の例は、一つのファイルを２つの別々のファイルとして出力します。それぞれのファイル名は、<code>split_file_1.html</code> と、<code>split_file_2.html</code> となります。</p>
+<div class="highlight"><pre><span></span><code>%%% split_file_1.html
+---
+title: 分割ファイル1
+---
+ファイル1
+
+%%% split_file_2.html
+---
+title: 分割ファイル2
+---
+ファイル2
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_reStructuredTextファイル_14"><a class="md_header_anchor" id="a_contents_md_reStructuredTextファイル_14"></a><h2>reStructuredTextファイル</h2></div>
+<p>拡張子が <code>'.rst'</code>のファイルは、reStructuredTextファイルとしてHTMLに変換されます。</p>
+<div class="md_header_block" id="h_contents_md_プロパティ_15"><a class="md_header_anchor" id="a_contents_md_プロパティ_15"></a><h3>プロパティ</h3></div>
+<p>アーティクルのプロパティは、<code>articleディレクティブ</code> で指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">article</span><span class="p">::</span>
+   <span class="nc">:date:</span> 2017-01-01
+   <span class="nc">:title:</span> 文書のタイトル
+   <span class="nc">:category:</span> カテゴリ1
+   <span class="nc">:tags:</span> タグ1, タグ2
+
+
+<span class="gh">Sample of article directive</span>
+<span class="gh">-----------------------------------</span>
+
+This is a miyadaiku article in reST.
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_マークアップ_16"><a class="md_header_anchor" id="a_contents_md_マークアップ_16"></a><h3>マークアップ</h3></div>
+<p>Miyadaikuでは、reStructuredTextに以下の記法を追加しています。</p>
+<div class="md_header_block" id="h_contents_md_jinjaディレクティブ_17"><a class="md_header_anchor" id="a_contents_md_jinjaディレクティブ_17"></a><h4>jinjaディレクティブ</h4></div>
+<p>複数行のJinjaテンプレートは、<code>jinjaディレクティブ</code> を使って記述できます。</p>
+<div class="highlight"><pre><span></span><code><span class="gh">この文書のプロパティ</span>
+<span class="gh">-----------------------------------</span>
+
+<span class="p">..</span> <span class="ow">jinja</span><span class="p">::</span>
+
+   &lt;ul&gt;
+     &lt;li&gt; カテゴリ: {{ content.category }} &lt;/li&gt;
+     &lt;li&gt; タグ: {{ ', '.join(content.tags) }} &lt;/li&gt;
+     &lt;li&gt; 日付: {{ content.date.strftime('%Y-%m-%d') }} &lt;/li&gt;
+   &lt;/ul&gt;
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_jinjaロール_18"><a class="md_header_anchor" id="a_contents_md_jinjaロール_18"></a><h4>jinjaロール</h4></div>
+<p>また、<code>\:jinja: ロール</code> で、インラインにJinjaテンプレートを記述できます。</p>
+<div class="highlight"><pre><span></span><code>この文書は、<span class="na">:jinja:</span><span class="nv">`{{ content.title }}`</span> です。
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_code_blockディレクティブ_19"><a class="md_header_anchor" id="a_contents_md_code_blockディレクティブ_19"></a><h4>code-blockディレクティブ</h4></div>
+<p>プログラムのソースコードなどは、<code>code-block ディレクティブ</code> で記述します。<code>.. code-block:: lang</code> のように言語を指定すると、Pygments による構文ハイライトが行われます。</p>
+<div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> python
+   def test():
+      pass
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_targetディレクティブ_20"><a class="md_header_anchor" id="a_contents_md_targetディレクティブ_20"></a><h4>targetディレクティブ</h4></div>
+<p><code>targetディレクティブ</code> は、HTMLに <code>&lt;div&gt;</code> 要素を埋め込み、直後のヘッダ要素へのリンクターゲットとして指定できるようにします。<code>&lt;div&gt;</code> 要素の <code>id</code> を、ディレクティブの引数で指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="p">..</span> <span class="ow">target</span><span class="p">::</span> id_of_section1
+
+<span class="gh">Section I</span>
+<span class="gh">-------------------</span>
+
+Body of section I.
+
+<span class="gh">Section II</span>
+<span class="gh">------------------</span>
+
+Link to <span class="na">:jinja:</span><span class="nv">`{{ content.link_to(content, fragment='id_of_section1') }}`</span>.
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_スニペット_21"><a class="md_header_anchor" id="a_contents_md_スニペット_21"></a><h2>スニペット</h2></div>
+<p><strong>スニペット</strong>は、アーティクルと同様、<em>.rst ファイルや </em>.md ファイルなどから作成されるコンテンツですが、アーティクルとは異なり、スニペットからはHTMLファイルは生成されません。スニペットは、独立したHTMLページを作成するためではなく、他のアーティクルなどから読み込んで使用します。</p>
+<p>スニペットは、ファイルの <code>type</code> プロパティに <code>snippet</code> を指定して作成します。</p>
+<p>次のMarkdownファイル <code>snip.md</code> は、スニペットを作成します。</p>
+<div class="highlight"><pre><span></span><code>---
+type: snippet
+---
+
+Hello from snip.md.
+</code></pre></div>
+<p>スニペットは、次のように他のアーティクル内に取り込めます。</p>
+<div class="highlight"><pre><span></span><code>---
+title
+---
+
+こんにちは
+
+:jinja:`{{ content.load('snip.md').html }}`
+</code></pre></div>
+<div class="md_header_block" id="h_contents_md_テンプレート変数_22"><a class="md_header_anchor" id="a_contents_md_テンプレート変数_22"></a><h2>テンプレート変数</h2></div>
+<p>アーティクルに <code>:jinja:``</code> などを使って記述するJinjaテンプレートでは、次の変数を参照できます。</p>
+<dl>
+<dt>content</dt>
+<dd>実行中のJinjaテンプレートが記述されている、アーティクル自身を参照します。</dd>
+<dt>page</dt>
+<dd>現在のページのオブジェクト を参照します。<br/>
+アーティクルの個別ページでは <code>content</code> と <code>page</code> は同じアーティクルですが、インデックスページにアーティクルを表示する場合などは、<code>content</code> はアーティクルオブジェクトで、<code>page</code> はインデックスオブジェクトとなります。</dd>
+<dt>contents</dt>
+<dd>ContentFilesオブジェクトを参照します。</dd>
+</dl>
+
+</div>
+
+
+</body>
+</html>

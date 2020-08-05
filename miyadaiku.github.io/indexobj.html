@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>インデックス - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='indexobj.html#h_indexobj_md_インデックス_1' >インデックス</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='indexobj.html#h_indexobj_md_プロパティ_2' >プロパティ</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="h_h2"><a href='indexobj.html#h_indexobj_md_グループ別インデックス_12' >グループ別インデックス</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='indexobj.html#h_indexobj_md_グループ別インデックスのプロパティ_13' >グループ別インデックスのプロパティ</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_indexobj_md_インデックス_1"><a class="md_header_anchor" id="a_indexobj_md_インデックス_1"></a><h1>インデックス</h1></div>
+<p>Blogサイトなどでは、新着記事ページや、記事カテゴリ別の一覧ページなど、アーティクルの一覧からなるページが必要となります。Miyadaikuでは、このようなファイルの一覧ページは、<code>index</code>オブジェクトから作成します。</p>
+<p><code>index</code>オブジェクトは、<code>type</code>を<code>index</code>と指定したYAMLファイルで定義します。</p>
+<p><strong>インデックス定義の例: contents/index.ymlファイル</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>                 <span class="c1"># YAMLファイルのタイプを index に指定</span>
+<span class="nt">indexpage_max_articles</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>  <span class="c1"># 1ページにファイルを10件表示</span>
+<span class="nt">abstract_length</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">256</span>        <span class="c1"># 摘要として表示する文字数</span>
+<span class="nt">filters</span><span class="p">:</span>                    <span class="c1"># categoryが TECH または IT のファイルの一覧を作成</span>
+  <span class="nt">category</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">TECH</span><span class="p p-Indicator">,</span> <span class="nv">IT</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<div class="md_header_block" id="h_indexobj_md_プロパティ_2"><a class="md_header_anchor" id="a_indexobj_md_プロパティ_2"></a><h2>プロパティ</h2></div>
+<p><code>index</code>オブジェクトには、以下のプロパティを指定できます。</p>
+<div class="md_header_block" id="h_indexobj_md_filters_3"><a class="md_header_anchor" id="a_indexobj_md_filters_3"></a><h4>filters</h4></div>
+<p>表示するアーティクルの検索条件を指定します。検索する文書プロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。</p>
+<p>省略時は、プロパティ <code>draft</code> が <code>false</code> の、すべてのファイルを表示します。</p>
+<p><strong>例: カテゴリが 'news' または 'event' の日本語ファイルのみを表示</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="nt">filters</span><span class="p">:</span>
+  <span class="nt">lang</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">ja</span><span class="p p-Indicator">]</span>  <span class="c1"># langが日本語</span>
+  <span class="nt">category</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">news</span><span class="p p-Indicator">,</span> <span class="nv">event</span><span class="p p-Indicator">]</span>  <span class="c1"># カテゴリが news または events</span>
+</code></pre></div>
+<div class="md_header_block" id="h_indexobj_md_excludes_4"><a class="md_header_anchor" id="a_indexobj_md_excludes_4"></a><h4>excludes</h4></div>
+<p>インデックスに含めないアーティクルの検索条件を指定します。検索する文書プロパティ名をキー、表示対象のプロパティ値のリストを値とする辞書を指定します。</p>
+<p><strong>例: タグが 'Programming'のファイルを除外</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="nt">excludes</span><span class="p">:</span>
+  <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">programming</span><span class="p p-Indicator">]</span>  <span class="c1"># カテゴリが news または events</span>
+</code></pre></div>
+<div class="md_header_block" id="h_indexobj_md_directories_5"><a class="md_header_anchor" id="a_indexobj_md_directories_5"></a><h4>directories</h4></div>
+<p>表示するアーティクルのディレクトリのリストを、絶対パスまたは相対パスで指定します。次の例を <code>contents/index/index.yml</code> に保存すると、<code>contents/docs</code> ディレクトリと<code>contents/index/subdir/</code> ディレクトリ以下のアーティクルを出力します。</p>
+<p><strong>例: <code>contents/docs</code> と<code>contents/index/subdir/</code> ディレクトリのみを表示</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># contents/index/index.yml</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="nt">directories</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/docs</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./subdir</span>
+</code></pre></div>
+<div class="md_header_block" id="h_indexobj_md_indexpage_filename_templ_indexpage_filename_templ2_6"><a class="md_header_anchor" id="a_indexobj_md_indexpage_filename_templ_indexpage_filename_templ2_6"></a><h4>indexpage_filename_templ, indexpage_filename_templ2</h4></div>
+<p>インデックスの先頭ページと２ページ目以降のファイル名を、Jina2テンプレートで指定します。</p>
+<p>未指定の場合は <code>{{content.stem}}.html</code> と <code>{{content.stem}}_{{cur_page}}.html</code> になります。</p>
+<p>テンプレートでは、次の変数を参照できます。</p>
+<ul>
+<li>
+<p><strong>cur_page</strong><br/>
+ページ番号を指定します。</p>
+</li>
+<li>
+<p><strong>page</strong><br/>
+現在のインデックスオブジェクト</p>
+</li>
+</ul>
+<p>次の例は、インデックスの1ページ目のファイル名は <code>index_blog.html</code>、2ページ目以降は <code>index_blog_2.html</code>、<code>index_blog_3.html</code>、... とします。</p>
+<p><strong>例: インデックスのファイル名設定</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="nt">indexpage_filename_templ</span><span class="p">:</span> <span class="s">'index_blog.html'</span>
+<span class="nt">indexpage_filename_templ2</span><span class="p">:</span> <span class="s">'index_blog_{{cur_page}}.html'</span>
+</code></pre></div>
+<div class="md_header_block" id="h_indexobj_md_indexpage_max_articles_7"><a class="md_header_anchor" id="a_indexobj_md_indexpage_max_articles_7"></a><h4>indexpage_max_articles</h4></div>
+<p>インデックスページに表示する、1ページあたりの項目数を指定します。未指定の場合は <code>5</code> となります。</p>
+<div class="md_header_block" id="h_indexobj_md_indexpage_max_num_pages_8"><a class="md_header_anchor" id="a_indexobj_md_indexpage_max_num_pages_8"></a><h4>indexpage_max_num_pages</h4></div>
+<p>インデックスの最大ページ数を指定します。<code>0</code> の場合は、すべてのページを出力します。未指定の場合は <code>0</code> となります。</p>
+<div class="md_header_block" id="h_indexobj_md_indexpage_template_9"><a class="md_header_anchor" id="a_indexobj_md_indexpage_template_9"></a><h4>indexpage_template</h4></div>
+<p>インデックスの先頭ページを生成する Jinja2 テンプレート名を指定します。未指定の場合は <code>page_index.html</code> となります。</p>
+<div class="md_header_block" id="h_indexobj_md_indexpage_template2_10"><a class="md_header_anchor" id="a_indexobj_md_indexpage_template2_10"></a><h4>indexpage_template2</h4></div>
+<p>インデックスの2ページ目以降を生成する Jinja2 テンプレート名を指定します。未指定の場合は <code>page_index.html</code> となります。</p>
+<div class="md_header_block" id="h_indexobj_md_indexpage_orphan_11"><a class="md_header_anchor" id="a_indexobj_md_indexpage_orphan_11"></a><h4>indexpage_orphan</h4></div>
+<p>最終インデックスページの項目数が <code>indexpage_orphan</code> 以下なら、新たなページを作成せずに前のページに統合します。</p>
+<p>例えばファイルが7件あり、<code>index_max_page</code> が <code>3</code> なら、3ページ目の項目数は 1 となります。この場合、<code>indexpage_orphan</code> が <code>1</code> なら、3ページ目は生成されず、2ページ目の項目数が 4 となります。</p>
+<div class="md_header_block" id="h_indexobj_md_グループ別インデックス_12"><a class="md_header_anchor" id="a_indexobj_md_グループ別インデックス_12"></a><h2>グループ別インデックス</h2></div>
+<p>カテゴリ毎のインデックスや、タグ毎のインデックスなど、プロパティ毎のインデックスは、分類対象のプロパティを <code>groupby</code> に指定して作成します。</p>
+<p><strong>例: カテゴリ別のインデックスを作成</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>   <span class="c1"># YAMLファイルのタイプを index に指定</span>
+<span class="nt">groupby</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">category</span>  <span class="c1"># カテゴリ別のインデックスを作成</span>
+</code></pre></div>
+<p><code>groupby</code> プロパティを指定すると、指定されたプロパティの値ごとにインデックスページを作成します。この例では、カテゴリが <code>catA</code> のページと <code>catB</code> のページが存在する場合、</p>
+<ul>
+<li>index_category_catA.html</li>
+<li>index_category_catA_2.html</li>
+<li>...</li>
+</ul>
+<p>と、</p>
+<ul>
+<li>index_category_catB.html</li>
+<li>index_category_catB_2.html</li>
+<li>...</li>
+</ul>
+<p>の2種類のインデックスページを作成します。</p>
+<div class="md_header_block" id="h_indexobj_md_グループ別インデックスのプロパティ_13"><a class="md_header_anchor" id="a_indexobj_md_グループ別インデックスのプロパティ_13"></a><h3>グループ別インデックスのプロパティ</h3></div>
+<p>グループ別インデックスでは、通常のインデックス に加えて、次のプロパティを指定できます。</p>
+<div class="md_header_block" id="h_indexobj_md_groupby_14"><a class="md_header_anchor" id="a_indexobj_md_groupby_14"></a><h4>groupby</h4></div>
+<p>ファイルを分類するプロパティの名前を指定します。e.g. <code>category</code>, <code>tag</code>, ...</p>
+<div class="md_header_block" id="h_indexobj_md_indexpage_group_filename_templ_indexpage_group_filename_templ2_15"><a class="md_header_anchor" id="a_indexobj_md_indexpage_group_filename_templ_indexpage_group_filename_templ2_15"></a><h4>indexpage_group_filename_templ, indexpage_group_filename_templ2</h4></div>
+<p>グループ別先頭ページと２ページ目以降のファイル名を、Jina2テンプレートで指定します。未指定の場合は <code>{{content.stem}}_{{content.groupby}}_{{ group_value }}.html</code>  と <code>{{content.stem}}_{{content.groupby}}_{{ group_value }}_{{cur_page}}.html</code> となります。</p>
+<p><strong>例: グループ別インデックスのファイル名設定</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index</span>
+<span class="nt">groupby</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tags</span>  <span class="c1"># タグ別のインデックスを作成</span>
+
+<span class="c1"># 先頭ページのファイル名は `tags_タグ名.html`、2ページ目以降は `tags_タグ名_ページ.html`</span>
+<span class="nt">indexpage_group_filename_templ</span><span class="p">:</span> <span class="s">'{{content.groupby}}_{{value}}.html'</span>
+<span class="nt">indexpage_group_filename_templ2</span><span class="p">:</span> <span class="s">'{{content.groupby}}_{{value}}_{{cur_page}}.html'</span>
+</code></pre></div>
+<p>テンプレートでは、次の変数を参照できます。</p>
+<ul>
+<li>
+<p><strong>cur_page</strong><br/>
+ページ番号を指定します。</p>
+</li>
+<li>
+<p><strong>page</strong><br/>
+現在のインデックスオブジェクト</p>
+</li>
+<li>
+<p><strong>group_value</strong><br/>
+プロパティの値を指定します。</p>
+</li>
+</ul>
+
+</div>
+
+
+</body>
+</html>

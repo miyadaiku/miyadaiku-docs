@@ -1,2 +1,1 @@
-miyadaiku>=1.6.0
-miyadaiku_theme_newblog>=1.2.0
+miyadaiku_theme_newblog

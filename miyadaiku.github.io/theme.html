@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>テーマ - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='proj.html' >プロジェクト構成</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='theme.html#h_theme_md_テーマ_1' >テーマ</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='theme.html#h_theme_md_テーマのインストール_2' >テーマのインストール</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='theme.html#h_theme_md_テーマのJinjaテンプレート_3' >テーマのJinjaテンプレート</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='theme.html#h_theme_md_組み込みテーマ_4' >組み込みテーマ</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='theme.html#h_theme_md_miyadaiku_themes_base_5' >miyadaiku.themes.base</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='theme.html#h_theme_md_miyadaiku_themes_docutils_html5_6' >miyadaiku.themes.docutils_html5</a></li>
+            
+          
+            
+          
+            
+              <li class="h_h2"><a href='theme.html#h_theme_md_miyadaiku_themes_ipynb_8' >miyadaiku.themes.ipynb</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='theme.html#h_theme_md_使い方_9' >使い方</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='theme.html#h_theme_md_miyadaiku_themes_pygments_10' >miyadaiku.themes.pygments</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='theme.html#h_theme_md_使い方_11' >使い方</a></li>
+            
+          
+            
+              <li class="h_h2"><a href='theme.html#h_theme_md_miyadaiku_themes_sample_blog_12' >miyadaiku.themes.sample.blog</a></li>
+            
+          
+            
+              <li class="h_h3"><a href='theme.html#h_theme_md_使い方_13' >使い方</a></li>
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_theme_md_テーマ_1"><a class="md_header_anchor" id="a_theme_md_テーマ_1"></a><h1>テーマ</h1></div>
+<p>Miyadaikuは、文書や画像、CSS、JinjaテンプレートなどのファイルをまとめたPythonパッケージを、文書を作成する部品として利用できるようになっています。Miyadaikuでは、こういったPythonパッケージを、「テーマ」と呼んでいます。</p>
+<p>利用するテーマは、プロジェクトの <a href="proj.html#config_yml">config.yml ファイル</a> の <code>themes:</code> に指定します。次のサンプルは、Miyadaikuに標準で組み込まれている <code>pygments</code> テーマを利用しています。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">themes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">miyadaiku.themes.pygments</span>
+</code></pre></div>
+<div class="md_header_block" id="h_theme_md_テーマのインストール_2"><a class="md_header_anchor" id="a_theme_md_テーマのインストール_2"></a><h2>テーマのインストール</h2></div>
+<p>標準で組み込まれていない、外部パッケージをテーマとして利用するときには、事前に <code>pip3</code> コマンドなどでテーマをインストールしておく必要があります。たとえば、<a href="https://github.com/miyadaiku/miyadaiku-theme-fontawesome">miyadaiku_theme_fontawesome</a> を利用するときには、</p>
+<div class="highlight"><pre><span></span><code>$ pip install miyadaiku_theme_fontawesome
+</code></pre></div>
+<p>としてパッケージをインストールしてから、<a href="proj.html#config_yml">config.yml ファイル</a> の <code>themes:</code> に <code>miyadaiku_theme_fontawesome</code> を追加します。</p>
+<div class="md_header_block" id="h_theme_md_テーマのJinjaテンプレート_3"><a class="md_header_anchor" id="a_theme_md_テーマのJinjaテンプレート_3"></a><h2>テーマのJinjaテンプレート</h2></div>
+<p>テーマの <code>templates</code> ディレクトリからJinjaテンプレートを参照する時は、テンプレート名の前に  <code>テーマ名!テンプレート名</code> と指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="x">miyadaiku.themes.base パッケージの、 base.html テンプレートを参照</span>
+<span class="cp">{%</span> <span class="k">extends</span> <span class="s1">'miyadaiku.themes.base!base.html'</span> <span class="cp">%}</span><span class="x">  </span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  &lt;title&gt; My document &lt;/title&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<div class="md_header_block" id="h_theme_md_組み込みテーマ_4"><a class="md_header_anchor" id="a_theme_md_組み込みテーマ_4"></a><h2>組み込みテーマ</h2></div>
+<p>Miyadaikuには、以下のテーマを組み込んでいます。</p>
+<ul>
+<li><a href="theme.html#miyadaiu_themes_base">miyadaiku.themes.base</a></li>
+<li><a href="theme.html#docutils_html5">miyadaiku.themes.docutils_html5</a></li>
+<li><a href="theme.html#ipynb">miyadaiku.themes.ipynb</a></li>
+<li><a href="theme.html#pygments">miyadaiku.themes.pygments</a></li>
+<li><a href="theme.html#sample_blog">miyadaiku.themes.sample.blog</a></li>
+</ul>
+<div class="header_target" id="miyadaiu_themes_base"></div>
+<div class="md_header_block" id="h_theme_md_miyadaiku_themes_base_5"><a class="md_header_anchor" id="a_theme_md_miyadaiku_themes_base_5"></a><h3>miyadaiku.themes.base</h3></div>
+<p><code>miyadaiku.themes.base</code> は、デフォルトで使用されるHTMLテンプレートを提供するテーマで、プロジェクトの <code>config.yml</code> でテーマとして指定しなくとも、常に使用されます。</p>
+<p>次のテンプレートを提供します。</p>
+<ul>
+<li>
+<p><a href="https://github.com/miyadaiku/miyadaiku/blob/master/miyadaiku/themes/base/templates/page_article.html">page_article.html</a><br/>
+<a href="contents.html">アーティクル</a>のデフォルトJinja テンプレートです。  </p>
+</li>
+<li>
+<p><a href="https://github.com/miyadaiku/miyadaiku/blob/master/miyadaiku/themes/base/templates/page_index.html">page_index.html</a><br/>
+<a href="indexobj.html">インデックス</a> のデフォルトJinja2 テンプレートです。</p>
+</li>
+</ul>
+<div class="header_target" id="docutils_html5"></div>
+<div class="md_header_block" id="h_theme_md_miyadaiku_themes_docutils_html5_6"><a class="md_header_anchor" id="a_theme_md_miyadaiku_themes_docutils_html5_6"></a><h3>miyadaiku.themes.docutils_html5</h3></div>
+<p>Docutilsの <a href="http://docutils.sourceforge.net/docs/user/html.html#html5-polyglot">html5_polyglot writer</a> 用 CSSファイルを提供します。reStructuredTextの標準CSSとして利用できます。</p>
+<div class="md_header_block" id="h_theme_md_使い方_7"><a class="md_header_anchor" id="a_theme_md_使い方_7"></a><h4>使い方</h4></div>
+<p><a href="proj.html#config_yml">config.yml ファイル</a> の <code>themes</code> に、<code>miyadaiku.themes.docutils_html5</code> を追加します。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">themes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">miyadaiku.themes.docutils_html5</span>
+</code></pre></div>
+<p>テンプレートの <code>head</code> 要素で、<code>docutils_html5.load_css(page)</code> を呼び出し、CSSファイルを指定する <code>link</code> 要素を出力します。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nb">super</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">docutils_html5.load_css</span><span class="o">(</span><span class="nv">page</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<div class="header_target" id="ipynb"></div>
+<div class="md_header_block" id="h_theme_md_miyadaiku_themes_ipynb_8"><a class="md_header_anchor" id="a_theme_md_miyadaiku_themes_ipynb_8"></a><h2>miyadaiku.themes.ipynb</h2></div>
+<p>Jupyter Notebook 用のCSSファイルを提供します。</p>
+<div class="md_header_block" id="h_theme_md_使い方_9"><a class="md_header_anchor" id="a_theme_md_使い方_9"></a><h3>使い方</h3></div>
+<p><a href="proj.html#config_yml">config.yml ファイル</a> の <code>themes</code> に、<code>miyadaiku.themes.ipynb</code> を追加します。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">themes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">miyadaiku.themes.ipynb</span>
+</code></pre></div>
+<p><code>miyadaiku.themes.ipynb</code> は、2種類のCSSを用意しています。<code>ipynb.load_css()</code>は、標準のJupyter NotebookとおなじデザインのCSSをロードします。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nb">super</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">ipynb.load_css</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<p><code>ipynb.load_css_min()</code>は、必要最低限なCSSをロードします。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nb">super</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">ipynb.load_css_min</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<div class="header_target" id="pygments"></div>
+<div class="md_header_block" id="h_theme_md_miyadaiku_themes_pygments_10"><a class="md_header_anchor" id="a_theme_md_miyadaiku_themes_pygments_10"></a><h2>miyadaiku.themes.pygments</h2></div>
+<p><a href="http://pygments.org/">Pygments</a> の組み込みスタイル用のCSSファイルを提供します。次のスタイルを指定できます。</p>
+<blockquote>
+<p>default, emacs, friendly, colorful, autumn, murphy, manni, monokai, perldoc, pastie, borland, trac, native, fruity, bw, vim, vs, tango, rrt, xcode, igor, paraiso-light, paraiso-dark, lovelace, algol, algol_nu, arduino, rainbow_dash, abap, solarized-dark, solarized-light, sas, stata, stata-light, stata-dark, inkpot</p>
+</blockquote>
+<div class="md_header_block" id="h_theme_md_使い方_11"><a class="md_header_anchor" id="a_theme_md_使い方_11"></a><h3>使い方</h3></div>
+<p><a href="proj.html#config_yml">config.yml ファイル</a> の <code>themes</code> に、<code>miyadaiku.themes.pygments</code> を追加し、<code>pygments_style</code> にスタイル名を指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">pygments_style</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">themes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">miyadaiku.themes.pygments</span>
+</code></pre></div>
+<p>テンプレートの <code>head</code> 要素で、<code>pygments.load_css(page)</code> を呼び出し、CSSファイルを指定する <code>link</code> 要素を出力します。</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nb">super</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">pygments.load_css</span><span class="o">(</span><span class="nv">page</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="nv">head</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<div class="header_target" id="sample_blog"></div>
+<div class="md_header_block" id="h_theme_md_miyadaiku_themes_sample_blog_12"><a class="md_header_anchor" id="a_theme_md_miyadaiku_themes_sample_blog_12"></a><h2>miyadaiku.themes.sample.blog</h2></div>
+<p>ブログサイトのサンプルテーマです。</p>
+<div class="md_header_block" id="h_theme_md_使い方_13"><a class="md_header_anchor" id="a_theme_md_使い方_13"></a><h3>使い方</h3></div>
+<p><a href="proj.html#config_yml">config.yml ファイル</a> の <code>themes</code> に、<code>miyadaiku.themes.sample.blog</code> を追加し、<code>pygments_style</code> にスタイル名を指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># List of site theme</span>
+<span class="nt">themes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">miyadaiku.themes.sample.blog</span>
+</code></pre></div>
+<p>ブログのエントリを <code>contents/entry_1.md</code> に作成します。コンテンツには、タグとカテゴリを指定します。</p>
+<p><strong>contents/entry_1.md</strong></p>
+<div class="highlight"><pre><span></span><code>---
+date: 2017-01-01
+title: First entry
+category: カテゴリ1
+tags:
+    - タグ1
+    - タグ2
+---
+
+This is my first blog entry.
+</code></pre></div>
+
+</div>
+
+
+</body>
+</html>

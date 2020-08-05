@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Blog sample</title><link>http://localhost:8888/</link><description></description><lastBuildDate>Tue, 10 Jan 2017 00:00:00 +0900</lastBuildDate><item><title>entry 10</title><link>http://localhost:8888/10.html</link><description>&lt;p&gt;body of entry 10&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog"&gt;https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description><pubDate>Tue, 10 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-10 00:00:00.000000:/10.html</guid></item><item><title>9.rst</title><link>http://localhost:8888/9.html</link><description>&lt;p&gt;body of 9.rst&lt;/p&gt;
+</description><pubDate>Mon, 09 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-09 00:00:00.000000:/9.html</guid></item><item><title>8.rst</title><link>http://localhost:8888/8.html</link><description>&lt;p&gt;body of 8.rst&lt;/p&gt;
+</description><pubDate>Sun, 08 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-08 00:00:00.000000:/8.html</guid></item><item><title>7.rst</title><link>http://localhost:8888/7.html</link><description>&lt;p&gt;body of 7.rst&lt;/p&gt;
+</description><pubDate>Sat, 07 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-07 00:00:00.000000:/7.html</guid></item><item><title>6.rst</title><link>http://localhost:8888/6.html</link><description>&lt;p&gt;body of 6.rst&lt;/p&gt;
+</description><pubDate>Fri, 06 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-06 00:00:00.000000:/6.html</guid></item><item><title>5.rst</title><link>http://localhost:8888/5.html</link><description>&lt;p&gt;body of 5.rst&lt;/p&gt;
+</description><pubDate>Thu, 05 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-05 00:00:00.000000:/5.html</guid></item><item><title>4.rst</title><link>http://localhost:8888/4.html</link><description>&lt;p&gt;body of 4.rst&lt;/p&gt;
+</description><pubDate>Wed, 04 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-04 00:00:00.000000:/4.html</guid></item><item><title>3.rst</title><link>http://localhost:8888/3.html</link><description>&lt;p&gt;body of 3.rst&lt;/p&gt;
+</description><pubDate>Tue, 03 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-03 00:00:00.000000:/3.html</guid></item><item><title>Second entry</title><link>http://localhost:8888/second_entry.html</link><description>&lt;p&gt;This is my second blog entry.&lt;/p&gt;
+</description><pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-02 00:00:00.000000:/second_entry.html</guid></item><item><title>First entry</title><link>http://localhost:8888/first_entry.html</link><description>&lt;p&gt;This is my first blog entry.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog"&gt;https://github.com/miyadaiku/miyadaiku-docs/tree/master/samples/first_blog&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description><pubDate>Sun, 01 Jan 2017 00:00:00 +0900</pubDate><guid isPermaLink="false">tag:localhost,2017-01-01 00:00:00.000000:/first_entry.html</guid></item></channel></rss>

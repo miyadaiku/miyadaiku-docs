@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+   
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>プロジェクト構成 - Miyadaiku</title>
+  
+
+
+<!-- include boolstrap4 -->
+<link rel="stylesheet" href="static/bootstrap4/bootstrap.min.css">
+
+<!-- include jquery.js -->
+<script src="static/jquery/jquery.min.js"></script>
+
+<!-- include popper.js -->
+<script src="static/popper.js/popper.min.js"></script>
+
+<!-- include boolstrap4 js -->
+<script src="static/bootstrap4/bootstrap.min.js"></script>
+
+<!-- include pygments css -->
+<link rel="stylesheet" href="static/pygments/default.css">
+
+<!-- include pygments css -->
+<script defer src="static/fontawesome/js/all.min.js"></script>
+  <script defer src="static/fontawesome/js/v4-shims.min.js"></script>
+
+
+<link rel="stylesheet" href="static/miyadaiku_docs/styles.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon">
+
+
+
+</head>
+
+<body>
+  
+<div class="bg-light leftmenu">
+  <div class="brand">
+    <img src='favicon' width='50'"> Miyadaiku
+  </div>
+  <div class="tocblock">
+  <ul class="toc">
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='index.html' >Miyadaiku</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='tutorial1.html' >チュートリアル</a></li>
+      
+    
+      
+      
+        <ul class="toc_curpage">
+          
+            
+              <li class="h_h1"><a href='proj.html#h_proj_md_プロジェクト構成_1' >プロジェクト構成</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents.html' >アーティクル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='contents_props.html' >コンテンツのプロパティ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='indexobj.html' >インデックス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='feed.html' >フィード</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='config.html' >設定ファイル</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='theme.html' >テーマ</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='template.html' >テンプレート</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='objects.html' >オブジェクトリファレンス</a></li>
+      
+    
+      
+      
+        <li class="h_h1 toc_closedpage"><a href='samples.html' >サンプル</a></li>
+      
+    
+  </ul>
+
+  </div>
+</div>
+
+<div class="main">
+
+<div class="md_header_block" id="h_proj_md_プロジェクト構成_1"><a class="md_header_anchor" id="a_proj_md_プロジェクト構成_1"></a><h1>プロジェクト構成</h1></div>
+<p>Miyadaikuのプロジェクトは、次のようなファイルで構成されます。</p>
+<div class="highlight"><pre><span></span><code>サンプルプロジェクト
+├── config.yml
+├── contents/
+│   └──
+├── files/
+│   └──
+├── outputs/
+│   └──
+└── templates/
+    └──
+</code></pre></div>
+<div class="header_target" id="config_yml"></div>
+<div class="md_header_block" id="h_proj_md_config_yml_ファイル_2"><a class="md_header_anchor" id="a_proj_md_config_yml_ファイル_2"></a><h4>config.yml ファイル</h4></div>
+<p>プロジェクト全体のプロパティを設定します。このファイルに指定したプロパティは、全てのファイルのプロパティのデフォルト値となります。</p>
+<div class="md_header_block" id="h_proj_md_contents_ディレクトリ_3"><a class="md_header_anchor" id="a_proj_md_contents_ディレクトリ_3"></a><h4>contents ディレクトリ</h4></div>
+<p>Markdown、Jupyter notebookなどの <a href="contents.html">アーティクル</a> や、それ以外の画像ファイルなどを配置します。contents ディレクトリのアーティクルファイルはHTMLに変換して、それ以外のファイルはそのまま、ディレクトリ構造を保ってOutputディレクトリにコピーされます。</p>
+<div class="md_header_block" id="h_proj_md_files_ディレクトリ_4"><a class="md_header_anchor" id="a_proj_md_files_ディレクトリ_4"></a><h4>files ディレクトリ</h4></div>
+<p>files ディレクトリのファイルは、ディレクトリ構造を保ってそのままOutputディレクトリにコピーされます。</p>
+<div class="md_header_block" id="h_proj_md_outputs_ディレクトリ_5"><a class="md_header_anchor" id="a_proj_md_outputs_ディレクトリ_5"></a><h4>outputs ディレクトリ</h4></div>
+<p>生成したHTMLなどがコピーされます。</p>
+<div class="md_header_block" id="h_proj_md_templatesディレクトリ_6"><a class="md_header_anchor" id="a_proj_md_templatesディレクトリ_6"></a><h4>templatesディレクトリ</h4></div>
+<p>アーティクルを変換するJinjaテンプレートを配置します。</p>
+
+</div>
+
+
+</body>
+</html>
