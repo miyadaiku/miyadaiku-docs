@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-OUTDIR=miyadaiku.github.io
+OUTDIR=outputs
 
 pip3 install -r requirements.txt
 miyadaiku-build --rebuild -o $OUTDIR .
