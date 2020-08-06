@@ -25,11 +25,11 @@ jobs:
         run: |
           ./build_all.sh
 
-#      - name: Deploy release
-#        uses: peaceiris/actions-gh-pages@v3
-#        if: github.event_name == 'release' && github.event.action == 'published'
-#        with:
-#          deploy_key: ${{ secrets.AISH_DEV_KEY }}
-#          external_repository: atsuoishimoto/atsuoishimoto.github.io
-#          publish_dir: ./public
-#          publish_branch: master
+      - name: Deploy release
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'release' && github.event.action == 'published'
+        with:
+          deploy_key: ${{ secrets.MIYADAIKU_GITHUB_IO }}
+          external_repository: miyadaiku.github.io
+          publish_dir: ./outputs
+          publish_branch: master
