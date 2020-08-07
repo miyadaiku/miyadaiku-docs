@@ -1,5 +1,5 @@
 :root {
-  --sidebar-width: 300px;
+  --sidebar-width: 240px;
   --brand-height: 60px;
 }
 
@@ -40,7 +40,7 @@
 
 .toc {
   padding: 0px;
-  font-size: 1em;
+  font-size: 0.85em;
 }
 
 .toc a {
