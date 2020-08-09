@@ -328,11 +328,16 @@ title
 アーティクルに <code>:jinja:\`\`</code> などを使って記述するJinjaテンプレートでは、次の変数を参照できます。
 
 content
-: 実行中のJinjaテンプレートが記述されている、アーティクル自身を参照します。
+: 実行中のJinjaテンプレートが記述されている、アーティクル自身の :jinja:`{{ content.link_to('./objects.md', fragment='content_obj') }}` を参照します。
 
 page
-: 現在のページのオブジェクト を参照します。  
+: 現在のページのオブジェクトの :jinja:`{{ content.link_to('./objects.md', fragment='content_obj') }}` を参照します。  
+
+
 アーティクルの個別ページでは `content` と `page` は同じアーティクルですが、インデックスページにアーティクルを表示する場合などは、`content` はアーティクルオブジェクトで、`page` はインデックスオブジェクトとなります。
 
+context
+: 実行中の状態を示す :jinja:`{{ content.link_to('./objects.md', fragment='context_obj') }}` を参照します。
+
 contents
-: ContentFilesオブジェクトを参照します。
+: :jinja:`{{ content.link_to('./objects.md', fragment='contents_collection') }}` オブジェクトを参照します。

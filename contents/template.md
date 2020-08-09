@@ -9,10 +9,16 @@ Miyadaikuは、`contents` ディレクトリを走査し、アーティクルや
 アーティクルテンプレートでは、次の変数を参照できます。
 
 page
-: ページに表示する `Article`オブジェクト を参照します。
+: ページに表示する :jinja:`{{ content.link_to('./objects.md', fragment='content_obj', text='Article オブジェクト') }}` を参照します。
+
+context
+: 実行中の状態を示す :jinja:`{{ content.link_to('./objects.md', fragment='context_obj') }}` を参照します。
+
 
 contents
-: `ContentFiles`オブジェクトを参照します。
+: :jinja:`{{ content.link_to('./objects.md', fragment='contents_collection') }}` オブジェクトを参照します。
+
+
 
 アーティクルテンプレートでは、次のようにアーティクルのHTMLを表示します。
 
@@ -41,13 +47,16 @@ contents
 
 
 page
-: ページに表示する `IndexPage` オブジェクト を参照します。
+: ページに表示する :jinja:`{{ content.link_to('./objects.md', fragment='content_obj', text='IndexPageオブジェクト') }}` オブジェクト を参照します。
+
+context
+: 実行中の状態を示す :jinja:`{{ content.link_to('./objects.md', fragment='context_obj') }}` を参照します。
 
 contents
-: `ContentFiles`オブジェクトを参照します。
+: :jinja:`{{ content.link_to('./objects.md', fragment='contents_collection') }}` オブジェクトを参照します。
 
 articles
-: ページに表示する`Article`オブジェクトのリストを参照します。
+: ページに表示する:jinja:`{{ content.link_to('./objects.md', fragment='content_obj', text='Article オブジェクト') }}` のリストを参照します。
 
 cur_page
 : 現在のページ番号(1~)。

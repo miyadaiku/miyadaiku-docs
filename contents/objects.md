@@ -39,9 +39,6 @@ class HTMLIDInfo(NamedTuple):
 
 コンテンツのHTMLを取得します。
 
-#### url
-
-コンテンツの絶対URLを取得します。
 
 ### メソッド
 
@@ -178,6 +175,18 @@ npage
 ```
 
 
+.. target:: context_obj
+
+## コンテキストオブジェクト
+
+
+作成中の出力ファイルに関する情報を保持します。
+
+### メソッド
+
+#### get_url()
+
+出力ファイルのURLを返します。
 
 .. target:: contents_collection
 
@@ -272,3 +281,5 @@ excludes
 {% endfor %}
 </dl>
 ```
+
+
