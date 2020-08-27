@@ -1,3 +1,4 @@
+miyadaiku>=1.18.dev1
 miyadaiku_theme_bootstrap4
 miyadaiku_theme_fontawesome
 miyadaiku_theme_newblog
